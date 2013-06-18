@@ -1,0 +1,3 @@
+method    = scp
+scp_file  = ~/cyclus-git/*
+recursive = true

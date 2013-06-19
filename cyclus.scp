@@ -1,3 +1,3 @@
 method    = scp
-scp_file  = ~/cyclus-git/*
+scp_file  = ~/cyclusCI/*
 recursive = true

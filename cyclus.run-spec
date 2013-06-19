@@ -1,5 +1,5 @@
 run_type    = build
-inputs      = cyclus.scp,cyclopts.git,cyclus.git, coin.svn,libxml++.url,boost.url
+inputs      = cyclus.scp,cyclopts.git,cyclus.git, coin.svn,libxml++.url,boost.url,glibmm.url
 remote_task = build.sh
 platforms   = x86_64_Ubuntu10
 project     = Cyclus

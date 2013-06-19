@@ -4,10 +4,6 @@ set -e
 mkdir install
 
 
-cd glibmm-2.4.0
-./configure --prefix=`pwd`/../install
-make
-make install
 
 
 cd ../libxml++-2.30.0

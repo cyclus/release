@@ -6,7 +6,7 @@ mkdir install
 
 
 
-cd ../libxml++-2.30.0
+cd libxml++-2.30.0
 ./configure --prefix=`pwd`/../install
 make
 make install

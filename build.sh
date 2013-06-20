@@ -11,7 +11,7 @@ cd libxml++-2.30.0
 make
 make install
 
-cd ../ boost_1_42_0/
+cd ../boost_1_42_0/
 ./bootstrap.sh
 ./bjam install --prefix=`pwd`/../install
 

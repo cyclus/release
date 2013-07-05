@@ -1,0 +1,3 @@
+method = git
+git_repo = git://github.com/zwelchWI/cycamore
+git_path = cycamore

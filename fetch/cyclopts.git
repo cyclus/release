@@ -1,0 +1,3 @@
+method = git
+git_repo = git://github.com/zwelchWI/cyclopts
+git_path = cyclopts

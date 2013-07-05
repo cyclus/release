@@ -1,5 +1,7 @@
 run_type    = build
-inputs      = cyclus.scp,cyclopts.git,cyclus.git, coin.svn,libxml++.url,boost.url,glibmm.url
-remote_task = build.sh
-platforms   = x86_64_Ubuntu10
+inputs      = fetch/cyclusCI.scp,fetch/libsigc++.url,fetch/cyclopts.git,fetch/cyclus.git, fetch/coin.svn,fetch/libxml++.url,fetch/boost.url,fetch/glibmm.url
+remote_pre_declare = CYCLUS/build.sh
+remote_declare = CYCLUS/generate_test_list.sh
+remote_task = CYCLUS/run_test.sh
+platforms   = x86_64_Ubuntu12
 project     = Cyclus

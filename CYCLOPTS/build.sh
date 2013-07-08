@@ -1,8 +1,13 @@
 set -x
 set -e
 
-mkdir install
 
+mkdir install
+_NMI_TASKNAME=CYCAMORE.BLAH
+if  [[ "${_NMI_TASKNAME}" == CYCAMORE* ]]
+then
+echo "fixed"
+fi
 cd coin-Cbc
 ls -l
 find -exec touch \{\} \;

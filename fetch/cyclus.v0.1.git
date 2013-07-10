@@ -1,0 +1,3 @@
+method = git
+git_repo = git://github.com/cyclus/cyclus
+git_path = cyclus;cd cyclus;git checkout tags/v0.1

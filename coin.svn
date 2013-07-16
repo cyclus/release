@@ -1,3 +1,0 @@
-method = svn
-url = https://projects.coin-or.org/svn/Cbc/stable/2.8
-svn_path = coin-Cbc

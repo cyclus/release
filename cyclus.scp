@@ -1,3 +1,0 @@
-method    = scp
-scp_file  = ~/cyclusCI/*
-recursive = true

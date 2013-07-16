@@ -4,6 +4,6 @@ pre_all = pre.sh
 remote_pre_declare = CYCAMORE/build.sh
 remote_declare = CYCAMORE/generate_test_list.sh
 remote_task = CYCAMORE/run_test.sh
-platforms   = x86_64_Ubuntu12
+platforms   = x86_Ubuntu12
 project     = Cycamore
 notify=zwelch@wisc.edu

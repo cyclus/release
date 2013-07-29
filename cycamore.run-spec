@@ -1,9 +1,8 @@
 run_type    = test
 inputs      = fetch/cyclusCI.scp,fetch/cycamore.git,fetch/libsigc++.url,fetch/cyclopts.git,fetch/cyclus.git, fetch/coin.svn,fetch/libxml++.url,fetch/boost.url,fetch/glibmm.url
-pre_all = pre.sh
-remote_pre_declare = CYCAMORE/build.sh
+remote_pre_declare = CYCAMORE/build.mac.sh
 remote_declare = CYCAMORE/generate_test_list.sh
 remote_task = CYCAMORE/run_test.sh
-platforms   = x86_Ubuntu12
+platforms   = x86_64_MacOSX8
 project     = Cycamore
 notify=zwelch@wisc.edu

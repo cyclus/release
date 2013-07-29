@@ -9,7 +9,7 @@ make
 make install
 cd ..
 
-cd glibmm-2.20.0
+cd glibmm-2.30.0
 ./configure --prefix=`pwd`/../install PKG_CONFIG_PATH=`pwd`/../install/lib/pkgconfig/
 make
 make install
@@ -21,9 +21,15 @@ make
 make install
 cd ..
 
-cd boost_1_42_0/
+cd boost_1_50_0/
 ./bootstrap.sh
 ./bjam install --prefix=`pwd`/../install
+cd ..
+
+cd hdf5-1.8.4
+./configure --prefix=`pwd`/../install
+make
+make install
 cd ..
 
 cd cyclus

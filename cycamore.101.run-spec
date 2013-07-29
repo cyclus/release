@@ -1,14 +1,14 @@
 run_type    = test
-inputs      = fetch/cyclusCI.scp,fetch/cycamore.git,fetch/libsigc++.url,fetch/cyclopts.git,fetch/cyclus.v0.1.git, fetch/coin.svn,fetch/libxml++.url,fetch/boost.url,fetch/glibmm.url
-remote_pre_declare = CYCAMORE/build.sh
+inputs      = fetch/hdf5.url,fetch/libxml2.url,fetch/gettext.url,fetch/libffi.url,fetch/glib.url, fetch/pkgconfig.url, fetch/cyclusCI.scp,fetch/cycamore.git,fetch/libsigc++.url,fetch/cyclopts.git,fetch/cyclus.git, fetch/coin.svn,fetch/libxml++.url,fetch/boost.url,fetch/glibmm.url
+x86_64_MacOSX8_remote_pre_declare = CYCAMORE/build.mac.sh
+x86_64_Ubuntu12_remote_pre_declare = CYCAMORE/build.sh
 remote_declare = CYCAMORE/generate_test_list.sh
 remote_task = CYCAMORE/run_test.sh
-platforms   = x86_64_Ubuntu12
+platforms   = x86_64_Ubuntu12,x86_64_MacOSX8
 project     = Cyclus
-project_version = dev/0.1/dev
-description = Builds Cyclopts[dev]. Builds/Unit tests Cyclus[0.1], Cycamore[dev]
-notify=zwelch@wisc.edu,zwelch@cs.wisc.edu,zwelch@clemson.edu
-cron_hour=15
-cron_minute=30
-
-
+project_version = dev/0.2/dev
+description = Builds Cyclopts[dev]. Builds/Unit tests Cyclus[0.2], Cycamore[dev]
+notify = cyclus-ci@googlegroups.com
+notify_fail_only = true
+cron_hour = 1
+cron_minute = 00

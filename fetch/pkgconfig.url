@@ -1,0 +1,3 @@
+method = url
+url = http://sourceforge.net/projects/pkgconfiglite/files/0.28-1/pkg-config-lite-0.28-1.tar.gz
+untar = true

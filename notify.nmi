@@ -1,0 +1,20 @@
+Cyclus Continuous Integration Test $(project_version), run ID $(runid), has $(result_display).
+
+For more details, visit
+
+http://$(webserver)/$(prefix)/results/details?runID=$(runid)
+
+List of Failed Tests
+     Note: Cyclus and its dependencies are built in remote-pre-declare stage
+$(failedTaskDisplay)
+-------------------------
+
+description: $(description)
+      start: $(start) ($(timezone))
+     status: $(result_display). (result code $(result))
+             ($(result_explain))
+     finish: $(finish) ($(timezone))
+    project: $(project)	version: $(project_version)
+  component: $(component)	version: $(component_version)
+  platforms: $(platforms)
+

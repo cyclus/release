@@ -1,7 +1,12 @@
 set -x
 set -e
 
-`pwd`/CYCLOPTS/build.sh
+DIR=`pwd`
+#tar -xzf results.tar.gz
+
+`pwd`/CYCLOPTS/build.test.sh
+
+
 
 cd libsigc++-2.3.1
 ./configure --prefix=`pwd`/../install
@@ -31,12 +36,23 @@ cd hdf5-1.8.4
 make
 make install
 cd ..
+DIR=`pwd`
 
+
+
+export LD_LIBRARY_PATH=`pwd`/install/lib/:$LD_LIBRARY_PATH
+export CMAKE_LIBRARY_PATH=`pwd`/install/lib/:$CMAKE_LIBRARY_PATH
+export LD_RUN_PATH=`pwd`/lapack-3.2.1/:$LD_RUN_PATH
+echo $LD_LIBRARY_PATH
 cd cyclus
-cmake src -DCMAKE_INSTALL_PREFIX=`pwd`/../install -DCYCLOPTS_ROOT_DIR=`pwd`/../install -DCOIN_ROOT_DIR=`pwd`/../install -DBOOST_ROOT=`pwd`/../install
+find -exec touch \{\} \;
+#cmake src  -DCMAKE_SHARED_LINKER_FLAGS="-L`pwd`/../lapack-3.2.1/" -DCMAKE_INSTALL_PREFIX=`pwd`/../install -DCYCLOPTS_ROOT_DIR=`pwd`/../install -DCOIN_ROOT_DIR=`pwd`/../install -DBOOST_ROOT=`pwd`/../install -DLAPACK_LIBRARIES=`pwd`/../lapack-3.2.1/liblapack.a -DBLAS_LIBRARIES=`pwd`/../lapack-3.2.1/libblas.a -DLAPACK_DIR=`pwd`/../lapack-3.2.1/
+
+cmake src  -DCMAKE_EXE_LINKER_FLAGS="-L/`pwd`/../install/lib -lcoinblas -lcoinlapack " -DCMAKE_INSTALL_PREFIX=`pwd`/../install -DCYCLOPTS_ROOT_DIR=`pwd`/../install -DCOIN_ROOT_DIR=`pwd`/../install -DBOOST_ROOT=`pwd`/../install
 make
 make install
 cd ..
-
+#rm results.tar.gz
+tar -czf results.tar.gz cyclus install coin-Cbc
 exit $?
 

@@ -1,4 +1,6 @@
-Cyclus Continuous Integration Test $(project_version), run ID $(runid), has $(result_display).
+Cyclus Continuous Integration Test $(project_version), on $(platforms), has $(result_display).
+
+$(result_explain)
 
 For more details, visit
 

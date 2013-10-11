@@ -36,7 +36,7 @@ DIR=`pwd`
 tar -czf results.tar.gz install coin-Cbc
 
 cd cyclus
-cmake src   -DCMAKE_INSTALL_PREFIX=`pwd`/../install -DCYCLOPTS_ROOT_DIR=`pwd`/../install -DCOIN_ROOT_DIR=`pwd`/../install -DBOOST_ROOT=`pwd`/../install  -DLAPACK_LIBRARIES="$DIR/coin-Cbc/ThirdParty/Lapack/.libs/libcoinlapack.so -llapack ;$DIR/coin-Cbc/ThirdParty/Blas/.libs/libcoinblas.so -lblas"
+cmake `pwd`   -DCMAKE_INSTALL_PREFIX=`pwd`/../install -DCYCLOPTS_ROOT_DIR=`pwd`/../install -DCOIN_ROOT_DIR=`pwd`/../install -DBOOST_ROOT=`pwd`/../install  -DLAPACK_LIBRARIES="$DIR/coin-Cbc/ThirdParty/Lapack/.libs/libcoinlapack.so -llapack ;$DIR/coin-Cbc/ThirdParty/Blas/.libs/libcoinblas.so -lblas"
 make
 make install
 cd ..

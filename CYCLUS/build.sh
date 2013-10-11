@@ -49,13 +49,9 @@ cd cyclus
 find -exec touch \{\} \;
 #cmake src  -DCMAKE_SHARED_LINKER_FLAGS="-L`pwd`/../lapack-3.2.1/" -DCMAKE_INSTALL_PREFIX=`pwd`/../install -DCYCLOPTS_ROOT_DIR=`pwd`/../install -DCOIN_ROOT_DIR=`pwd`/../install -DBOOST_ROOT=`pwd`/../install -DLAPACK_LIBRARIES=`pwd`/../lapack-3.2.1/liblapack.a -DBLAS_LIBRARIES=`pwd`/../lapack-3.2.1/libblas.a -DLAPACK_DIR=`pwd`/../lapack-3.2.1/
 
-mkdir build
-cd build
-
-cmake ../src  -DCMAKE_EXE_LINKER_FLAGS="-L/`pwd`/../../install/lib -lcoinblas -lcoinlapack " -DCMAKE_INSTALL_PREFIX=`pwd`/../../install -DCYCLOPTS_ROOT_DIR=`pwd`/../../install -DCOIN_ROOT_DIR=`pwd`/../../install -DBOOST_ROOT=`pwd`/../../install
+cmake `pwd`  -DCMAKE_EXE_LINKER_FLAGS="-L/`pwd`/../install/lib -lcoinblas -lcoinlapack " -DCMAKE_INSTALL_PREFIX=`pwd`/../install -DCYCLOPTS_ROOT_DIR=`pwd`/../install -DCOIN_ROOT_DIR=`pwd`/../install -DBOOST_ROOT=`pwd`/../install
 make
 make install
-cd ..
 cd ..
 #rm results.tar.gz
 exit $?

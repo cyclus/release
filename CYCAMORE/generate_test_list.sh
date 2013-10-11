@@ -1,18 +1,18 @@
 set -x
 set -e
 export DYLD_LIBRARY_PATH=`pwd`/install/lib:$DYLD_LIBRARY_PATH
-if [ -e install/cyclus/bin/CyclusUnitTestDriver ]
+if [ -e install/cyclus/bin/cyclus_unit_tests ]
 then
-install/cyclus/bin/CyclusUnitTestDriver --gtest_list_tests  | python gen_test_list.py CYCLUS.
-install/cyclus/bin/CyclusUnitTestDriver --gtest_list_tests  | python gen_test_list.py CYCLUS. > tasklist.nmi
+install/cyclus/bin/cyclus_unit_tests --gtest_list_tests  | python gen_test_list.py CYCLUS.
+install/cyclus/bin/cyclus_unit_tests --gtest_list_tests  | python gen_test_list.py CYCLUS. > tasklist.nmi
 else
-if [ ! -f install/bin/CyclusUnitTestDriver ]; then
+if [ ! -f install/bin/cyclus_unit_tests ]; then
     echo "CYCLUS NOT PROPERLY INSTALLED"
     exit 1
 fi
 
-install/bin/CyclusUnitTestDriver --gtest_list_tests  | python gen_test_list.py CYCLUS.
-install/bin/CyclusUnitTestDriver --gtest_list_tests  | python gen_test_list.py CYCLUS. > tasklist.nmi
+install/bin/cyclus_unit_tests --gtest_list_tests  | python gen_test_list.py CYCLUS.
+install/bin/cyclus_unit_tests --gtest_list_tests  | python gen_test_list.py CYCLUS. > tasklist.nmi
 fi
 
 if [ -e install/cyclus/bin/CycamoreUnitTestDriver ]

@@ -1,11 +1,11 @@
 #!/bin/sh
 set -x
 set -e
-    if [ -e install/cyclus/bin/CyclusUnitTestDriver ]
+    if [ -e install/cyclus/bin/cyclus_unit_tests ]
     then
-    install/cyclus/bin/CyclusUnitTestDriver --gtest_filter=`echo ${_NMI_TASKNAME} | sed -e 's/__/\//g' | sed -e 's/CYCLUS.//g'`
+    install/cyclus/bin/cyclus_unit_tests --gtest_filter=`echo ${_NMI_TASKNAME} | sed -e 's/__/\//g' | sed -e 's/CYCLUS.//g'`
     else
-    install/bin/CyclusUnitTestDriver --gtest_filter=`echo ${_NMI_TASKNAME} | sed -e 's/__/\//g' | sed -e 's/CYCLUS.//g'`
+    install/bin/cyclus_unit_tests --gtest_filter=`echo ${_NMI_TASKNAME} | sed -e 's/__/\//g' | sed -e 's/CYCLUS.//g'`
     fi
 
 exit $?

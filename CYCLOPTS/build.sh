@@ -25,7 +25,7 @@ mkdir install
 ##cd ..
 
 
-cd coin-Cbc
+cd Cbc-2.8.3
 find -exec touch \{\} \;
 #./configure --prefix=`pwd`/../install 
 cp ../lapack-3.4.2.tgz ThirdParty/Lapack/

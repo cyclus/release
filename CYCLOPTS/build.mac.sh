@@ -3,7 +3,7 @@ set -e
 
 
 mkdir install
-cd coin-Cbc
+cd Cbc-2.8.3
 ls -l
 ./configure --prefix=`pwd`/../install
 make

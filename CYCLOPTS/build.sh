@@ -2,28 +2,11 @@ set -x
 set -e
 
 mkdir install
-#tar -xzf blas.tgz
-#tar -xzf lapack-3.4.2.tgz
-#cd BLAS
-#make
-#mv blas_LINUX.a ../lapack-3.4.2
-#ls -l
-#make install
-#cd ..
-#cd ..
 
-#cd lapack-3.4.2
-#cmake -DCMAKE_INSTALL_PREFIX=`pwd`/../install -DBLAS_LIBRARIES=`pwd`/../BLAS/blas_LINUX.a
-#cp make.inc.example make.inc
-#make
-#mv lapack_LINUX.a libcoinlapack.a
-#mv blas_LINUX.a libcoinblas.a
-##make install
-#ls -l 
-#ls -l BLAS
-#mv *.a ../install/lib/
-##cd ..
-
+if [ -f "ubuntu.tar.gz" ]
+then
+    tar -xzf ubuntu.tar.gz
+fi
 
 cd Cbc-2.8.3
 find -exec touch \{\} \;

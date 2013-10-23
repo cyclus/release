@@ -1,8 +1,11 @@
 run_type    = test
-inputs      = fetch/cyclusCI.scp,fetch/cycamore.git,fetch/libsigc++.url,fetch/cyclopts.git,fetch/cyclus.git, fetch/coin.svn,fetch/libxml++.url,fetch/boost.url,fetch/glibmm.url
-remote_pre_declare = CYCAMORE/build.mac.sh
+inputs      = fetch/doxygen.git,fetch/blas.url,fetch/lapack.url,fetch/hdf5.url,fetch/libxml2.url,fetch/gettext.url,fetch/libffi.url,fetch/glib.url, fetch/pkgconfig.url, fetch/myCyclusCI.scp,fetch/cycamore.git,fetch/libsigc++.url,fetch/cyclopts.git,fetch/cyclus.git, fetch/coin.url,fetch/libxml++.url,fetch/boost.url,fetch/glibmm.url
+x86_64_MacOSX8_remote_pre_declare = CYCAMORE/build.mac.sh
+x86_64_Ubuntu12_remote_pre_declare = CYCAMORE/build.sh
 remote_declare = CYCAMORE/generate_test_list.sh
 remote_task = CYCAMORE/run_test.sh
-platforms   = x86_64_MacOSX8
-project     = Cycamore
-notify=zwelch@wisc.edu
+x86_64_Ubuntu12_remote_post = CYCAMORE/build_doc.sh
+platforms   = x86_64_Ubuntu12,x86_64_MacOSX8
+project     = Cyclus
+project_version = dev/dev/dev
+description = Builds Cyclopts[dev]. Builds/Unit tests Cyclus[dev], Cycamore[dev]

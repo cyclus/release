@@ -4,21 +4,24 @@ set -e
 
 cd cycamore/build
 make cycamoredoc | tee  doc.out
-line=$(grep -i 'warning' doc.out)
-if [ ! -z "$line" ] 
+line=`grep -i warning doc.out|wc -l`
+ls
+
+if [  $line -ne 0 ] 
  then
+	echo HERE
         exit 1
 fi
 mv doc cycamoredoc
 cd ../..
 
-cd cyclus/build
+cd cyclus
 make cyclusdoc | tee  doc.out
-line=$(grep -i 'warning' doc.out)
-if [ ! -z "$line" ]
+line=`grep -i warning doc.out|wc -l`
+if [ $line -ne 0 ]
  then
     exit 1
 fi
 ls -l
 mv doc cyclusdoc
-cd ../..
+cd ..

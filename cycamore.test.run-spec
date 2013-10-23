@@ -1,13 +1,12 @@
 run_type    = test
-inputs      = fetch/doxygen.git,fetch/blas.url,fetch/lapack.url,fetch/hdf5.url,fetch/libxml2.url,fetch/gettext.url,fetch/libffi.url,fetch/glib.url, fetch/pkgconfig.url, fetch/cyclusCI.scp,fetch/cycamore.git,fetch/libsigc++.url,fetch/cyclopts.git,fetch/cyclus.git, fetch/coin.svn,fetch/libxml++.url,fetch/boost.url,fetch/glibmm.url
-x86_64_MacOSX8_remote_pre_declare = CYCAMORE/build.mac.test.sh
+inputs      = fetch/doxygen.git,fetch/blas.url,fetch/lapack.url,fetch/hdf5.url,fetch/libxml2.url,fetch/gettext.url,fetch/libffi.url,fetch/glib.url, fetch/pkgconfig.url, fetch/cyclusCI.scp,fetch/cycamore.git,fetch/libsigc++.url,fetch/cyclopts.git,fetch/cyclus.git, fetch/coin.url,fetch/libxml++.url,fetch/boost.url,fetch/glibmm.url
 x86_64_Ubuntu12_remote_pre_declare = CYCAMORE/build.test.sh
 remote_declare = CYCAMORE/generate_test_list.sh
 remote_task = CYCAMORE/run_test.sh
 x86_64_Ubuntu12_remote_post = CYCAMORE/build_doc.test.sh
-x86_64_Ubuntu12_post_all = CYCAMORE/gh_pages.sh
-platforms   = x86_64_Ubuntu12,x86_64_MacOSX8
+platform_post = CYCAMORE/gh_pages.sh
+platforms   = x86_64_Ubuntu12
 project     = Cyclus
-project_version = dev/dev/dev
+project_version = test
 description = Builds Cyclopts[dev]. Builds/Unit tests Cyclus[dev], Cycamore[dev]
 notify = zwelch@wisc.edu

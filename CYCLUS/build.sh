@@ -4,7 +4,7 @@ set -e
 DIR=`pwd`
 #tar -xzf results.tar.gz
 
-`pwd`/CYCLOPTS/build.test.sh
+`pwd`/CYCLOPTS/build.sh
 
 
 

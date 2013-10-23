@@ -1,0 +1,3 @@
+method = git
+git_repo = git://github.com/zwelchWI/cyclusCI.git
+git_path = cyclusCI;cp -R cyclusCI/* .

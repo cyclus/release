@@ -3,7 +3,17 @@ set -e
 
 
 mkdir install
-cd coin-Cbc
+
+if [ -f "mac.tar.gz" ]
+then
+    tar -xzf mac.tar.gz
+fi
+
+
+
+
+
+cd Cbc-2.8.3
 ls -l
 ./configure --prefix=`pwd`/../install
 make

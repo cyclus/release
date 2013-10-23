@@ -1,7 +1,7 @@
 set -x
 set -e
 
-`pwd`/CYCLUS/build.test.sh
+`pwd`/CYCLUS/build.sh
 cd cycamore
 mkdir build
 cd build

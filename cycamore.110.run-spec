@@ -1,5 +1,5 @@
 run_type    = test
-inputs      = fetch/blas.url,fetch/lapack.url,fetch/hdf5.url,fetch/libxml2.url,fetch/gettext.url,fetch/libffi.url,fetch/glib.url, fetch/pkgconfig.url, fetch/cyclusCI.git,fetch/cycamore.v0.2.git,fetch/libsigc++.url,fetch/cyclopts.git,fetch/cyclus.git, fetch/coin.svn,fetch/libxml++.url,fetch/boost.url,fetch/glibmm.url
+inputs      = fetch/blas.url,fetch/lapack.url,fetch/hdf5.url,fetch/libxml2.url,fetch/gettext.url,fetch/libffi.url,fetch/glib.url, fetch/pkgconfig.url, fetch/ciclus.git,fetch/cycamore.v0.2.git,fetch/libsigc++.url,fetch/cyclopts.git,fetch/cyclus.git, fetch/coin.svn,fetch/libxml++.url,fetch/boost.url,fetch/glibmm.url
 x86_64_MacOSX8_remote_pre_declare = CYCAMORE/build.mac.sh
 x86_64_Ubuntu12_remote_pre_declare = CYCAMORE/build.sh
 remote_declare = CYCAMORE/generate_test_list.sh

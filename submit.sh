@@ -12,7 +12,7 @@ echo "
 method    = scp
 scp_file  = $path/*
 recursive = true
-">$path/fetch/myCyclusCI.scp
+">$path/fetch/myCiclus.scp
 
 
 nmi_submit $1

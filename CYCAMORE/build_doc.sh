@@ -12,7 +12,7 @@ if [  $line -ne 0 ]
 	echo HERE
         exit 1
 fi
-mv doc cycamoredoc
+mv doc ../../cycamoredoc
 cd ../..
 
 cd cyclus
@@ -23,5 +23,9 @@ if [ $line -ne 0 ]
     exit 1
 fi
 ls -l
-mv doc cyclusdoc
+mv doc ../cyclusdoc
 cd ..
+
+tar -czf results.tar.gz cycamoredoc cyclusdoc
+
+

@@ -1,10 +1,11 @@
 run_type    = test
-inputs      = fetch/cyclusCI.git,fetch/cycamore.git,fetch/cyclopts.git,fetch/cyclus.git, fetch/nightly_deps.scp
+inputs      = fetch/ciclus.git,fetch/cycamore.git,fetch/cyclopts.git,fetch/cyclus.git, fetch/nightly_deps.scp
 x86_64_MacOSX8_remote_pre_declare = CYCAMORE/build.mac.sh
 x86_64_Ubuntu12_remote_pre_declare = CYCAMORE/build.sh
 remote_declare = CYCAMORE/generate_test_list.sh
 remote_task = CYCAMORE/run_test.sh
 x86_64_Ubuntu12_remote_post = CYCAMORE/build_doc.sh
+x86_64_Ubuntu12_platform_post = CYCAMORE/gh_pages.sh
 platforms   = x86_64_Ubuntu12,x86_64_MacOSX8
 project     = Cyclus
 project_version = dev/dev/dev

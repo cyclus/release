@@ -1,0 +1,5 @@
+
+method    = scp
+scp_file  = /home/cyclusci/ciclus/*
+recursive = true
+

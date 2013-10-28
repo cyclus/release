@@ -1,15 +1,26 @@
+#!/bin/bash
+set -x
+set -e
 
 
-#`pwd`/../CYCLUS/gh_pages.sh
-
-
-#cd cycamore
-#git checkout gh-pages
+tar -xzf results.tar.gz
 ls -l
+
+cd cyclus
+git checkout gh-pages
+rsync -a ../cyclusdoc/html* .
+git add -A
+git commit -m "nightly build"
+git push -f ssh://git@github.com/cyclus/cyclus.git gh-pages
+cd ..
+
+
 cd cycamore
 git checkout gh-pages
-return 0
-
+rsync -a ../cycamoredoc/html* .
+git add -A
+git commit -m "nightly build"
+git push -f ssh://git@github.com/cyclus/cycamore.git gh-pages
 
 
 

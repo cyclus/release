@@ -1,7 +1,20 @@
 set -x
 set -e
 
-`pwd`/CYCLOPTS/build.mac.sh
+
+mkdir install
+
+if [ -f "mac.tar.gz" ]
+then
+    tar -xzf mac.tar.gz
+fi
+
+cd Cbc-2.8.3
+ls -l
+./configure --prefix=`pwd`/../install
+make
+make install
+cd ..
 
 cd pkg-config-lite-0.28-1
 ./configure --prefix=`pwd`/../install

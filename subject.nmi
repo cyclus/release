@@ -1,1 +1,1 @@
-[cyclus-ci] BaTLab Test $(project_version), on $(platforms), $(result_display).
+[ciclus] BaTLab Test $(project_version), on $(platforms), $(result_display).

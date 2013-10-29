@@ -10,6 +10,5 @@ make
 make install
 cd ..
 cd ..
-tar -czf results.tar.gz cyclus cycamore
 exit $?
 

@@ -1,5 +1,0 @@
-run_type    = build
-inputs      = fetch/cyclusCI.scp,fetch/cyclopts.git, fetch/coin.svn
-remote_task = CYCLOPTS/build.sh
-platforms   = x86_64_Ubuntu12
-project     = Cyclopts

@@ -5,5 +5,5 @@ remote_declare = CYCAMORE/generate_test_list.sh
 remote_task = CYCAMORE/run_test.sh
 platforms   = x86_64_MacOSX8
 project     = Cyclus
-project_version = dev/dev/dev
+project_version = mac dev/dev
 description = Mac testing

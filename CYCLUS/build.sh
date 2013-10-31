@@ -3,6 +3,13 @@ set -e
 
 DIR=`pwd`
 
+
+
+if [ -f "ubuntu.fast.tar.gz" ]
+then
+    tar -xzf ubuntu.fast.tar.gz
+else
+
 mkdir install
 
 if [ -f "ubuntu.tar.gz" ]
@@ -72,7 +79,7 @@ make install
 cd ..
 DIR=`pwd`
 
-
+fi
 
 export LD_LIBRARY_PATH=`pwd`/install/lib/:$LD_LIBRARY_PATH
 export CMAKE_LIBRARY_PATH=`pwd`/install/lib/:$CMAKE_LIBRARY_PATH

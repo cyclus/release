@@ -2,6 +2,13 @@ set -x
 set -e
 
 
+if [ -f "mac.fast.tar.gz" ]
+then
+    tar -xzf mac.fast.tar.gz
+
+else
+
+
 mkdir install
 
 if [ -f "mac.tar.gz" ]
@@ -82,6 +89,7 @@ make
 make install
 cd ..
 
+fi
 
 cd cyclus
 cmake `pwd` -DCMAKE_INSTALL_PREFIX=`pwd`/../install -DCYCLOPTS_ROOT_DIR=`pwd`/../install -DCOIN_ROOT_DIR=`pwd`/../install -DBOOST_ROOT=`pwd`/../install

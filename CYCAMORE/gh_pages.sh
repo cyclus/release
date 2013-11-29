@@ -11,14 +11,10 @@ tar -xzf results.tar.gz
 
 cd cyclus
 git checkout gh-pages
-rsync -a ../cycamoredoc/html/* api/
+rsync -a ../cyclusdoc/html/* api/
 git add -A
-git commit -m "nightly build" | tee  doc.out
-line=`grep -i "no changes added to commit" doc.out|wc -l`
-if [ $line == 0 ]
-then
+git commit -m "nightly build"
 git push -f ssh://git@github.com/cyclus/cyclus.git gh-pages
-fi
 cd ..
 
 
@@ -26,10 +22,6 @@ cd cycamore
 git checkout gh-pages
 rsync -a ../cycamoredoc/html/* api/
 git add -A
-git commit -m "nightly build" | tee  doc.out
-line=`grep -i "no changes added to commit" doc.out|wc -l`
-if [ $line == 0 ]
-then
+git commit -m "nightly build"
 git push -f ssh://git@github.com/cyclus/cycamore.git gh-pages
-fi
 

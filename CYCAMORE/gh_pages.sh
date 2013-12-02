@@ -1,14 +1,17 @@
-#!/bin/bash
+#!/bin/sh
 set -x
 set -e
 
 
+if [ ! -e results.tar.gz ]
+then
+exit 0
+fi
 tar -xzf results.tar.gz
-ls -l
 
 cd cyclus
 git checkout gh-pages
-rsync -a ../cycamoredoc/html/* api/
+rsync -a ../cyclusdoc/html/* api/
 git add -A
 git commit -m "nightly build"
 git push -f ssh://git@github.com/cyclus/cyclus.git gh-pages
@@ -21,6 +24,4 @@ rsync -a ../cycamoredoc/html/* api/
 git add -A
 git commit -m "nightly build"
 git push -f ssh://git@github.com/cyclus/cycamore.git gh-pages
-
-
 

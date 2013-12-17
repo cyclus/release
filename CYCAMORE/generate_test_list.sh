@@ -15,18 +15,18 @@ install/bin/cyclus_unit_tests --gtest_list_tests  | python gen_test_list.py CYCL
 install/bin/cyclus_unit_tests --gtest_list_tests  | python gen_test_list.py CYCLUS. > tasklist.nmi
 fi
 
-if [ -e install/cyclus/bin/CycamoreUnitTestDriver ]
+if [ -e install/cyclus/bin/cycamore_unit_tests ]
 then
-install/cycamore/bin/CycamoreUnitTestDriver --gtest_list_tests  | python gen_test_list.py CYCAMORE.
-install/cycamore/bin/CycamoreUnitTestDriver --gtest_list_tests  | python gen_test_list.py CYCAMORE. >> tasklist.nmi
+install/cycamore/bin/cycamore_unit_tests --gtest_list_tests  | python gen_test_list.py CYCAMORE.
+install/cycamore/bin/cycamore_unit_tests --gtest_list_tests  | python gen_test_list.py CYCAMORE. >> tasklist.nmi
 else
-if [ ! -f install/bin/CycamoreUnitTestDriver ]; then
+if [ ! -f install/bin/cycamore_unit_tests ]; then
     echo "CYCAMORE NOT PROPERLY INSTALLED"
     exit 1
 fi
 
-install/bin/CycamoreUnitTestDriver --gtest_list_tests  | python gen_test_list.py CYCAMORE.
-install/bin/CycamoreUnitTestDriver --gtest_list_tests  | python gen_test_list.py CYCAMORE. >> tasklist.nmi
+install/bin/cycamore_unit_tests --gtest_list_tests  | python gen_test_list.py CYCAMORE.
+install/bin/cycamore_unit_tests --gtest_list_tests  | python gen_test_list.py CYCAMORE. >> tasklist.nmi
 fi
 
 

@@ -4,6 +4,6 @@ x86_64_MacOSX8_remote_pre_declare = CYCAMORE/build.mac.sh
 remote_declare = CYCAMORE/generate_test_list.sh
 remote_task = CYCAMORE/run_test.sh
 platforms   = x86_64_MacOSX8
-project     = Cyclus
+project     = <a href="http://cyclus.github.io/">Cyclus</a>
 project_version = mac dev/dev
 description = Mac testing

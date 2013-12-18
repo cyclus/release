@@ -5,6 +5,6 @@ x86_64_Ubuntu12_remote_pre_declare = CYCAMORE/build.sh
 remote_task = CYCAMORE/run_test.fast.sh
 x86_64_Ubuntu12_remote_post = CYCAMORE/build_doc.sh
 platforms   = x86_64_Ubuntu12,x86_64_MacOSX8
-project     = Cyclus
+project     = <a href="http://cyclus.github.io/">Cyclus</a>
 project_version = fast_dev/dev
 description = Builds/Unit tests Cyclus[dev], Cycamore[dev]

@@ -73,15 +73,5 @@ execute node.  You can then use these files for unit testing instead of building
 The `Cyclus Homepage`_ has much more detailed guides and information.  If
 you intend to develop for *Cyclus*, please visit it to learn more.
 
-
-------------------------------------------------------------------
-Authors
-------------------------------------------------------------------
-Matthew Gidden
-Anthony Scopatz
-Zach Welch
-
-
-
 .. _`Cyclus Homepage`: http://cyclus.github.com
 

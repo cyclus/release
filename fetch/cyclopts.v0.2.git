@@ -1,3 +1,0 @@
-method = git
-git_repo = git://github.com/cyclus/cyclopts
-git_path = cyclopts;cd cyclopts;git checkout tags/0.2

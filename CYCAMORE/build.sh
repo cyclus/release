@@ -10,5 +10,8 @@ make
 make install
 cd ..
 cd ..
+cd nose-1.3.0
+python setup.py install --prefix=`pwd`/../install
+cd ..
 exit $?
 

@@ -7,5 +7,8 @@ cmake src -DCMAKE_INSTALL_PREFIX=`pwd`/../install -DCYCLUS_ROOT_DIR=`pwd`/../ins
 make
 make install
 cd ..
+cd nose-1.3.0
+python setup.py install --prefix=`pwd`/../install
+cd ..
 exit $?
 

@@ -15,6 +15,14 @@ else
     install/bin/cyclus_unit_tests --gtest_repeat=1
 fi
 
+# check that unit tests ran
+if [ $? -ne 0 ]
+then
+    exit $?
+fi
 
+# run regression tests
+cd `pwd`/install/cycamore/tests
+../../bin/nosetests
 
 exit $?

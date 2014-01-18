@@ -22,7 +22,8 @@ then
 fi
 
 # run regression tests
-cd `pwd`/install/cycamore/tests
-../../bin/nosetests
+export PYTHONPATH=$PYTHONPATH:`pwd`/install:`pwd`/install/lib/python2.7/site-packages
+cd `pwd`/cycamore/tests
+../../install/bin/nosetests
 
 exit $?

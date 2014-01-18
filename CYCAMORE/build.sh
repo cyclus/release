@@ -10,7 +10,9 @@ make
 make install
 cd ..
 cd ..
-cd nose-1.3.0
+cd nose
+export PYTHONPATH=$PYTHONPATH:`pwd`/../install:`pwd`/../install/lib/python2.7/site-packages
+mkdir -p `pwd`/../install/lib/python2.7/site-packages
 python setup.py install --prefix=`pwd`/../install
 cd ..
 exit $?

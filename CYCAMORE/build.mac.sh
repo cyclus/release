@@ -7,7 +7,9 @@ cmake src -DCMAKE_INSTALL_PREFIX=`pwd`/../install -DCYCLUS_ROOT_DIR=`pwd`/../ins
 make
 make install
 cd ..
-cd nose-1.3.0
+cd nose
+export PYTHONPATH=$PYTHONPATH:`pwd`/../install/lib/python2.7/site-packages
+mkdir -p `pwd`/../install/lib/python2.7/site-packages
 python setup.py install --prefix=`pwd`/../install
 cd ..
 exit $?

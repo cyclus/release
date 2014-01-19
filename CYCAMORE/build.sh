@@ -18,8 +18,6 @@ cd ../numpy
 python setup.py install --prefix=`pwd`/../install
 cd ../cython
 python setup.py install --prefix=`pwd`/../install
-cd ../argparse
-python setup.py install --prefix=`pwd`/../install
 cd ../numexpr
 python setup.py install --prefix=`pwd`/../install
 cd ../PyTables

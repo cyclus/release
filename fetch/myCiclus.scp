@@ -1,5 +1,5 @@
 
 method    = scp
-scp_file  = /home/gidden/ciclus/*
+scp_file  = /home/ciclus/ciclus/*
 recursive = true
 

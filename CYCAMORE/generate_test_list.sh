@@ -29,6 +29,7 @@ install/bin/cycamore_unit_tests --gtest_list_tests  | python gen_test_list.py CY
 install/bin/cycamore_unit_tests --gtest_list_tests  | python gen_test_list.py CYCAMORE. >> tasklist.nmi
 fi
 
+echo "Regression_Test" >> tasklist.nmi
 
 
 exit $?

@@ -15,7 +15,7 @@ git checkout develop
 git branch -D gh-pages
 git checkout -b  gh-pages
 
-git rm -r *
+git rm -r * .gitignore
 
 git reflog expire --expire-unreachable=now --all
 git gc --prune
@@ -33,7 +33,7 @@ git checkout develop
 git branch -D gh-pages
 git checkout -b  gh-pages
 
-git rm -r *
+git rm -r * .gitignore
 
 git reflog expire --expire-unreachable=now --all
 git gc --prune

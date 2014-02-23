@@ -16,7 +16,7 @@ then
     tar -xzf mac.tar.gz
 fi
 
-cd Cbc-2.8.3
+cd Cbc-2.5.0
 ls -l
 ./configure --prefix=`pwd`/../install
 make

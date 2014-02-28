@@ -17,7 +17,7 @@ then
     tar -xzf ubuntu.tar.gz
 fi
 
-cd Cbc-2.5.0
+cd Cbc-2.8.3
 find -exec touch \{\} \;
 #./configure --prefix=`pwd`/../install 
 cp ../lapack-3.4.2.tgz ThirdParty/Lapack/

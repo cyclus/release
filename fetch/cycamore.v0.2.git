@@ -1,3 +1,0 @@
-method = git
-git_repo = git://github.com/cyclus/cycamore
-git_path = cycamore;cd cycamore;git checkout tags/0.2

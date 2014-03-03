@@ -1,3 +1,0 @@
-method = url
-url = http://sourceforge.net/projects/boost/files/boost/1.50.0/boost_1_50_0.tar.gz
-untar = true

@@ -1,3 +1,0 @@
-method = url
-url = http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.30/glibmm-2.30.0.tar.xz
-untar = true

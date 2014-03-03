@@ -1,3 +1,0 @@
-method = git
-git_repo = git://github.com/cyclus/ciclus.git
-git_path = ciclus;cp -R ciclus/* .

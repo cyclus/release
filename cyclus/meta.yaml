@@ -1,0 +1,34 @@
+package:
+  name: cyclus
+  version: 0.4
+
+source:
+  fn: develop.zip
+  url: https://github.com/cyclus/cyclus/archive/develop.zip
+
+requirements:
+   build:
+    - sigcpp
+    - glibmm
+    - libxmlpp
+    - coincbc
+    - boost
+    - hdf5
+    - libxml2
+    - cmake
+   run:
+    - sigcpp
+    - glibmm
+    - libxmlpp
+    - coincbc
+    - boost
+    - hdf5
+    - libxml2
+
+
+build:
+  number: 2            [osx]
+
+about:
+  home: Cyclus
+  license: Eclipse Public License 1.0

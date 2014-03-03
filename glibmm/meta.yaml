@@ -1,0 +1,23 @@
+package:
+  name: glibmm
+  version: 2.30.0
+
+source:
+  fn: glibmm-2.30.0.tar.xz
+  url: http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.30/glibmm-2.30.0.tar.xz
+
+build:
+  number: 2            [osx]
+
+# the build and runtime requirements. Dependencies of these requirements
+# # are included automatically.
+# requirements:
+#   # Packages required to build the package. python and numpy must be
+#     # listed explicitly if they are required.
+requirements:
+ build:
+  - sigcpp
+
+about:
+  home: Glibmm
+  license: Eclipse Public License 1.0

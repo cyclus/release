@@ -1,0 +1,8 @@
+run_type    = build
+inputs      = fetch/conda.scp,fetch/conda-recipe.git
+remote_pre_declare = build.sh
+remote_declare = CYCLUS/generate_test_list.sh
+remote_task = CYCLUS/run_test.sh
+platforms   = x86_64_Ubuntu12
+project     = build-conda
+description = builds conda

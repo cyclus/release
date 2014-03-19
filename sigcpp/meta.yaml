@@ -9,6 +9,7 @@ source:
 build:
   number: 2            [osx]
 
+
 about:
   home: Coin
   license: Eclipse Public License 1.0

@@ -1,6 +1,7 @@
 run_type    = build
 inputs      = fetch/conda.scp,fetch/conda-recipe.git
-remote_task = build.mac.sh
-platforms   = x86_64_MacOSX8
+remote_pre_declare = install.sh
+remote_task = CYCLUS/run_test.fast.sh
+platforms   = x86_64_Ubuntu12
 project     = build-conda
 description = builds conda

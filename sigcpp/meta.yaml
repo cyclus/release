@@ -1,6 +1,6 @@
 package:
   name: sigcpp
-  version: 2.30.0
+  version: 2.3.1
 
 source:
   fn:  libsigc++-2.3.1.tar.xz

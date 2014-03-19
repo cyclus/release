@@ -9,6 +9,7 @@ anaconda/bin/conda install jinja2
 anaconda/bin/conda install setuptools
 anaconda/bin/conda install xz 
 #anaconda/bin/conda install libffi
+anaconda/bin/conda build -h
 anaconda/bin/conda build  --no-test --no-binstar-upload sigcpp
 tar -czf results.tar.gz anaconda
 exit 0

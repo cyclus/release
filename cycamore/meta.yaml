@@ -1,0 +1,22 @@
+package:
+  name: cycamore
+  version: 0.4
+
+source:
+  fn: develop.zip
+  url: https://github.com/cyclus/cycamore/archive/develop.zip
+
+requirements:
+   build:
+    - cyclus
+    - cmake
+   run:
+    - cyclus
+
+
+build:
+  number: 2            [osx]
+
+about:
+  home: Cyclus
+  license: Eclipse Public License 1.0

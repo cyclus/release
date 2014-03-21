@@ -4,7 +4,7 @@ package:
 
 source:
   fn: develop.zip
-  url: https://github.com/zwelchWI/cyclus/archive/develop.zip
+  url: https://github.com/cyclus/cyclus/archive/develop.zip
 
 requirements:
    build:

@@ -8,16 +8,8 @@ anaconda/bin/conda install conda-build
 anaconda/bin/conda install jinja2 
 anaconda/bin/conda install patchelf 
 anaconda/bin/conda install setuptools 
-#anaconda/bin/conda install sigcpp 
-#anaconda/bin/conda install glibmm 
-#anaconda/bin/conda  install libxmlpp 
-#anaconda/bin/conda  install coincbc 
-#anaconda/bin/conda install boost 
-#anaconda/bin/conda install hdf5 
-#anaconda/bin/conda install libxml2 
-#anaconda/bin/conda install cmake 
-#tar -czf results.tar.gz anaconda
-anaconda/bin/conda build --no-test cyclus
+anaconda/bin/conda build --no-test cycamore
+anaconda/bin/conda install --use-local cycamore
 tar -czf results.tar.gz anaconda
 
 #anaconda/bin/conda install cyclus

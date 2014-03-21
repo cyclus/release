@@ -1,6 +1,7 @@
 run_type    = build
 inputs      = fetch/conda.scp,fetch/conda-recipe.git
-remote_task = build.sh
+remote_pre_declare = install.cycamore.sh
+remote_task = CYCAMORE/run_test.fast.sh
 platforms   = x86_64_Ubuntu12
 project     = build-conda
 description = builds conda

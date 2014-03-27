@@ -1,3 +1,5 @@
+set -x
+set -e
 export DYLD_LIBRARY_PATH=anaconda/lib:$DYLD_LIBRARY_PATH
 
     anaconda/bin/cycamore_unit_tests --gtest_repeat=1

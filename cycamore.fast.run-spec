@@ -1,7 +1,9 @@
 run_type    = build
-inputs      = fetch/conda.scp,fetch/conda-recipe.git
-remote_pre_declare = install.cycamore.sh
+inputs      = fetch/conda.scp
+remote_pre_declare = CYCAMORE/build.sh
 remote_task = CYCAMORE/run_test.fast.sh
+remote_post = CYCAMORE/build_doc.sh
 platforms   = x86_64_Ubuntu12
-project     = build-conda
-description = builds conda
+project     = <a href="http://fuelcycle.org">Cyclus</a>
+project_version = fast_dev/dev
+description = Builds/Unit tests Cyclus[dev], Cycamore[dev] (<a href="http://cycamore-ci.fuelcycle.org/dashboard">dashboard</a>)

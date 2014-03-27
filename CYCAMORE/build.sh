@@ -1,27 +1,18 @@
-set -x
+#!/bin/bash
+set -x 
 set -e
+./Miniconda-3.0.5-Linux-x86_64.sh -b -p ./anaconda
+mv condarc $HOME/.condarc
+anaconda/bin/conda install binstar  
+anaconda/bin/conda install conda-build 
+anaconda/bin/conda install jinja2 
+anaconda/bin/conda install patchelf 
+anaconda/bin/conda install setuptools 
+anaconda/bin/conda build --no-test cycamore
+anaconda/bin/conda install --use-local cycamore
+tar -czf results.tar.gz anaconda
 
-`pwd`/CYCLUS/build.sh
-cd cycamore
-mkdir build
-cd build
-cmake ../src -DCMAKE_INSTALL_PREFIX=`pwd`/../../install -DCYCLUS_ROOT_DIR=`pwd`/../../install  -DCYCLOPTS_ROOT_DIR=`pwd`/../../install -DCOIN_ROOT_DIR=`pwd`/../../install -DBOOST_ROOT=`pwd`/../../install
-make
-make install
-cd ..
-cd ..
-mkdir -p `pwd`/install/lib/python2.7/site-packages
-export PYTHONPATH=$PYTHONPATH:`pwd`/install:`pwd`/install/lib/python2.7/site-packages
-cd nose
-python setup.py install --prefix=`pwd`/../install
-cd ../numpy
-python setup.py install --prefix=`pwd`/../install
-cd ../cython
-python setup.py install --prefix=`pwd`/../install
-cd ../numexpr
-python setup.py install --prefix=`pwd`/../install
-cd ../PyTables
-python setup.py install --prefix=`pwd`/../install --hdf5=`pwd`/../install
-cd ..
-exit $?
-
+#anaconda/bin/conda install cyclus
+ls -l anaconda
+ls -l anaconda/bin
+ls -l anaconda/share

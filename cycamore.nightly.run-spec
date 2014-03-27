@@ -7,7 +7,7 @@ remote_task = CYCAMORE/run_test.sh
 x86_64_Ubuntu12_remote_post = CYCAMORE/build_doc.sh
 platform_post = CYCAMORE/gh_pages.sh
 platforms   = x86_64_Ubuntu12,x86_64_MacOSX8
-project     = <a href="http://cyclus.github.io/">Cyclus</a>
+project     = <a href="http://fuelcycle.org">Cyclus</a>
 project_version = nightly_dev/dev
 description = Builds/Unit tests Cyclus[dev], Cycamore[dev]
 notify = cyclus-ci@googlegroups.com

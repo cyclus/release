@@ -5,14 +5,12 @@
 echo HERE
           
 echo  $CXX      
-echo  $CXXFLAGS  
-echo  $LDFLAGS    
+CXXFLAGS=  
+LDFLAGS=    
           
-echo  $LIBS     
-echo $CPPFLAGS  
            
-echo  $CC        
-echo  $CFLAGS     
+CC=        
+CFLAGS=     
 echo  $CPP  
 echo  $CXXCPP
 echo  $M4     
@@ -21,11 +19,11 @@ echo  $DOT
 echo  $DOXYGEN   
 echo  $XSLTPROC   
 echo  $PKG_CONFIG  
-echo  $PKG_CONFIG_PATH
+PKG_CONFIG_PATH=
 echo  $PKG_CONFIG_LIBDIR
-
-
-./configure  --prefix=$PREFIX
+echo $ACLOCAL_FLAGS
+echo 'int main(){return 0;}'>examples/hello_world.cc
+./configure  --prefix=$PREFIX CFLAGS='-g -O2' CXXFLAGS='-g -O2' CPP= CXX=
 make
 make install
 

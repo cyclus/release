@@ -1,2 +1,3 @@
 method = git
 git_repo = https://github.com/numpy/numpy.git
+git_path = numpy;cd numpy;git checkout tags/v1.8.1

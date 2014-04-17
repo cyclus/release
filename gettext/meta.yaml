@@ -4,15 +4,16 @@ package:
 
 source:
   fn:  gettext-0.18.3.tar.gz
-  url:  http://ftp.gnu.org/pub/gnu/gettext/gettext-0.18.3.tar.gz
+  url: http://ftp.gnu.org/gnu/gettext/gettext-0.18.3.tar.gz
 
 build:
   number: 2            [osx]
 
 requirements:
  build:
+  - xz
   - libffi
-
+  - pkg-config-lite
 about:
-  home: Coin
+  home: gettext
   license: Eclipse Public License 1.0

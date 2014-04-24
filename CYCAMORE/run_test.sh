@@ -26,8 +26,12 @@ else
     export PYTHONPATH=$PYTHONPATH:`pwd`/install:`pwd`/install/lib/python2.7/site-packages
     export LD_LIBRARY_PATH=`pwd`/install/lib/:$LD_LIBRARY_PATH
     export PATH=`pwd`/install/bin/:$PATH
+    cd `pwd`/cyclus/tests
+    ../../install/bin/nosetests
+    cd ../../
     cd `pwd`/cycamore/tests
     ../../install/bin/nosetests
+    cd ../../
 
 
 fi

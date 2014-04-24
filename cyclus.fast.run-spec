@@ -1,5 +1,5 @@
 run_type    = test
-inputs      = fetch/ciclus.scp,fetch/cyclus.git, fetch/fast_deps.scp
+inputs      = fetch/ciclus.scp,fetch/cyclus.git, fetch/fast_deps.scp,fetch/nose.git,fetch/numpy.git,fetch/pytables.git,fetch/numexpr.hg,fetch/cython.git
 x86_64_MacOSX8_remote_pre_declare = CYCLUS/build.mac.sh
 x86_64_Ubuntu12_remote_pre_declare = CYCLUS/build.sh
 remote_task = CYCLUS/run_test.fast.sh

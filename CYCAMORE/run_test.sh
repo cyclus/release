@@ -2,6 +2,9 @@ set -x
 set -e
 export DYLD_LIBRARY_PATH=`pwd`/install/lib:$DYLD_LIBRARY_PATH
 
+echo "Querying cyclus version"
+cyclus --version
+
 
 
 if  [[ "${_NMI_TASKNAME}" == CYCAMORE* ]]

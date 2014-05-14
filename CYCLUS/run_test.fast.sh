@@ -9,7 +9,7 @@ echo "Querying cyclus version"
 cyclus --version
 
 cyclus_unit_tests --gtest_repeat=1
-`pwd`/install/bin/nosetests -w `pwd`/cyclus/tests
+`pwd`/install/bin/nosetests -sw `pwd`/cyclus/tests
 
 
 exit $?

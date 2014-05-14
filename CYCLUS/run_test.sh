@@ -10,6 +10,6 @@ cyclus --version
 
 cyclus_unit_tests --gtest_filter=`echo ${_NMI_TASKNAME} | sed -e 's/__/\//g' | sed -e 's/CYCLUS.//g'`
 
-nosetests -w `pwd`/cyclus/tests
+nosetests -sw `pwd`/cyclus/tests
 
 exit $?

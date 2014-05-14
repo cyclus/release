@@ -9,6 +9,6 @@ echo "Querying cyclus version"
 cyclus --version
 
 cycamore_unit_tests --gtest_repeat=1
-`pwd`/install/bin/nosetests -w `pwd`/cycamore/tests
+`pwd`/install/bin/nosetests -sw `pwd`/cycamore/tests
 
 exit $?

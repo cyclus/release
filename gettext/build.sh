@@ -1,7 +1,7 @@
 #!/bin/bash
 #set -x 
 #set -e
-./configure --prefix=$PREFIX --disable-java  --enable-fast-install
+./configure --prefix=$PREFIX 
 make
 #ls 
 #mv bin $PREFIX/bin
@@ -9,6 +9,6 @@ make
 #mv lib $PREFIX/lib
 #mv share $PREFIX/share
 make install
-rm -rf $PREFIX/share/doc/gettext/examples/
-rm -rf $PREFIX/share/gettext/
+#rm -rf $PREFIX/share/doc/gettext/examples/
+#rm -rf $PREFIX/share/gettext/
 

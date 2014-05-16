@@ -17,7 +17,11 @@ build:
 requirements:
  build:
   - sigcpp
-
+  - xz
+  - libffi
+  - myglib
+  - pkg-config-lite
+  - gettext
 about:
   home: Glibmm
   license: Eclipse Public License 1.0

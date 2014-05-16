@@ -13,7 +13,6 @@ requirements:
  build:
   - xz
   - libffi
-  - pkg-config-lite
 about:
   home: gettext
   license: Eclipse Public License 1.0

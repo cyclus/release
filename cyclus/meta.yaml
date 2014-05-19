@@ -3,19 +3,24 @@ package:
   version: 0.4
 
 source:
-  fn: develop.zip
-  url: https://github.com/cyclus/cyclus/archive/develop.zip
-
+  #fn: develop.zip # [linux]
+  #url: https://github.com/cyclus/cyclus/archive/develop.zip # [linux]
+  git_url: https://github.com/cyclus/cyclus.git 
 requirements:
    build:
     - sigcpp
     - glibmm
-    - libxmlpp
+    - libxmlpp 
     - coincbc
     - boost
     - hdf5
-    - libxml2
+    - mylibxml2 # [osx]
+    - libxml2  #  [linux]
+    - myglib   # [osx]  
     - cmake
+    - libffi # [osx]
+    - gettext # [osx]
+    - pkg-config-lite # [osx]
    run:
     - sigcpp
     - glibmm
@@ -23,7 +28,8 @@ requirements:
     - coincbc
     - boost
     - hdf5
-    - libxml2
+    - libxml2 # [not osx]
+    - mylibxml2 # [osx]
 
 
 build:

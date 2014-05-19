@@ -12,12 +12,13 @@ build:
 requirements:
  build:
   - sigcpp
-  - myglib
+  - myglib # [osx]
   - glibmm
-  - pkg-config-lite
-  - mylibxml2
-  - libffi
-  - gettext
+  - pkg-config-lite # [osx]
+  - mylibxml2 # [osx]
+  - libxml2   # [not osx]
+  - libffi # [osx]
+  - gettext  # [osx]
 about:
   home: libxmlpp
   license: Eclipse Public License 1.0

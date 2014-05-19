@@ -5,4 +5,4 @@ echo $CXX
 MACOSX_DEPLOYMENT_TARGET=
 export DYLD_LIBRARY_PATH=$PREFIX/lib
 ./bootstrap.sh
-./bjam install --prefix=PREFIX
+./bjam install --prefix=$PREFIX

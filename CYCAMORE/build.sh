@@ -1,10 +1,12 @@
 set -x
 set -e
 
+export INSTALL=`pwd`/install
+
 `pwd`/CYCLUS/build.sh
 cd cycamore
 mkdir build; cd build;
-cmake ../ -DCMAKE_INSTALL_PREFIX=`pwd`/../../install -DCYCLUS_ROOT_DIR=`pwd`/../../install  -DCYCLOPTS_ROOT_DIR=`pwd`/../../install -DCOIN_ROOT_DIR=`pwd`/../../install -DBOOST_ROOT=`pwd`/../../install -DBoost_NO_SYSTEM_PATHS=ON
+cmake ../ -DCMAKE_INSTALL_PREFIX=$INSTALL -DCYCLUS_ROOT_DIR=$INSTALL  -DCYCLOPTS_ROOT_DIR=$INSTALL -DCOIN_ROOT_DIR=$INSTALL -DBOOST_ROOT=$INSTALL -DBoost_NO_SYSTEM_PATHS=ON
 make
 make install
 cd ../..

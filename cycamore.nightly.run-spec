@@ -10,6 +10,3 @@ platforms   = x86_64_Ubuntu12,x86_64_MacOSX8
 project     = <a href="http://fuelcycle.org">Cyclus</a>
 project_version = nightly_dev/dev
 description = Builds/Unit tests Cyclus[dev], Cycamore[dev]
-notify = cyclus-ci@googlegroups.com
-cron_hour = 0
-cron_minute = 15

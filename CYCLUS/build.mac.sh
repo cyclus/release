@@ -56,7 +56,7 @@ cd ..
 
 
 export PATH=`pwd`/install/bin/:$PATH
-cd glibmm-2.30.0
+cd glibmm-2.32.1
 ./configure --prefix=`pwd`/../install PKG_CONFIG=`pwd`/../install/bin/pkg-config PKG_CONFIG_PATH=`pwd`/../install/lib/pkgconfig LD_LIBRARY_PATH=$LD_LIBRARY_PATH:`pwd`/../install/lib/ PATH=$PATH:`pwd`/../install/bin/ CPPFLAGS=-I/`pwd`/../install/include LDFLAGS=-L/`pwd`/../install/lib
 make
 make install
@@ -69,7 +69,7 @@ make
 make install
 cd ..
 
-cd libxml++-2.30.0
+cd libxml++-2.36.0
 ./configure --prefix=`pwd`/../install PKG_CONFIG=`pwd`/../install/bin/pkg-config PKG_CONFIG_PATH=`pwd`/../install/lib/pkgconfig LD_LIBRARY_PATH=$LD_LIBRARY_PATH:`pwd`/../install/lib/ PATH=$PATH:`pwd`/../install/bin/ CPPFLAGS=-I/`pwd`/../install/include LDFLAGS=-L/`pwd`/../install/lib
 make
 make install
@@ -90,6 +90,8 @@ make install
 cd ..
 
 fi
+
+tar -czf results.tar.gz install
 
 cd cyclus
 cmake `pwd` -DCMAKE_INSTALL_PREFIX=`pwd`/../install -DCYCLOPTS_ROOT_DIR=`pwd`/../install -DCOIN_ROOT_DIR=`pwd`/../install -DBOOST_ROOT=`pwd`/../install

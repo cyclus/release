@@ -55,13 +55,13 @@ make
 make install
 cd ..
 
-cd glibmm-2.30.0
+cd glibmm-2.32.1
 ./configure --prefix=`pwd`/../install PKG_CONFIG_PATH=`pwd`/../install/lib/pkgconfig/
 make
 make install
 cd ..
 
-cd libxml++-2.30.0
+cd libxml++-2.36.0
 ./configure --prefix=`pwd`/../install PKG_CONFIG_PATH=`pwd`/../install/lib/pkgconfig/
 make
 make install
@@ -85,6 +85,10 @@ export LD_LIBRARY_PATH=`pwd`/install/lib/:$LD_LIBRARY_PATH
 export CMAKE_LIBRARY_PATH=`pwd`/install/lib/:$CMAKE_LIBRARY_PATH
 export LD_RUN_PATH=`pwd`/lapack-3.2.1/:$LD_RUN_PATH
 echo $LD_LIBRARY_PATH
+
+
+tar -czf results.tar.gz install
+
 cd cyclus
 
 find -exec touch \{\} \;

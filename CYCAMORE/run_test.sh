@@ -5,7 +5,8 @@ export PYTHONPATH=$PYTHONPATH:`pwd`/install:`pwd`/install/lib/python2.7/site-pac
 export LD_LIBRARY_PATH=`pwd`/install/lib/:$LD_LIBRARY_PATH    
 export PATH=$PWD/install/bin/:$PWD/install/cyclus/bin/:$PWD/install/cycamore/bin/:$PATH
 
-echo "Querying cyclus version"
+echo "Querying version info"
+cmake --version
 cyclus --version
 
 if  [[ "${_NMI_TASKNAME}" == CYCAMORE* ]]

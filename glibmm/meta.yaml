@@ -1,10 +1,10 @@
 package:
   name: glibmm
-  version: 2.30.0
+  version: 2.32.1
 
 source:
-  fn: glibmm-2.30.0.tar.xz
-  url: http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.30/glibmm-2.30.0.tar.xz
+  fn:  glibmm-2.32.1.tar.xz
+  url: http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.32/glibmm-2.32.1.tar.xz
 
 build:
   number: 2            [osx]
@@ -18,10 +18,10 @@ requirements:
  build:
   - sigcpp
   - xz
-  - libffi
-  - myglib
-  - pkg-config-lite
-  - gettext
+  - libffi # [osx[
+  - myglib # [osx]
+  - pkg-config-lite # [osx]
+  - gettext  # [osx]
 about:
   home: Glibmm
   license: Eclipse Public License 1.0

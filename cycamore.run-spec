@@ -1,7 +1,9 @@
-run_type    = build
-inputs      = fetch/conda.scp
-remote_pre_declare = CYCAMORE/build.sh
-remote_task = CYCAMORE/run_test.sh
-platforms   = x86_64_Ubuntu12
-project     = build-conda
-description = builds conda
+run_type    = test
+inputs      = fetch/conda.linux.url,fetch/conda.mac.url, fetch/git.git, fetch/conda.scp
+remote_pre_declare = CYCA/build.sh
+remote_declare = CYCA/generate_test_list.sh
+remote_task = CYCA/run_test.sh
+platforms   = x86_64_MacOSX8,x86_64_Ubuntu12
+project     = <a href="http://cyclus.github.io/">Cyclus</a>
+project_version = dev/dev
+description =  Builds/Unit tests Cyclus[dev], Cycamore[dev]

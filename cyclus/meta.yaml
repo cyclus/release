@@ -1,11 +1,12 @@
 package:
   name: cyclus
-  version: 0.4
+  version: 0.4.4
 
 source:
   #fn: develop.zip # [linux]
   #url: https://github.com/cyclus/cyclus/archive/develop.zip # [linux]
   git_url: https://github.com/cyclus/cyclus.git 
+  git_tag: develop
 requirements:
    build:
     - sigcpp
@@ -17,10 +18,11 @@ requirements:
     - mylibxml2 # [osx]
     - libxml2  #  [linux]
     - myglib   # [osx]  
-    - cmake
     - libffi # [osx]
     - gettext # [osx]
     - pkg-config-lite # [osx]
+    - cmake
+    - python
    run:
     - sigcpp
     - glibmm
@@ -28,9 +30,12 @@ requirements:
     - coincbc
     - boost
     - hdf5
-    - libxml2 # [not osx]
     - mylibxml2 # [osx]
-
+    - libxml2  #  [linux]
+    - myglib   # [osx]  
+    - libffi # [osx]
+    - gettext # [osx]
+    - pkg-config-lite # [osx]
 
 build:
   number: 2            [osx]

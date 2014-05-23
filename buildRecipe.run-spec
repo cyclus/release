@@ -1,6 +1,0 @@
-run_type    = build
-inputs      = fetch/conda.scp,fetch/conda-recipe.git
-remote_task = buildRecipe.sh
-platforms   = x86_64_MacOSX8
-project     = build-conda
-description = builds conda

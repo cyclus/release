@@ -1,7 +1,7 @@
 set -x
 set -e
 export DYLD_LIBRARY_PATH=`pwd`/anaconda/lib:`pwd`/anaconda/lib/cyclus:$DYLD_LIBRARY_PATH
-
+export LD_LIBRARY_PATH=`pwd`/anaconda/lib:`pwd`/anaconda/lib/cyclus
     # check that unit tests ran
     if  [[ "${_NMI_TASKNAME}" == CYCAMORE* ]]
     then

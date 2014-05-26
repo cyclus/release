@@ -1,6 +1,6 @@
 package:
   name: cyclus
-  version: 0.4.4
+  version: 1.0rc
 
 source:
   #fn: develop.zip # [linux]
@@ -42,4 +42,4 @@ build:
 
 about:
   home: Cyclus
-  license: Eclipse Public License 1.0
+  license: BSD Clause 3

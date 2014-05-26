@@ -1,6 +1,6 @@
 package:
   name: cycamore
-  version: 0.4
+  version: 1.0rc
 
 source:
 #  fn: develop.zip

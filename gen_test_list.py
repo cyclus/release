@@ -7,6 +7,9 @@ else:
 prefix=''
 for line in sys.stdin:
     if len(line) > 0:
+        x = line.split("#")
+        line = x[0]
+        line = line.rstrip()
         if line[0] != ' ':
             prefix=line 
             prefixList = prefix.split("/")
@@ -23,4 +26,4 @@ for line in sys.stdin:
                         final = final + '__'+suffixList[ndx]
                     print execName+final
                 else:
-                    print execName+prefix[:-1]+suffix[0]
+                    print execName+prefix+suffix[0]

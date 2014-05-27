@@ -22,6 +22,18 @@ To submit Batlab tests without making any changes, simply call ::
 ``cyclus.run-spec`` will build Cyclus and run its unit tests, while ``cycamore.run-spec``
 will build and run unit tests for both Cyclus and Cycamore. 
 
+----------------------------------------------------------------
+Building Cyclus With Conda
+---------------------------------------------------------------
+The process of building Conda packages involves a system called `Conda Recipes <http://conda.pydata.org/docs/build.html>`_.
+A Conda Recipe is a directory containing at least two files, meta.yaml and build.sh.
+Version information, build and run dependencies, the location of the source code, and other 
+information about the package are stored in meta.yaml, while build.sh contains a script to
+build from source. Packages are built from recipes using the ``conda build`` command. 
+
+
+
+
 ------------------------------------------------------------------
 Customizing Your Tests on Batlab
 ------------------------------------------------------------------

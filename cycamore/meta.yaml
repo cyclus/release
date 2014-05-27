@@ -1,6 +1,6 @@
 package:
   name: cycamore
-  version: 1.0rc
+  version: 1.0rc3
 
 source:
 #  fn: develop.zip
@@ -17,7 +17,7 @@ requirements:
 
 
 build:
-  number: 2            [osx]
+  number: 3
 
 about:
   home: Cyclus

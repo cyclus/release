@@ -7,6 +7,8 @@ else:
 prefix=''
 for line in sys.stdin:
     if len(line) > 0:
+        x = line.split("#")
+        line=x[0]
         if line[0] != ' ':
             prefix=line 
             prefixList = prefix.split("/")

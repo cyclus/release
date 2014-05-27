@@ -2,7 +2,7 @@ Cyclus Continuous Integration
 _______________________________________________________________________
 
 
-Continuous Integration scripts for the Cyclus nuclear fuel cycle simulator on the University of Wisconsin - Madison's `Batlab <http://batlab.org>`_
+Continuous Integration scripts for the Cyclus nuclear fuel cycle simulator on the University of Wisconsin - Madison's `Batlab <http://batlab.org>`_ using the `Conda <http://conda.pydata.org/>`_ package manager.
 
 To see user and developer documentation for Cyclus, please visit the `Cyclus Homepage`_.
 

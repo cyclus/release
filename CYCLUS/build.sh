@@ -50,7 +50,7 @@ libtool --finish `pwd`/install/lib
 
 
 cd libsigc++-2.3.1
-
+./configure --prefix=$MYINSTALL
 make
 make install
 cd ..

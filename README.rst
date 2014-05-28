@@ -2,7 +2,8 @@ Cyclus Continuous Integration
 _______________________________________________________________________
 
 
-Continuous Integration scripts for the Cyclus nuclear fuel cycle simulator on the University of Wisconsin - Madison's `Batlab <http://batlab.org>`_ using the `Conda <http://conda.pydata.org/>`_ package manager.
+Continuous Integration scripts for the Cyclus nuclear fuel cycle simulator on the University of Wisconsin - 
+Madison's `Batlab <http://batlab.org>`_ using the `Conda <http://conda.pydata.org/>`_ package manager.
 
 To see user and developer documentation for Cyclus, please visit the `Cyclus Homepage`_.
 
@@ -22,10 +23,11 @@ To submit Batlab tests without making any changes, simply call ::
 ``cyclus.run-spec`` will build Cyclus and run its unit tests, while ``cycamore.run-spec``
 will build and run unit tests for both Cyclus and Cycamore. 
 
+
 ----------------------------------------------------------------
 Building Cyclus With Conda
----------------------------------------------------------------
-The process of building Conda packages involves a system called `Conda Recipes <http://conda.pydata.org/docs/build.html>`_.
+----------------------------------------------------------------
+The process of building Conda packages involves a system called `Conda Recipes <http://conda.pydata.org/docs/build.html>`_ .
 A Conda Recipe is a directory containing at least two files, meta.yaml and build.sh.
 Version information, build and run dependencies, the location of the source code, and other 
 information about the package are stored in meta.yaml, while build.sh contains a script to
@@ -35,6 +37,7 @@ build.sh script is run and installed.  The final output is a tar.bz2 file which 
 the necessary binaries, libraries, etc.  This package can then be installed or can be uploaded to `Binstar <binstar.org>`_, 
 which is a service provided to store and distribute conda packages. Notice that Conda requires all dependencies explicitly 
 listed in meta.yaml must have an available Conda package to install. 
+
 
 As part of installing and maintaining Cyclus with conda, recipes for a number of dependencies have also been created.  All 
 lowercase directories in this repo (except fetch) are conda recipes.  Additionally, this repo contains a stock ``.condarc`` file
@@ -50,7 +53,7 @@ There are many ways to customize the files in this repo to have Batlab run usefu
 Currently the process for uploading a package to Binstar is rather clunky and must be done
 manually. If you create a results.tar.gz somewhere of the anaconda directory after building
 cyclus and cycamore, Batlab will know to bring that file back, and it can be found in that
- tests run directory. The submit script should print the run directory for a test when you submit it.
+tests run directory. The submit script should print the run directory for a test when you submit it.
 Once this file is fetched, it can be untarred and the command ::
 
         binstar upload -u cyclus anaconda/conda-bld/linux-64/cyclus.<VERSION>.tar.gz
@@ -72,7 +75,7 @@ To get email updates, add a line in your local run-spec file a reading
 
 5) Test a new build process for Cyclus and Cycamore
 To alter Cyclus or Cycamore's build process, look at ``build.sh`` in cyclus or cycamore
- respectively. 
+respectively. 
 
 6) Set up nightly runs
 To set up what Batlab refers to as recurring runs, you must set the ``cron_minute`` and 
@@ -95,4 +98,3 @@ you intend to develop for *Cyclus*, please visit it to learn more.
 
 
 .. _`Cyclus Homepage`: http://cyclus.github.com
-

@@ -6,6 +6,6 @@
 # interpreted as binstar usernames (this can be changed by modifying the
 # channel_alias key; see below).
 channels:
-  - cyclus
+  - https://conda.binstar.org/cyclus 
   - defaults
 

@@ -21,7 +21,7 @@ for line in sys.stdin:
             if suffix[0].find('DISABLED_') < 0:
                 suffixList = suffix[0].split("/")
                 if len(suffixList) >1:
-                    final = prefix+suffixList[0]
+                    final = prefix[:-1]+suffixList[0]
                     for ndx in range(1,len(suffixList)):
                         final = final + '__'+suffixList[ndx]
                     print execName+final

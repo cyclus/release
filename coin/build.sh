@@ -1,0 +1,30 @@
+#!/bin/bash
+#find -exec touch \{\} \;
+CFLAGS=
+CXXFLAGS=
+LDFLAGS=
+CPPFLAGS=
+
+
+ ARCH=
+ SRC_DIR=
+ RECIPE_DIR=
+ PKG_NAME= 
+ PKG_VERSION=
+ PKG_BUILDNUM= 	
+ PYTHON= 
+ PY3K= 
+ STDLIB_DIR= 
+ SP_DIR= 	
+ PY_VER= 
+ SYS_PYTHON=
+ SYS_PREFIX=
+
+ LD_LIBRARY_PATH=
+echo $MACOSX_DEPLOYMENT_TARGET
+MACOSX_DEPLOYMENT_TARGET=
+./configure --prefix=$PREFIX
+make
+make install
+
+

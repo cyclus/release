@@ -1,3 +1,0 @@
-method = url
-url = ftp://xmlsoft.org/libxml2/libxml2-2.8.0.tar.gz
-untar = true

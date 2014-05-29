@@ -1,0 +1,24 @@
+package:
+  name: cycamore
+  version: 1.0rc3
+
+source:
+#  fn: develop.zip
+ # url: https://github.com/cyclus/cycamore/archive/develop.zip
+  git_url: https://github.com/cyclus/cycamore.git 
+  git_tag: develop
+requirements:
+   build:
+    - cyclus
+    - cmake
+    - python
+   run:
+    - cyclus
+
+
+build:
+  number: 3
+
+about:
+  home: Cyclus
+  license: BSD 3 Clause

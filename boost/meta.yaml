@@ -1,0 +1,18 @@
+package:
+  name: boost
+  version: 1.50.0
+
+source:
+  fn: boost_1_50_0.tar.gz
+  url:  http://sourceforge.net/projects/boost/files/boost/1.50.0/boost_1_50_0.tar.gz
+
+build:
+  number: 2            [osx]
+requirements:
+ build:
+  - xz
+  - bzip2
+  - zlib
+about:
+  home: Boost
+  license: Eclipse Public License 1.0

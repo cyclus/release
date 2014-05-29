@@ -1,11 +1,9 @@
 run_type    = test
-inputs      = fetch/doxygen.git,fetch/blas.url,fetch/lapack.url,fetch/hdf5.url,fetch/libxml2.url,fetch/gettext.url,fetch/libffi.url,fetch/glib.url, fetch/pkgconfig.url, fetch/myCiclus.scp,fetch/cycamore.git,fetch/libsigc++.url,fetch/cyclus.git, fetch/coin.url,fetch/libxml++.url,fetch/boost.url,fetch/glibmm.url,fetch/nose.git,fetch/numpy.git,fetch/pytables.git,fetch/numexpr.hg,fetch/cython.git
-x86_64_MacOSX8_remote_pre_declare = CYCAMORE/build.mac.sh
-x86_64_Ubuntu12_remote_pre_declare = CYCAMORE/build.sh
-remote_declare = CYCAMORE/generate_test_list.sh
-remote_task = CYCAMORE/run_test.sh
-x86_64_Ubuntu12_remote_post = CYCAMORE/build_doc.sh
-platforms   = x86_64_Ubuntu12,x86_64_MacOSX8
+inputs      = fetch/conda.linux.url,fetch/conda.mac.url, fetch/git.git, fetch/conda.scp
+remote_pre_declare = CYCA/build.sh
+remote_declare = CYCA/generate_test_list.sh
+remote_task = CYCA/run_test.sh
+platforms   = x86_64_MacOSX8,x86_64_Ubuntu12
 project     = <a href="http://cyclus.github.io/">Cyclus</a>
 project_version = dev/dev
 description =  Builds/Unit tests Cyclus[dev], Cycamore[dev]

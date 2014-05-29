@@ -1,10 +1,7 @@
-run_type    = test
-inputs      = fetch/ciclus.scp,fetch/cyclus.git, fetch/fast_deps.scp,fetch/nose.git,fetch/numpy.git,fetch/pytables.git,fetch/numexpr.hg,fetch/cython.git
-x86_64_MacOSX8_remote_pre_declare = CYCLUS/build.mac.sh
-x86_64_Ubuntu12_remote_pre_declare = CYCLUS/build.sh
+run_type    = build
+inputs      = fetch/conda.scp
+remote_pre_declare = CYCLUS/build.sh
 remote_task = CYCLUS/run_test.fast.sh
-x86_64_Ubuntu12_remote_post = CYCLUS/build_doc.sh
-platforms   = x86_64_Ubuntu12,x86_64_MacOSX8
-project     = <a href="http://fuelcycle.org">Cyclus</a>
-project_version = fast_dev/dev
-description = Builds/Unit tests Cyclus[dev] (<a href="http://cyclus-ci.fuelcycle.org/dashboard">dashboard</a>)
+platforms   = x86_64_Ubuntu12
+project     = build-conda
+description = builds conda

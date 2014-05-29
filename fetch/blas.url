@@ -1,3 +1,0 @@
-method = url
-url = http://www.netlib.org/blas/blas.tgz
-untar = false

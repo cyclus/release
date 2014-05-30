@@ -1,6 +1,6 @@
 package:
   name: cyclus
-  version: 1.0rc3
+  version: 1.0
 
 source:
   #fn: develop.zip # [linux]
@@ -23,6 +23,7 @@ requirements:
     - pkg-config-lite # [osx]
     - cmake
     - python
+    - numpy
    run:
     - sigcpp
     - glibmm
@@ -36,6 +37,7 @@ requirements:
     - libffi # [osx]
     - gettext # [osx]
     - pkg-config-lite # [osx]
+    - numpy
 
 build:
   number: 2

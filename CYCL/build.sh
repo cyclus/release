@@ -11,8 +11,6 @@ if [[  `uname` == 'Linux' ]]; then
 	 ./configure --prefix=`pwd`/../install
 	 make
 	 make install
-
-
     cd ..
     PATH=$PATH:`pwd`/install/bin
 else

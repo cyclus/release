@@ -3,6 +3,9 @@ set -e
 export DYLD_LIBRARY_PATH=`pwd`/anaconda/lib:`pwd`/anaconda/lib/cyclus:$DYLD_LIBRARY_PATH
 export LD_LIBRARY_PATH=`pwd`/anaconda/lib:`pwd`/anaconda/lib/cyclus
     # check that unit tests ran
+anaconda/bin/cyclus --install-path
+anaconda/bin/cyclus --nuc-data
+anaconda/bin/cyclus --version
     if  [[ "${_NMI_TASKNAME}" == CYCAMORE* ]]
     then
         anaconda/bin/cycamore_unit_tests --gtest_filter=`echo ${_NMI_TASKNAME} | sed -e 's/__/\//g' | sed -e 's/CYCAMORE.//g'`
@@ -19,8 +22,9 @@ export LD_LIBRARY_PATH=`pwd`/anaconda/lib:`pwd`/anaconda/lib/cyclus
         cd `pwd`/cycamore/tests
         ../../anaconda/bin/nosetests
     else
-    anaconda/bin/cycamore_unit_tests --gtest_repeat=1
     anaconda/bin/cyclus_unit_tests --gtest_repeat=1
+    anaconda/bin/cycamore_unit_tests --gtest_repeat=1
+
     # check that unit tests ran
     if [ $? -ne 0 ]
     then

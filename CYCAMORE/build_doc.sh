@@ -15,7 +15,7 @@ fi
 mv doc ../../cycamoredoc
 cd ../..
 
-cd cyclus
+cd cyclus/build
 make cyclusdoc | tee  doc.out
 line=`grep -i warning doc.out|wc -l`
 if [ $line -ne 0 ]
@@ -23,8 +23,8 @@ if [ $line -ne 0 ]
     exit 1
 fi
 ls -l
-mv doc ../cyclusdoc
-cd ..
+mv doc ../../cyclusdoc
+cd ../..
 
 tar -czf results.tar.gz cycamoredoc cyclusdoc
 

@@ -86,12 +86,6 @@ export CMAKE_LIBRARY_PATH=`pwd`/install/lib/:$CMAKE_LIBRARY_PATH
 export LD_RUN_PATH=`pwd`/lapack-3.2.1/:$LD_RUN_PATH
 echo $LD_LIBRARY_PATH
 
-cd doxygen
-./configure --prefix $MYINSTALL
-make
-make install
-cd ..
-
 cd cyclus
 
 find -exec touch \{\} \;

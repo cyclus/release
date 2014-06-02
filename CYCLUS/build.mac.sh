@@ -93,7 +93,6 @@ cd ..
 
 fi
 
-tar -czf results.tar.gz install
 
 cd cyclus
 mkdir `pwd`/build; cd build;

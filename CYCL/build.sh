@@ -26,3 +26,10 @@ anaconda/bin/conda install setuptools
 anaconda/bin/conda build --no-test cyclus
 anaconda/bin/conda install --use-local cyclus
 tar -czf results.tar.gz anaconda
+
+anaconda/bin/conda install nose
+anaconda/bin/conda install numpy
+anaconda/bin/conda install cython
+anaconda/bin/conda install numexpr
+anaconda/bin/conda install pytables
+

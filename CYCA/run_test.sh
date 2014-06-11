@@ -1,8 +1,9 @@
 set -x
 set -e
-export DYLD_LIBRARY_PATH=`pwd`/anaconda/lib:`pwd`/anaconda/lib/cyclus:$DYLD_LIBRARY_PATH
-export LD_LIBRARY_PATH=`pwd`/anaconda/lib:`pwd`/anaconda/lib/cyclus
+#export DYLD_LIBRARY_PATH=`pwd`/anaconda/lib:`pwd`/anaconda/lib/cyclus:$DYLD_LIBRARY_PATH
+#export LD_LIBRARY_PATH=`pwd`/anaconda/lib:`pwd`/anaconda/lib/cyclus
     # check that unit tests ran
+PATH=`pwd`/anaconda/bin:$PATH
 anaconda/bin/cyclus --install-path
 anaconda/bin/cyclus --nuc-data
 anaconda/bin/cyclus --version
@@ -19,12 +20,12 @@ anaconda/bin/cyclus --version
         export PYTHONPATH=$PYTHONPATH:anaconda:anaconda/lib/python2.7/site-packages
         export LD_LIBRARY_PATH=anaconda/lib/:$LD_LIBRARY_PATH
         export PATH=anaconda/bin/:$PATH
-        cd `pwd`/cycamore/tests
-        ../../anaconda/bin/nosetests
+        anaconda/bin/nosetests -sw `pwd`/anaconda/conda-bld/work/tests
+
     else
     anaconda/bin/cyclus_unit_tests --gtest_repeat=1
     anaconda/bin/cycamore_unit_tests --gtest_repeat=1
-
+    anaconda/bin/nosetests -sw `pwd`/anaconda/conda-bld/work/tests
     # check that unit tests ran
     if [ $? -ne 0 ]
     then

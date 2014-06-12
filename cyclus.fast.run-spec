@@ -1,7 +1,8 @@
-run_type    = build
-inputs      = fetch/conda.scp
-remote_pre_declare = CYCLUS/build.sh
-remote_task = CYCLUS/run_test.fast.sh
-platforms   = x86_64_Ubuntu12
-project     = build-conda
-description = builds conda
+run_type    = test
+inputs      = fetch/conda.linux.url,fetch/conda.mac.url, fetch/git.git, fetch/conda.scp
+remote_pre_declare = CYCL/build.sh
+remote_task = CYCL/run_test.sh
+platforms   = x86_64_MacOSX8,x86_64_Ubuntu12
+project     = <a href="http://cyclus.github.io/">Cyclus</a>
+project_version = dev
+description =  Builds/Unit tests Cyclus[dev]

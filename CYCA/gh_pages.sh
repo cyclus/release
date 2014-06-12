@@ -1,15 +1,16 @@
-#!/bin/sh
+#!/bin/bash
 set -x
 set -e
 
+tar -xzf results.tar.gz
 
-if [ ! -e results.tar.gz ]
+if [[ ! -d cycamoredoc ]] 
 then
 exit 0
 fi
-tar -xzf results.tar.gz
 
-cd cyclus
+
+cd cyclsrc
 git checkout gh-pages
 git checkout develop
 git branch -D gh-pages
@@ -27,7 +28,7 @@ git push -f ssh://git@github.com/cyclus/cyclus.git gh-pages
 cd ..
 
 
-cd cycamore
+cd cycasrc
 git checkout gh-pages
 git checkout develop
 git branch -D gh-pages

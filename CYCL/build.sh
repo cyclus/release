@@ -27,6 +27,22 @@ anaconda/bin/conda build --no-test cyclus
 anaconda/bin/conda install --use-local cyclus
 tar -czf results.tar.gz anaconda
 
+#build Doc
+if [[  `uname` == 'Linux' ]]; then
+
+cd anaconda/conda-bld/work/build
+make cyclusdoc | tee  doc.out
+line=`grep -i warning doc.out|wc -l`
+if [ $line -ne 0 ]
+ then
+    exit 1
+fi
+ls -l
+mv doc ../../../../cyclusdoc
+cd ../../../..
+fi
+
+#Regression Testing
 anaconda/bin/conda install nose
 anaconda/bin/conda install numpy
 anaconda/bin/conda install cython

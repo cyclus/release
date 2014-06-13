@@ -27,6 +27,9 @@ anaconda/bin/conda build --no-test cyclus
 anaconda/bin/conda install --use-local cyclus
 tar -czf results.tar.gz anaconda
 
+cp -r anaconda/conda-bld/work/tests cycltest
+
+
 #build Doc
 if [[  `uname` == 'Linux' ]]; then
 

@@ -7,6 +7,10 @@ PATH=$PATH:`pwd`/install/bin
 
 anaconda/bin/conda build --no-test cycamore
 anaconda/bin/conda install --use-local cycamore
+
+cp -r anaconda/conda-bld/work/tests cycatest
+
+
 #build Doc
 if [[  `uname` == 'Linux' ]]; then
 

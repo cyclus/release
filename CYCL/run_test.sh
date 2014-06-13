@@ -15,11 +15,10 @@ anaconda/bin/cyclus --version
         export PYTHONPATH=$PYTHONPATH:anaconda:anaconda/lib/python2.7/site-packages
         export LD_LIBRARY_PATH=anaconda/lib/:$LD_LIBRARY_PATH
         export PATH=anaconda/bin/:$PATH
-        cd `pwd`/anaconda/conda-bld/work/tests
-        ../../anaconda/bin/nosetests
+        anaconda/bin/nosetests -sw cycltest
     else
     anaconda/bin/cyclus_unit_tests --gtest_repeat=1
-    anaconda/bin/nosetests -sw `pwd`/anaconda/conda-bld/work/tests
+    anaconda/bin/nosetests -sw cycltest
     # check that unit tests ran
     if [ $? -ne 0 ]
     then

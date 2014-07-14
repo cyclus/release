@@ -1,0 +1,11 @@
+package:
+  name: lapack
+  version: 3.5.0
+
+source:
+  fn: lapack-3.5.0.tgz
+  url: http://www.netlib.org/lapack/lapack-3.5.0.tgz
+
+about:
+  home: Lapack
+  license: The University of Tennessee 

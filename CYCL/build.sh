@@ -19,10 +19,15 @@ else
 fi
 
 mv condarc $HOME/.condarc
+anaconda/bin/conda search
 anaconda/bin/conda install binstar  
-anaconda/bin/conda install conda-build 
-anaconda/bin/conda install jinja2 
-anaconda/bin/conda install setuptools 
+anaconda/bin/conda install conda-build
+anaconda/bin/conda install jinja2
+anaconda/bin/conda install setuptools
+anaconda/bin/conda build --no-test lapack
+anaconda/bin/conda install --use-local lapack
+anaconda/bin/conda build --no-test coin
+anaconda/bin/conda install --use-local coincbc
 anaconda/bin/conda build --no-test cyclus
 anaconda/bin/conda install --use-local cyclus
 tar -czf results.tar.gz anaconda

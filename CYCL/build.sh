@@ -19,10 +19,46 @@ else
 fi
 
 mv condarc $HOME/.condarc
+anaconda/bin/conda search
 anaconda/bin/conda install binstar  
-anaconda/bin/conda install conda-build 
-anaconda/bin/conda install jinja2 
-anaconda/bin/conda install setuptools 
+if [[  `uname` == 'Linux' ]]; then
+anaconda/bin/conda install conda-build=1.6.1
+else
+git clone https://github.com/conda/conda condaa
+cd condaa
+../anaconda/bin/python setup.py install
+cd ..
+cd conda-build
+../anaconda/bin/python setup.py install 
+cd ..
+fi
+anaconda/bin/conda install jinja2
+anaconda/bin/conda install setuptools
 anaconda/bin/conda build --no-test cyclus
 anaconda/bin/conda install --use-local cyclus
 tar -czf results.tar.gz anaconda
+
+cp -r anaconda/conda-bld/work/tests cycltest
+
+#build Doc
+if [[  `uname` == 'Linux' ]]; then
+
+cd anaconda/conda-bld/work/build
+make cyclusdoc | tee  doc.out
+line=`grep -i warning doc.out|wc -l`
+if [ $line -ne 0 ]
+ then
+    exit 1
+fi
+ls -l
+mv doc ../../../../cyclusdoc
+cd ../../../..
+fi
+
+#Regression Testing
+anaconda/bin/conda install nose
+anaconda/bin/conda install numpy
+anaconda/bin/conda install cython
+anaconda/bin/conda install numexpr
+anaconda/bin/conda install pytables
+

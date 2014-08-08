@@ -1,0 +1,13 @@
+run_type    = test
+inputs      = fetch/cyclsrc.git,fetch/cycasrc.git,fetch/conda.linux.url,fetch/conda.mac.url, fetch/git.git, fetch/conda.scp,fetch/conda-recipe.git
+remote_pre_declare = CYCA/build.sh
+remote_declare = CYCA/generate_test_list.sh
+remote_task = CYCA/run_test.sh
+platform_post = CYCA/gh_pages.sh
+platforms   = x86_64_Ubuntu12,x86_64_MacOSX8
+project     = <a href="http://cyclus.github.io/">Cyclus</a>
+project_version = nightly
+description =  Builds/Unit tests Cyclus[dev], Cycamore[dev]
+notify = cyclus-ci@googlegroups.com
+cron_hour = 0
+cron_minute = 15

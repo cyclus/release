@@ -30,7 +30,7 @@ else
 
 export LDFLAGS="-headerpad_max_install_names -headerpad"
 export CFLAGS="-headerpad_max_install_names -headerpad"
-./configure --prefix=$PREFIX # --with-blas=$PREFIX/lib/libblas.dylib  --with-lapack=$PREFIX/lib/liblapack.dylib
+./configure --prefix=$PREFIX  --with-blas=$PREFIX/lib/libblas.dylib  --with-lapack=$PREFIX/lib/liblapack.dylib
 fi
 make
 make install

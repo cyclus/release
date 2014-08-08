@@ -7,6 +7,7 @@ PATH=`pwd`/anaconda/bin:$PATH
 anaconda/bin/cyclus --install-path
 anaconda/bin/cyclus --nuc-data
 anaconda/bin/cyclus --version
+
     if  [[ "${_NMI_TASKNAME}" == CYCAMORE* ]]
     then
         anaconda/bin/cycamore_unit_tests --gtest_filter=`echo ${_NMI_TASKNAME} | sed -e 's/__/\//g' | sed -e 's/CYCAMORE.//g'`

@@ -6,14 +6,12 @@ source:
   fn: Cbc-2.8.8.tgz
   url: http://www.coin-or.org/download/source/Cbc/Cbc-2.8.8.tgz
 
-build:
-  number: 2            [osx]
 
 requirements:
    build:
-    - lapack # [linux]
+    - lapack 
    run:
-    - lapack # [linux]
+    - lapack 
 
 about:
   home: Coin

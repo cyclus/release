@@ -1,7 +1,5 @@
 set -x
 set -e
-export DYLD_LIBRARY_PATH=`pwd`/anaconda/lib:`pwd`/anaconda/lib/cyclus:$DYLD_LIBRARY_PATH
-export LD_LIBRARY_PATH=`pwd`/anaconda/lib:`pwd`/anaconda/lib/cyclus
     # check that unit tests ran
 PATH=`pwd`/anaconda/bin:$PATH
 anaconda/bin/cyclus --version

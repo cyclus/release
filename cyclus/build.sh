@@ -18,7 +18,7 @@ export DYLD_LIBRARY_PATH=$PREFIX/lib
 export LDFLAGS="-headerpad_max_install_names -headerpad"
 export CFLAGS="-headerpad_max_install_names -headerpad"
 export CXXFLAGS=
-    cmake ..  -DCMAKE_INSTALL_PREFIX=$PREFIX  -DCOIN_ROOT_DIR=$PREFIX -DBOOST_ROOT=$PREFIX #-DCMAKE_BUILD_TYPE=Release  #-DLAPACK_LIBRARIES=$PREFIX/lib/liblapack.dylib -DBLAS_LIBRARIES=$PREFIX/lib/libblas.dylib
+    cmake ..  -DCMAKE_INSTALL_PREFIX=$PREFIX  -DCOIN_ROOT_DIR=$PREFIX -DBOOST_ROOT=$PREFIX -DCMAKE_BUILD_TYPE=Release  -DLAPACK_LIBRARIES=$PREFIX/lib/liblapack.dylib -DBLAS_LIBRARIES=$PREFIX/lib/libblas.dylib
 fi
 make VERBOSE=1
-make install VERBOSE=1
+make install

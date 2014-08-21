@@ -5,6 +5,8 @@ set -e
 if [[  `uname` == 'Linux' ]]; then
     chmod 755 Miniconda-3.0.5-Linux-x86_64.sh
     ./Miniconda-3.0.5-Linux-x86_64.sh -b -p ./anaconda
+    anaconda/bin/conda install conda=3.6.1
+
     anaconda/bin/conda install patchelf
     cd  git
     make configure 
@@ -16,21 +18,25 @@ if [[  `uname` == 'Linux' ]]; then
 else
     chmod 755 Miniconda-3.0.5-MacOSX-x86_64.sh
     ./Miniconda-3.0.5-MacOSX-x86_64.sh -b -p ./anaconda
+    anaconda/bin/conda install conda=3.6.1
+
 fi
 
 mv condarc $HOME/.condarc
+
 anaconda/bin/conda search
 anaconda/bin/conda install binstar  
 if [[  `uname` == 'Linux' ]]; then
-anaconda/bin/conda install conda-build=1.6.1
+    anaconda/bin/conda install conda-build=1.6.1
 else
-git clone https://github.com/conda/conda condaa
-cd condaa
-../anaconda/bin/python setup.py install
-cd ..
-cd conda-build
-../anaconda/bin/python setup.py install 
-cd ..
+    git clone https://github.com/conda/conda condaa
+    cd condaa
+    git checkout tags/3.6.1
+    ../anaconda/bin/python setup.py install
+    cd ..
+    cd conda-build
+    ../anaconda/bin/python setup.py install 
+    cd ..
 fi
 anaconda/bin/conda install jinja2
 anaconda/bin/conda install setuptools

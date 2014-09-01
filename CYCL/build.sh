@@ -2,6 +2,8 @@
 set -x 
 set -e
 
+mv condarc $HOME/.condarc
+
 if [[  `uname` == 'Linux' ]]; then
     chmod 755 Miniconda-3.0.5-Linux-x86_64.sh
     ./Miniconda-3.0.5-Linux-x86_64.sh -b -p ./anaconda
@@ -21,8 +23,6 @@ else
     anaconda/bin/conda install conda=3.6.1
 
 fi
-
-mv condarc $HOME/.condarc
 
 anaconda/bin/conda search
 anaconda/bin/conda install binstar  

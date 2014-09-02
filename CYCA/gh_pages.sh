@@ -4,6 +4,17 @@ set -e
 
 tar -xzf results.tar.gz
 
+if [ -d "anaconda/conda-bld/linux-64" ]; then
+os=linux-64
+else
+os=osx-64
+fi
+
+for f in `ls anaconda/conda-bld/$os/*tar.bz2`;do
+     echo $f
+    /home/$USER/miniconda/bin/binstar upload -u cyclus --force $f
+done
+
 if [[ ! -d cycamoredoc ]] 
 then
 exit 0

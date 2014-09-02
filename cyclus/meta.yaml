@@ -1,6 +1,6 @@
 package:
   name: cyclus
-  version: 1.0
+  version: 0.0
 
 source:
   #fn: develop.zip # [linux]
@@ -39,7 +39,7 @@ requirements:
 
 build:
   number: 2
-
+  string: nightly
 about:
   home: Cyclus
   license: BSD Clause 3

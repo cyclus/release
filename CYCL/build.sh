@@ -41,7 +41,12 @@ fi
 anaconda/bin/conda install jinja2
 anaconda/bin/conda install setuptools
 anaconda/bin/conda build --no-test cyclus
-anaconda/bin/conda install --use-local cyclus
+
+#force cycamore to build with local cyclus
+vers=`cat cyclus/meta.yaml | grep version`
+read -a versArray <<< $vers
+
+anaconda/bin/conda install --use-local cyclus=${versArray[1]}
 tar -czf results.tar.gz anaconda
 
 cp -r anaconda/conda-bld/work/tests cycltest

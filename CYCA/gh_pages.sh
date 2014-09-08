@@ -12,7 +12,7 @@ fi
 
 for f in `ls anaconda/conda-bld/$os/*tar.bz2`;do
      echo $f
-    /home/$USER/miniconda/bin/binstar upload -u cyclus --force $f
+    /home/cyclusci/miniconda/bin/binstar upload -u cyclus --force $f
 done
 
 if [[ ! -d cycamoredoc ]] 

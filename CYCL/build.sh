@@ -50,6 +50,7 @@ anaconda/bin/conda install --use-local cyclus=${versArray[1]}
 tar -czf results.tar.gz anaconda
 
 cp -r anaconda/conda-bld/work/tests cycltest
+cp -r anaconda/conda-bld/work/release release
 
 #build Doc
 if [[  `uname` == 'Linux' ]]; then

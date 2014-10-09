@@ -1,0 +1,18 @@
+package:
+  name: coincbc
+  version: 2.8.8
+
+source:
+  fn: Cbc-2.8.8.tgz
+  url: http://www.coin-or.org/download/source/Cbc/Cbc-2.8.8.tgz
+
+
+requirements:
+   build:
+    - lapack 
+   run:
+    - lapack 
+
+about:
+  home: Coin
+  license: Eclipse Public License 1.0

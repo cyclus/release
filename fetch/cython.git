@@ -1,4 +1,0 @@
-method = git
-git_repo = https://github.com/cython/cython.git
-git_path = cython;cd cython;git checkout tags/0.20.1
-

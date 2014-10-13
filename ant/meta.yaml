@@ -14,7 +14,7 @@ requirements:
   build:
     - java-jdk
   run:
-    - java-jre
+    - java-jdk
 
 about:
   home: http://ant.apache.org/

@@ -26,7 +26,8 @@ cp -v $BUILD_CACHE/jre.tar.gz jre.tar.gz
 
 # Install
 tar xvf jre.tar.gz --strip-components=$NSTRIP -C $PREFIX
-ln -s $LINKLOC/*jli.* $(relpath $PREFIX/lib $LINKLOC/*jli.*)
+JLI_REL=$(relpath $PREFIX/lib $LINKLOC)
+ln -s $LINKLOC/*jli.* $JLI_REL
 
 # Some clean up
 rm -rf $PREFIX/release $PREFIX/README $PREFIX/Welcome.html $PREFIX/*jli.*

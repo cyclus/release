@@ -2,12 +2,25 @@
 
 UNAME=$(uname)
 INSTLOC="$PREFIX/share/cyclist"
+export JAVA_HOME="$(dirname $(which java))/.."
 if [[ $UNAME == "Linux" ]]; then
   # Linux
   RMPOST="darwin"
+  SCRIPT='#!/bin/bash
+          # SRCDIR is a BASH hack to get the where this cyclist script is running in a 
+          # relocatable way.
+          SRCDIR="$(dirname "$(readlink -f "$0")")"
+          java -jar $SRCDIR/../share/cyclist/cyclist.jar
+          '
 else
   # Mac OSX
   RMPOST="linux"
+  SCRIPT='#!/bin/bash
+          # SRCDIR is a BASH hack to get the where this cyclist script is running in a 
+          # relocatable way.
+          SRCDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+          java -jar $SRCDIR/../share/cyclist/cyclist.jar
+          '
 fi
 
 # Build
@@ -19,10 +32,5 @@ mkdir -p $INSTLOC
 cp -rv deploy/dist/* $INSTLOC
 
 mkdir -p $PREFIX/bin
-echo '#!/bin/bash
-# SRCDIR is a BASH hack to get the where this cyclist script is running in a 
-# relocatable way.
-SRCDIR="$(dirname "$(readlink -f "$0")")"
-java -jar $SRCDIR/../share/cyclist/cyclist.jar
-' > $PREFIX/bin/cyclist
+echo "$SCRIPT" | sed 's/^ *//g' > $PREFIX/bin/cyclist
 chmod 755 $PREFIX/bin/cyclist

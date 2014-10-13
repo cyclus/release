@@ -4,13 +4,7 @@ UNAME=`uname`
 BUILD_CACHE="$RECIPE_DIR/../build/cache"
 mkdir -p $BUILD_CACHE
 HAMCREST="hamcrest-core-1.3.jar"
-if [[ $UNAME == "Linux" ]]; then
-  # Linux
-  export JAVA_HOME="$(dirname $(which java))/.."
-else
-  # MacOSX
-  :
-fi
+export JAVA_HOME="$(dirname $(which java))/.."
 
 # Debug info
 echo "UNAME = ${UNAME}"

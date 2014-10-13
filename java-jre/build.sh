@@ -1,5 +1,7 @@
 #!/bin/bash 
 
+BUILD_CACHE="$RECIPE_DIR/../build/cache"
+mkdir -p $BUILD_CACHE
 UNAME=`uname`
 if [[ $UNAME == "Linux" ]]; then
   # Linux
@@ -13,12 +15,18 @@ else
   LINKLOC="$PREFIX/lib/jli"
 fi
 
+# this must exist because ln does not have the -r option in Mac. Apple, unix - but not!
+relpath(){ python -c "import os.path; print(os.path.relpath('$1','${2:-$PWD}'))" ; }
+
 # Download
-curl -L -C - -b "oraclelicense=accept-securebackup-cookie" -o jre.tar.gz $URL
+if [ ! -f $BUILD_CACHE/jre.tar.gz ]; then
+  curl -L -C - -b "oraclelicense=accept-securebackup-cookie" -o $BUILD_CACHE/jre.tar.gz $URL
+fi
+cp -v $BUILD_CACHE/jre.tar.gz jre.tar.gz
 
 # Install
 tar xvf jre.tar.gz --strip-components=$NSTRIP -C $PREFIX
-ln -sr $LINKLOC/*jli.* $PREFIX/lib
+ln -s $LINKLOC/*jli.* $(relpath $PREFIX/lib $LINKLOC/*jli.*)
 
 # Some clean up
 rm -rf $PREFIX/release $PREFIX/README $PREFIX/Welcome.html $PREFIX/*jli.*

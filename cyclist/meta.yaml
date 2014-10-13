@@ -1,0 +1,23 @@
+package:
+  name: cyclist
+  version: 0.0
+
+source:
+  git_url: https://github.com/cyclus/cyclist2.git
+  git_tag: master
+  #git_tag: 179e7bd
+
+requirements:
+   build:
+    - java-jdk
+    - ant
+   run:
+    - java-jre
+
+build:
+  number: 1
+  string: test
+
+about:
+  home: Cyclus
+  license: BSD 3-Clause

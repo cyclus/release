@@ -52,7 +52,7 @@ else
   cd $PREV_DIR
   rm -rf $PREFIX/tmp
 fi
-ln -s $LINKLOC/*jli.* $(relpath $PREFIX/lib $LINKLOC/*jli.*)
+ln -s $LINKLOC/*jli.* $(relpath $PREFIX/lib $LINKLOC)
 
 # Some clean up
 rm -rf $PREFIX/release $PREFIX/README $PREFIX/Welcome.html $PREFIX/*jli.*

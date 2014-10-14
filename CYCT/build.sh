@@ -10,6 +10,7 @@ set -e
 PATH=$(pwd)/anaconda/bin:$PATH:$(pwd)/install/bin
 UNAME=$(uname)
 BLD=anaconda/conda-bld
+touch results.tar
 
 conda_build () {
   conda build --no-test --no-binstar-upload $1 

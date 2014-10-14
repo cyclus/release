@@ -21,7 +21,9 @@ chmod 755 ${MINICONDA}
 conda install conda=3.6.1  # is this needed?
 conda install jinja2
 conda install setuptools
-conda install patchelf
+if [[  "$UNAME" == 'Linux' ]]; then
+  conda install patchelf
+fi
 conda install git
 conda install binstar  
 conda install conda-build

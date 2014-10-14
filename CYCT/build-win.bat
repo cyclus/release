@@ -4,7 +4,7 @@
 ::  * ant
 ::  * cyclist
 
-set PATH=%PATH%;%cd%\\install\\bin
+set PATH=%cd%\\anaconda\\bin;%PATH%;%cd%\\install\\bin
 set CONDA=anaconda\\bin\\conda
 set PKGS=anaconda\\pkgs
 %CONDA% list
@@ -23,8 +23,8 @@ echo "---------------"
 tar -ztvf results.tar.gz
 
 :conda_build
-  %CONDA% build --no-test --no-binstar-upload %~1
-  python -c "from os.path import basenam; print(basename('%~1'))" > basename.txt
+  conda build --no-test --no-binstar-upload %~1
+  python -c "from os.path import basename; print(basename('%~1'))" > basename.txt
   set BNAME=<basename.txt
   tar -uf results.tar -C %PKGS% %BNAME%
 goto:eof

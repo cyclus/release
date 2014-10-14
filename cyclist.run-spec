@@ -1,6 +1,7 @@
 run_type = build
 inputs = fetch/conda.linux.url, fetch/conda.mac.url, fetch/git.git, fetch/myCiclus.scp
 platforms = x86_64_Ubuntu12,x86_64_MacOSX8,x86_64_Windows8
+remote_task = CYCT/build.sh
 x86_64_Ubuntu12_remote_task = CYCT/build.sh
 x86_64_MacOSX8_remote_task = CYCT/build.sh
 x86_64_Windows8_remote_task = CYCT/build-win.bat

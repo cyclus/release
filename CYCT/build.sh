@@ -16,7 +16,7 @@ conda_build () {
   P=$(ls ${BLD}/*/${1}*.tar.bz2)
   PDIR=$(dirname $P)
   PFILE=$(basename $P)
-  tar -uf results.tar -C $PDIR $PNAME
+  tar -uf results.tar -C $PDIR $PFILE
 }
 
 # Install conda

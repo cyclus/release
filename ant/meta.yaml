@@ -8,11 +8,12 @@ source:
   sha1: cdefb110fd7dcf87d8697af4369fb476c4c36324
 
 build:
-  number: 1            [osx]
+  number: 1 
 
 requirements:
   build:
     - java-jdk
+    - curl [win]
   run:
     - java-jdk
 

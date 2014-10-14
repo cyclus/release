@@ -5,7 +5,7 @@ set -e
 
 # Setup
 UNAME=$(uname)
-MINICONDA_VER="3.70"
+MINICONDA_VER="3.7.0"
 export PATH="$(pwd)/anaconda/bin:${PATH}"
 
 if [[  "$UNAME" == 'Linux' ]]; then

@@ -6,11 +6,11 @@ python -c "from os.path import dirname; print(dirname(dirname(r'%JAVA_EXE%')))" 
 set /p JAVA_HOME=<java-home.txt
 
 :: Build
-ant
-del deploy\\dist\\externalApps\\*linux* deploy\\dist\\externalApps\\*darwin*
+call ant
+del deploy\\dist\\externalApps\\*linux* 
+del deploy\\dist\\externalApps\\*darwin*
 
 :: Install
 mkdir %INSTLOC%
-robocopy deploy\\dist %INSTLOC%
-echo "java -jar %~f0\\..\\share\\cyclist\\cyclist.jar" > %LIBRARY_BIN%\\cyclist.bat
-
+robocopy deploy\\dist %INSTLOC% /S
+echo java -jar %%~dp0\\..\\share\\cyclist\\cyclist.jar > %LIBRARY_BIN%\\cyclist.bat

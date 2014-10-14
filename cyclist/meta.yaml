@@ -3,6 +3,9 @@ package:
   version: 0.0
 
 source:
+  # keep these commented lines for batlab
+  #fn: master.tar.gz
+  #url: https://github.com/cyclus/cyclist2/archive/master.tar.gz
   git_url: http://github.com/cyclus/cyclist2.git
   git_tag: master
 

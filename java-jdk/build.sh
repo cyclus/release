@@ -51,6 +51,7 @@ else
   mv Contents/Home/* $PREFIX
   cd $PREV_DIR
   rm -rf $PREFIX/tmp
+  find $PREFIX/lib
 fi
 JLI_REL=$(relpath $(ls $LINKLOC/*jli.*) $PREFIX/lib)
 ln -s $JLI_REL $PREFIX/lib

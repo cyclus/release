@@ -1,0 +1,3 @@
+method = url
+url = http://repo.continuum.io/miniconda/Miniconda-3.7.0-Windows-x86_64.exe
+untar = true

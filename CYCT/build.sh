@@ -7,16 +7,17 @@
 set -x 
 set -e
 
-PATH=$PATH:`pwd`/install/bin
+PATH=$(pwd)/anaconda/bin:$PATH:$(pwd)/install/bin
 UNAME=$(uname)
-CONDA=anaconda/bin/conda
 PKGS=anaconda/pkgs
-$CONDA list
 
 conda_build () {
-  $CONDA build --no-test --no-binstar-upload $1 
+  conda build --no-test --no-binstar-upload $1 
   tar -uf results.tar -C $PKGS $(basename $PKGS/${1}*.tar.bz2)
 }
+
+# Install conda
+./bin/conda-inst.sh
 
 # build
 conda_build java-jre

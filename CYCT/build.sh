@@ -13,7 +13,7 @@ UNAME=$(uname)
 BLD=anaconda/conda-bld
 CYCLIST_META=cyclist/meta.yaml
 if [[ "$UNAME" == "LINUX" ]]; then
-  SED_I="sed -i"
+  SED_I="sed -i "
 else
   SED_I="sed -i ''"
 fi

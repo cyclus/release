@@ -9,6 +9,9 @@ set CONDA=anaconda\\bin\\conda
 set PKGS=anaconda\\pkgs
 %CONDA% list
 
+:: Install conda
+call bin\\conda-inst.bat
+
 :: build
 call:conda_build java-jre
 call:conda_build java-jdk

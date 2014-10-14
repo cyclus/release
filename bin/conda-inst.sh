@@ -23,7 +23,7 @@ conda install jinja2
 conda install setuptools
 if [[  "$UNAME" == 'Linux' ]]; then
   conda install patchelf
+  conda install git
 fi
-conda install git
 conda install binstar  
 conda install conda-build

@@ -9,11 +9,14 @@ set -e
 
 PATH=$(pwd)/anaconda/bin:$PATH:$(pwd)/install/bin
 UNAME=$(uname)
-PKGS=anaconda/pkgs
+BLD=anaconda/conda-bld
 
 conda_build () {
   conda build --no-test --no-binstar-upload $1 
-  tar -uf results.tar -C $PKGS $(basename $(ls ${PKGS}/${1}*.tar.bz2))
+  P=$(ls ${BLD}/*/${1}*.tar.bz2)
+  PDIR=$(dirname $P)
+  PFILE=$(basename $P)
+  tar -uf results.tar -C $PDIR $PNAME
 }
 
 # Install conda

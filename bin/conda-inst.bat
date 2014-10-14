@@ -6,7 +6,7 @@ set PATH=%cd%\\anaconda\\bin:%PATH%
 
 :: Install
 move condarc %HOME%\\.condarc
-Miniconda-%MINICONDA_VER%-Windows-x86_64.exe -b -p %cd%\\anaconda
+Miniconda-%MINICONDA_VER%-Windows-x86_64.exe -b -p "%cd%\\anaconda"
 conda install conda=3.6.1  :: is this needed?
 conda install jinja2
 conda install setuptools

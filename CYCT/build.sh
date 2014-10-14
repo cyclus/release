@@ -13,7 +13,7 @@ PKGS=anaconda/pkgs
 
 conda_build () {
   conda build --no-test --no-binstar-upload $1 
-  tar -uf results.tar -C $PKGS $(basename $PKGS/${1}*.tar.bz2)
+  tar -uf results.tar -C $PKGS $(basename $(ls ${PKGS}/${1}*.tar.bz2))
 }
 
 # Install conda

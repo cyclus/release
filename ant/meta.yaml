@@ -13,7 +13,7 @@ build:
 requirements:
   build:
     - java-jdk
-    - curl [win]
+    - curl # [win]
   run:
     - java-jdk
 

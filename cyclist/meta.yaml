@@ -5,7 +5,6 @@ package:
 source:
   git_url: https://github.com/cyclus/cyclist2.git
   git_tag: master
-  #git_tag: 179e7bd
 
 requirements:
    build:
@@ -13,6 +12,7 @@ requirements:
     - ant
    run:
     - java-jre
+    - cycamore # [unix]
 
 build:
   number: 1

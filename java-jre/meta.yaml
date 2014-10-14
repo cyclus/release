@@ -9,7 +9,7 @@ package:
 
 requirements:
   build:
-    - curl [win]
+    - curl # [win]
   
 about:
   home: http://www.java.com/en/

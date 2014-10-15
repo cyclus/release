@@ -14,16 +14,16 @@ UNAME=$(uname)
 BLD=anaconda/conda-bld
 CYCLIST_META=cyclist/meta.yaml
 if [[ "$UNAME" == "LINUX" ]]; then
-  alias sed-i='sed -i '
+  sed_i() { sed -i  $1; } 
 else
-  alias sed-i="sed -i '' "
+  sed_i() { sed -i '' $1; } 
 fi
 
 touch results.tar
-sed-i 's/#fn: /fn: /' $CYCLIST_META
-sed-i 's/#url: /url: /' $CYCLIST_META
-sed-i 's/git_url: /#git_url: /' $CYCLIST_META
-sed-i 's/git_tag: /#git_tag: /' $CYCLIST_META
+sed_i 's/#fn: /fn: /' $CYCLIST_META
+sed_i 's/#url: /url: /' $CYCLIST_META
+sed_i 's/git_url: /#git_url: /' $CYCLIST_META
+sed_i 's/git_tag: /#git_tag: /' $CYCLIST_META
 
 conda_build () {
   echo "#################"

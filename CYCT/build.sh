@@ -6,6 +6,7 @@
 #  * cyclist
 set -x 
 set -e
+shopt -s expand_aliases
 
 # setup
 PATH=$(pwd)/anaconda/bin:$PATH:$(pwd)/install/bin

@@ -51,7 +51,6 @@ else
   mv Contents/Home/* $PREFIX
   cd $PREV_DIR
   rm -rf $PREFIX/tmp
-  ls -lh /Volumes/MacintoshHD2/condor/*/*/userdir/anaconda/envs/_build/lib
 fi
 JLI_REL=$(relpath $(ls $LINKLOC/*jli.*) $PREFIX/lib)
 ln -s $JLI_REL $PREFIX/lib
@@ -63,3 +62,6 @@ mv $PREFIX/COPYRIGHT $PREFIX/COPYRIGHT-JDK
 mv $PREFIX/LICENSE $PREFIX/LICENSE-JDK
 mv $PREFIX/THIRDPARTYLICENSEREADME.txt $PREFIX/THIRDPARTYLICENSEREADME-JDK.txt
 
+if [[ $UNAME == "Darwin" ]]; then
+  ls -lh /Volumes/MacintoshHD2/condor/*/*/userdir/anaconda/envs/_build/lib
+fi

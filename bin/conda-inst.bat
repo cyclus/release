@@ -2,7 +2,9 @@
 
 :: Setup
 set MINICONDA_VER=3.7.0
-set PATH=%cd%\\anaconda\\bin:%PATH%
+set PATH=%cd%\\anaconda\\Library\\bin;%PATH%
+set PATH=%cd%\\anaconda\\bin;%PATH%
+set PATH=%cd%\\anaconda\\Scripts;%PATH%
 
 :: Install
 move condarc %HOME%\\.condarc

@@ -22,8 +22,12 @@ chmod 755 ${MINICONDA}
 conda update conda
 conda install jinja2
 conda install setuptools
+conda install binstar  
 if [[  "$UNAME" == 'Linux' ]]; then
   conda install patchelf
+  conda install conda-build
+else
+  cd conda-build
+  python setup.py install
+  cd ..
 fi
-conda install binstar  
-conda install conda-build

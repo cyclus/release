@@ -7,7 +7,7 @@
 set -x 
 set -e
 shopt -s expand_aliases
-  
+
 # setup
 PATH=$(pwd)/anaconda/bin:$PATH:$(pwd)/install/bin
 UNAME=$(uname)
@@ -26,9 +26,12 @@ sed_i 's/git_url: /#git_url: /' $CYCLIST_META
 sed_i 's/git_tag: /#git_tag: /' $CYCLIST_META
 
 conda_build () {
-  echo "#################"
-  echo "# Building $1 #"
-  echo "#################"
+  echo ""
+  echo ""
+  echo "#######################################"
+  echo "#    Building $1 "
+  echo "#######################################"
+  echo ""
   echo ""
   conda build --no-test --no-binstar-upload $1 
   P=$(ls ${BLD}/*/${1}*.tar.bz2)

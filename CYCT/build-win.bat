@@ -4,7 +4,9 @@
 ::  * ant
 ::  * cyclist
 
-set PATH=%cd%\\anaconda\\bin;%PATH%;%cd%\\install\\bin
+set PATH=%cd%\\anaconda\\Library\\bin;%PATH%
+set PATH=%cd%\\anaconda\\bin;%PATH%
+set PATH=%cd%\\anaconda\\Scripts;%PATH%
 set CONDA=anaconda\\bin\\conda
 set PKGS=anaconda\\pkgs
 %CONDA% list

@@ -14,9 +14,9 @@ UNAME=$(uname)
 BLD=anaconda/conda-bld
 CYCLIST_META=cyclist/meta.yaml
 if [[ "$UNAME" == "LINUX" ]]; then
-  sed_i() { sed -i  $@; } 
+  sed_i() { sed -i  "$1" "$2"; } 
 else
-  sed_i() { sed -i '' $@; } 
+  sed_i() { sed -i '' "$1" "$2"; } 
 fi
 
 touch results.tar

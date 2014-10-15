@@ -1,5 +1,6 @@
 #!/bin/bash 
 
+
 BUILD_CACHE="$RECIPE_DIR/../build/cache"
 mkdir -p $BUILD_CACHE
 UNAME=`uname`
@@ -62,6 +63,8 @@ mv $PREFIX/COPYRIGHT $PREFIX/COPYRIGHT-JDK
 mv $PREFIX/LICENSE $PREFIX/LICENSE-JDK
 mv $PREFIX/THIRDPARTYLICENSEREADME.txt $PREFIX/THIRDPARTYLICENSEREADME-JDK.txt
 
+set -x
 if [[ $UNAME == "Darwin" ]]; then
+  find /Volumes/MacintoshHD2/condor/*/*/userdir/
   ls -lh /Volumes/MacintoshHD2/condor/*/*/userdir/anaconda/envs/_build/lib
 fi

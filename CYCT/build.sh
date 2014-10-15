@@ -7,16 +7,16 @@
 set -x 
 set -e
 shopt -s expand_aliases
-
+  
 # setup
 PATH=$(pwd)/anaconda/bin:$PATH:$(pwd)/install/bin
 UNAME=$(uname)
 BLD=anaconda/conda-bld
 CYCLIST_META=cyclist/meta.yaml
 if [[ "$UNAME" == "LINUX" ]]; then
-  alias sed-i=sed -i
+  alias sed-i='sed -i '
 else
-  alias sed-i=sed -i ''
+  alias sed-i="sed -i '' "
 fi
 
 touch results.tar

@@ -18,7 +18,8 @@ fi
 mv condarc $HOME/.condarc
 chmod 755 ${MINICONDA}
 ./${MINICONDA} -b -p ./anaconda
-conda install conda=3.6.1  # is this needed?
+#conda install conda=3.6.1  # is this needed?
+conda update conda
 conda install jinja2
 conda install setuptools
 if [[  "$UNAME" == 'Linux' ]]; then

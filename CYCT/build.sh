@@ -13,7 +13,7 @@ PATH=$(pwd)/anaconda/bin:$PATH:$(pwd)/install/bin
 UNAME=$(uname)
 BLD=anaconda/conda-bld
 CYCLIST_META=cyclist/meta.yaml
-if [[ "$UNAME" == "LINUX" ]]; then
+if [[ "$UNAME" == "Linux" ]]; then
   sed_i() { sed -i  "$1" "$2"; } 
 else
   sed_i() { sed -i '' "$1" "$2"; } 

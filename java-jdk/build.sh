@@ -70,4 +70,6 @@ if [[ $UNAME == "Darwin" ]]; then
   ls -lh /Volumes/MacintoshHD2/condor/*/*/userdir/anaconda/envs/_build/lib
   echo "Looking at /Volumes/MacintoshHD2/condor/*/*/userdir/anaconda/envs/_build/lib/lib"
   ls -lh /Volumes/MacintoshHD2/condor/*/*/userdir/anaconda/envs/_build/lib/lib
+  echo "Remove $PREFIX/lib/lib"
+  rm -rf $PREFIX/lib/lib
 fi

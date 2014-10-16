@@ -10,6 +10,7 @@ set PATH=%cd%\\anaconda\\Scripts;%PATH%
 move condarc %HOME%\\.condarc
 dir "%cd%"
 echo %PATH%
+dir 
 ::start /W Miniconda-%MINICONDA_VER%-Windows-x86_64.exe /S /D="%cd%\\anaconda" /AddToPath=0 /RegisterPython=0
 ::%cd%\Miniconda-%MINICONDA_VER%-Windows-x86_64.exe /S /D=%cd%\anaconda /AddToPath=0 /RegisterPython=0
 ::call %cd%\Miniconda-%MINICONDA_VER%-Windows-x86_64.exe /S /D=%cd%\anaconda || exit 1

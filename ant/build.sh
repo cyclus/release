@@ -19,18 +19,5 @@ cp -v "$BUILD_CACHE/${HAMCREST}" "lib/optional/${HAMCREST}"
 
 # Build
 sh build.sh -Ddist.dir=$PREFIX dist
-
-echo ""
-echo "ANT FETCHING!!!!!!!!!!"
-echo "ANT HOME = ${ANT_HOME}"
-echo "NMI_PLATFORM = ${NMI_PLATFORM}"
-echo ""
-echo ""
-export ANT_OPTS="-Duser.home=$HOME"
+export ANT_OPTS="-Duser.home=$HOME"  # this line is needed for BaTLab
 ant -f fetch.xml -Ddest=system
-
-#if [[ $UNAME == "Linux" ]]; then
-#  ant -f fetch.xml -Ddest=system
-#else
-#  ant -f fetch.xml -Ddest=optional
-#fi

@@ -12,7 +12,7 @@ dir "%cd%"
 echo %PATH%
 ::start /W Miniconda-%MINICONDA_VER%-Windows-x86_64.exe /S /D="%cd%\\anaconda" /AddToPath=0 /RegisterPython=0
 ::%cd%\Miniconda-%MINICONDA_VER%-Windows-x86_64.exe /S /D=%cd%\anaconda /AddToPath=0 /RegisterPython=0
-%cd%\Miniconda-%MINICONDA_VER%-Windows-x86_64.exe /S /D=%cd%\anaconda
+call %cd%\Miniconda-%MINICONDA_VER%-Windows-x86_64.exe /S /D=%cd%\anaconda || exit 1
 ::conda install conda=3.6.1  :: is this needed?
 conda update conda
 conda install jinja2

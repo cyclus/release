@@ -66,8 +66,8 @@ mv $PREFIX/THIRDPARTYLICENSEREADME.txt $PREFIX/THIRDPARTYLICENSEREADME-JDK.txt
 set -x
 if [[ $UNAME == "Darwin" ]]; then
   #find /Volumes/MacintoshHD2/condor/*/*/userdir
-  ehco "Looking at /Volumes/MacintoshHD2/condor/*/*/userdir/anaconda/envs/_build/lib"
+  echo "Looking at /Volumes/MacintoshHD2/condor/*/*/userdir/anaconda/envs/_build/lib"
   ls -lh /Volumes/MacintoshHD2/condor/*/*/userdir/anaconda/envs/_build/lib
-  ehco "Looking at /Volumes/MacintoshHD2/condor/*/*/userdir/anaconda/envs/_build/lib/lib"
+  echo "Looking at /Volumes/MacintoshHD2/condor/*/*/userdir/anaconda/envs/_build/lib/lib"
   ls -lh /Volumes/MacintoshHD2/condor/*/*/userdir/anaconda/envs/_build/lib/lib
 fi

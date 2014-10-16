@@ -63,13 +63,7 @@ mv $PREFIX/COPYRIGHT $PREFIX/COPYRIGHT-JDK
 mv $PREFIX/LICENSE $PREFIX/LICENSE-JDK
 mv $PREFIX/THIRDPARTYLICENSEREADME.txt $PREFIX/THIRDPARTYLICENSEREADME-JDK.txt
 
-set -x
+# I have no idea why this broken symlink appears on BaTLab, but it does.
 if [[ $UNAME == "Darwin" ]]; then
-  #find /Volumes/MacintoshHD2/condor/*/*/userdir
-  echo "Looking at /Volumes/MacintoshHD2/condor/*/*/userdir/anaconda/envs/_build/lib"
-  ls -lh /Volumes/MacintoshHD2/condor/*/*/userdir/anaconda/envs/_build/lib
-  echo "Looking at /Volumes/MacintoshHD2/condor/*/*/userdir/anaconda/envs/_build/lib/lib"
-  ls -lh /Volumes/MacintoshHD2/condor/*/*/userdir/anaconda/envs/_build/lib/lib
-  echo "Remove $PREFIX/lib/lib"
   rm -rf $PREFIX/lib/lib
 fi

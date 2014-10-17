@@ -1,10 +1,14 @@
+# Windows does not work for some reason. To reinstate, replace with the 
+# following lines:
+#platforms = x86_64_Ubuntu12,x86_64_MacOSX8,x86_64_Windows8
+#x86_64_Windows8_remote_task = CYCT/build-win.sh
+#inputs = fetch/conda.linux.url, fetch/conda.mac.url, fetch/conda.win.url, fetch/myCiclus.scp
 run_type = build
-inputs = fetch/conda.linux.url, fetch/conda.mac.url, fetch/conda.win.url, fetch/myCiclus.scp
-platforms = x86_64_Ubuntu12,x86_64_MacOSX8,x86_64_Windows8
+inputs = fetch/conda.linux.url, fetch/conda.mac.url, fetch/myCiclus.scp
+platforms = x86_64_Ubuntu12,x86_64_MacOSX8
 remote_task = CYCT/build.sh
 x86_64_Ubuntu12_remote_task = CYCT/build.sh
 x86_64_MacOSX8_remote_task = CYCT/build.sh
-x86_64_Windows8_remote_task = CYCT/build-win.bat
 project = <a href="http://cyclus.github.io/">Cyclus</a>
 project_version = dev/dev
 description = Builds Cyclist

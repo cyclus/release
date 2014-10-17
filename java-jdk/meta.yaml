@@ -7,9 +7,6 @@ package:
 #  fn: jre-8u20-linux-x64.tar.gz
 #  url: http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jre-8u20-linux-x64.tar.gz
 
-build:
-  number: 1 
-  
 requirements:
   build:
     - curl # [win]

@@ -17,10 +17,6 @@ requirements:
     - java-jre
     - cycamore # [unix]
 
-build:
-  number: 1
-  string: test
-
 about:
   home: Cyclus
   license: BSD 3-Clause

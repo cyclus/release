@@ -14,10 +14,6 @@ else
   MINICONDA="Miniconda-${MINICONDA_VER}-MacOSX-x86_64.sh"
 fi
 
-if [ "$(expr substr $(uname -s) 1 6)" == "CYGWIN" ]; then
-  MINICONDA="Miniconda-${MINICONDA_VER}-Windows-x86_64.exe"
-fi
-
 # Install
 mv condarc $HOME/.condarc
 chmod 755 ${MINICONDA}

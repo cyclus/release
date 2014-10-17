@@ -18,19 +18,14 @@ mv condarc $HOME/.condarc
 cat $HOME/.condarc
 #unzip ${MINICONDA} # unzip not on batlab
 python -c "from zipfile import ZipFile; f = ZipFile('${MINICONDA}', 'r'); f.extractall(); f.close()"
-echo "############ ls -a "
-ls -a
-echo "############ ls $(pwd)/anaconda"
-ls $(pwd)/anaconda
-echo "############ conda -V"
-conda -V
+conda config --set always_yes yes
 echo "############ conda info"
 conda info
 
+echo "############ install updates"
 #conda install conda=3.6.1  # is this needed?
-activate root
 conda update --yes conda
-conda install jinja2
-conda install setuptools
-conda install binstar  
-conda install conda-build
+conda install --yes jinja2
+conda install --yes setuptools
+conda install --yes binstar  
+conda install --yes conda-build

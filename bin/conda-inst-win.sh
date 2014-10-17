@@ -12,7 +12,8 @@ MINICONDA="Miniconda-${MINICONDA_VER}-Windows-x86_64.zip"
 
 # Install
 mv condarc $HOME/.condarc
-unzip ${MINICONDA}
+#unzip ${MINICONDA} # unzip not on batlab
+python -c "from zipfile import ZipFile; f = ZipFile('${MINICONDA}', 'r'); f.extractall(); f.close()"
 echo "############ ls "
 ls
 echo "############ ls $(pwd)"

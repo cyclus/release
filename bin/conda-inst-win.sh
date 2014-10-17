@@ -7,17 +7,12 @@ set -e
 # Setup
 UNAME=$(uname)
 MINICONDA_VER="3.7.0"
-export PATH="$(pwd)/anaconda/bin:${PATH}:C:\\anaconda\\bin"
-MINICONDA="Miniconda-${MINICONDA_VER}-Windows-x86_64.exe"
-export PATH="$HOME\\Python\\Scripts:$PATH"
+export PATH="$(pwd)/anaconda/bin:${PATH}"
+MINICONDA="Miniconda-${MINICONDA_VER}-Windows-x86_64.zip"
 
 # Install
 mv condarc $HOME/.condarc
-chmod 755 ${MINICONDA}
-./${MINICONDA} /S /D=C:\\anaconda
-sleep 1m
-echo "############ dir C:\\ "
-dir C:\\
+unzip ${MINICONDA}
 echo "############ ls "
 ls
 echo "############ ls $(pwd)"

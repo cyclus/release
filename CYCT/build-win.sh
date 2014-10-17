@@ -10,7 +10,10 @@ set -e
 shopt -s expand_aliases
 
 # setup
-PATH=$(pwd)/anaconda/bin:$PATH:$(pwd)/install/bin
+export PATH="$(pwd)/anaconda:${PATH}"
+export PATH="$(pwd)/anaconda/bin:${PATH}"
+export PATH="$(pwd)/anaconda/Scripts:${PATH}"
+export PATH="$(pwd)/anaconda/Library/bin:${PATH}"
 UNAME=$(uname)
 BLD=anaconda/conda-bld
 CYCLIST_META=cyclist/meta.yaml

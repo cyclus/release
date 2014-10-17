@@ -16,6 +16,14 @@ requirements:
    run:
     - java-jre
     - cycamore # [unix]
+    - launcher
+
+# If the app key makes this appear in the launcher.
+app:
+  # The command that is called to launch the app
+  entry: cyclist
+  icon: icon64x64.png
+  summary: Cyclist is a visual interface companion for the Cyclus project.
 
 about:
   home: Cyclus

@@ -25,6 +25,10 @@ remote_task = CYCT/build.sh
 run_type = build
 x86_64_Ubuntu12_remote_task = CYCT/build.sh
 x86_64_MacOSX8_remote_task = CYCT/build.sh
-project = <a href="http://cyclus.github.io/">Cyclus</a>
+project = Cyclus
 project_version = dev/dev
 description = Builds Cyclist
+
+# DO NOT SET THE FOLLOWING:
+#project = <a href="http://cyclus.github.io/">Cyclus</a>
+# This cuases extreme breakage with the Windows 'set' command

@@ -18,6 +18,7 @@ mv condarc $HOME/.condarc
 cat $HOME/.condarc
 #unzip ${MINICONDA} # unzip not on batlab
 python -c "from zipfile import ZipFile; f = ZipFile('${MINICONDA}', 'r'); f.extractall(); f.close()"
+
 conda config --set always_yes yes
 echo "############ conda info"
 conda info

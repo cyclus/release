@@ -32,7 +32,8 @@ conda_build () {
   echo "#######################################"
   echo ""
   echo ""
-  conda build --no-test --no-binstar-upload $1 
+  unix2dos $1/bld.bat
+  conda build --no-test --no-binstar-upload $1 2>&1 
   P=$(ls ${BLD}/*/${1}*.tar.bz2)
   PDIR=$(dirname $P)
   PFILE=$(basename $P)

@@ -25,6 +25,7 @@ copy %BUILD_CACHE%\\%JDK% %JDK%
 :: This page was pretty helpful http://stackoverflow.com/questions/15292464/how-to-silently-install-java-jdk-into-a-specific-directory-on-windows
 if %ON_BATLAB% == "TRUE" (
   python -c "from zipfile import ZipFile; f = ZipFile(r'%JDK%', 'r'); f.extractall(r'%LIBRARY_PREFIX%'); f.close()"
+  dir %LIBRARY_PREFIX%
 ) else (
   %JDK% /s /log jdk-install.log INSTALLDIR:%LIBRARY_PREFIX%
 )

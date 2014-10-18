@@ -11,7 +11,11 @@ set -e
 set -x
 
 ID="$1"
-if [ "$ID" == "" ]; then echo "Please pass in a run id!"; exit; fi
+if [ "$ID" == "" ]; then 
+  echo "Please pass in a run id!"
+  echo "  $ ./upload-cyclist.sh 424242"
+  exit
+fi
 IFS=':' read -ra RUNDIRS <<< $(nmi_rundir $ID)
 RUNDIRS=($RUNDIRS)
 RUNDIR="${RUNDIRS[2]}"

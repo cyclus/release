@@ -1,6 +1,4 @@
 #!/bin/bash 
-set -e
-set -x
 
 # Setup binstar
 which binstar
@@ -8,14 +6,18 @@ if [ $? -ne 0 ]; then
   export PATH="${HOME}/miniconda/bin:${PATH}"
 fi
 
+set -e
+set -x
+
 ID="$1"
 IFS=':' read -ra RUNDIRS <<< $(nmi_rundir $ID)
-RUNDIR="${RUNDIR[2]}"
+RUNDIRS=($RUNDIRS)
+RUNDIR="${RUNDIRS[2]}"
 USERDIR="${RUNDIR}/userdir"
 
-for x in $(ls $USERDIR); do
-  if [ "$x" == "common" ]; then continue; fi
-  ls -l $x/results.*
+for platform in $(ls $USERDIR); do
+  if [ "$platfrom" == "common" ]; then continue; fi
+  ls -l $USERDIR/$platform/results.*
 done
 
 

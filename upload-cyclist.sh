@@ -8,7 +8,7 @@ if [ $? -ne 0 ]; then
 fi
 
 set -e
-set -x
+#set -x  # Uncomment for debugging
 
 ID="$1"
 if [ "$ID" == "" ]; then 
@@ -23,6 +23,10 @@ USERDIR="${RUNDIR}/userdir"
 
 for platform in $(ls $USERDIR); do
   if [ "$platform" == "common" ]; then continue; fi
+  echo "###"
+  echo "### Uploading packages for $platform"
+  echo "###"
+  echo ""
   results="$USERDIR/$platform/results.tar.gz"
   mkdir -p "$platform"
   tar xvf "$results" -C "$platform"

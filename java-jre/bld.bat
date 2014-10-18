@@ -1,25 +1,15 @@
 :: Setup
-echo "HERE 1"
 set BUILD_CACHE=%RECIPE_DIR%\\..\\build\\cache
-echo "HERE 2"
 if not exist %BUILD_CACHE% (
-echo "HERE 3"
   mkdir %BUILD_CACHE%
-echo "HERE 4"
 )
-echo "HERE 5"
 
 set URL=http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jre-8u20-windows-x64.tar.gz
 
 :: Download
-echo "HERE 6"
-
 if not exist %BUILD_CACHE%\\jre.tar.gz (
-echo "HERE 7"
   curl -L -C - -k -b "oraclelicense=accept-securebackup-cookie" -o %BUILD_CACHE%\\jre.tar.gz %URL%
-echo "HERE 8"
 )
-echo "HERE 9"
 
 copy %BUILD_CACHE%\\jre.tar.gz jre.tar.gz
 

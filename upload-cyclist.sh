@@ -11,6 +11,7 @@ set -e
 set -x
 
 ID="$1"
+if [ "$ID" == "" ]; then echo "Please pass in a run id!"; exit; fi
 IFS=':' read -ra RUNDIRS <<< $(nmi_rundir $ID)
 RUNDIRS=($RUNDIRS)
 RUNDIR="${RUNDIRS[2]}"

@@ -26,5 +26,6 @@ app:
   summary: Cyclist is a visual interface companion for the Cyclus project.
 
 about:
-  home: Cyclus
+  home: http://fuelcycle.org
   license: BSD 3-Clause
+  summary: Cyclist is a visual interface companion for the Cyclus project.

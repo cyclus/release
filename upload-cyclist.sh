@@ -2,7 +2,7 @@
 # This script takes one argument, which is the BaTLab job Run ID or Global ID
 
 # Setup binstar
-which binstar
+which binstar > /dev/null 2>&1
 if [ $? -ne 0 ]; then
   export PATH="${HOME}/miniconda/bin:${PATH}"
 fi
@@ -28,10 +28,11 @@ for platform in $(ls $USERDIR); do
   echo "###"
   echo ""
   results="$USERDIR/$platform/results.tar.gz"
+  rm -rf "$platform"
   mkdir -p "$platform"
   tar xvf "$results" -C "$platform"
   for pkg in $(ls "$platform"/*.tar.bz2); do
-    binstar upload -u cyclus "$pkg"
+    binstar upload --force -u cyclus "$pkg"
   done
   rm -rf "$platform"
 done

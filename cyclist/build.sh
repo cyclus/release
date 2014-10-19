@@ -10,7 +10,9 @@ if [[ $UNAME == "Linux" ]]; then
           # SRCDIR is a BASH hack to get the where this cyclist script is running in a 
           # relocatable way.
           SRCDIR="$(dirname "$(readlink -f "$0")")"
-          java -jar $SRCDIR/../share/cyclist/cyclist.jar
+          PREFIX_DIR=$(dirname $SRCDIR)
+          export LD_LIBRARY_PATH="${PREFIX_DIR}/lib:${PREFIX_DIR}/lib/amd64:${LD_LIBRARY_PATH}"
+          java -jar ${PREFIX_DIR}/share/cyclist/cyclist.jar
           '
 else
   # Mac OSX
@@ -19,7 +21,9 @@ else
           # SRCDIR is a BASH hack to get the where this cyclist script is running in a 
           # relocatable way.
           SRCDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-          java -jar $SRCDIR/../share/cyclist/cyclist.jar
+          PREFIX_DIR=$(dirname $SRCDIR)
+          export LD_LIBRARY_PATH="${PREFIX_DIR}/lib:${PREFIX_DIR}/lib/amd64:${LD_LIBRARY_PATH}"
+          java -jar ${PREFIX_DIR}/share/cyclist/cyclist.jar
           '
 fi
 

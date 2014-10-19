@@ -97,4 +97,34 @@ The `Cyclus Homepage`_ has much more detailed guides and information.  If
 you intend to develop for *Cyclus*, please visit it to learn more.
 
 
+----------------------------------------------------------------
+Building Cyclist with Conda
+----------------------------------------------------------------
+To build cyclist from scratch using conda, simply come into this directory, 
+make sure that conda is on your path, and 
+build the conda recipe::
+
+    ~ $ export PATH=/home/scopatz/miniconda/bin:$PATH 
+    ~ $ cd ciclus
+    ~/ciclus $ conda build --no-binstar-upload cyclist
+
+If you would also like to build the dependencies, please build their recipes as 
+well::
+
+    ~/ciclus $ conda build --no-binstar-upload java-jre
+    ~/ciclus $ conda build --no-binstar-upload java-jdk
+    ~/ciclus $ conda build --no-binstar-upload ant
+
+If you would like to install any of these locally, pass in the ``--use-local`` flag.
+For example::
+
+    ~/ciclus $ conda install --use-local cyclist
+
+You may also upload such packages to binstar, assuing that you have binstar install.
+This is done via something like the following::
+
+    ~ $ binstar upload --user cyclus ~/miniconda/conda-bld/linux-64/cyclist-0.0.tar.bz2
+
+This should be enough to get you started.
+
 .. _`Cyclus Homepage`: http://cyclus.github.com

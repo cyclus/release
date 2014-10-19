@@ -96,7 +96,6 @@ Cyclus and Cycamore.  Follow instructions in 1 to upload to binstar.
 The `Cyclus Homepage`_ has much more detailed guides and information.  If
 you intend to develop for *Cyclus*, please visit it to learn more.
 
-
 ----------------------------------------------------------------
 Building Cyclist with Conda
 ----------------------------------------------------------------
@@ -126,5 +125,23 @@ This is done via something like the following::
     ~ $ binstar upload --user cyclus ~/miniconda/conda-bld/linux-64/cyclist-0.0.tar.bz2
 
 This should be enough to get you started.
+
+----------------------------------------------------------------
+Cyclist (and Its Dependencies) Conda Packages on BaTLab
+----------------------------------------------------------------
+Building cyclist and its java ecosystem is easy to do on Linux, Mac, and Windows on 
+BaTLab.  After you have signed into BaTLab and cloned this repo, submit the 
+cyclist run specification to build the packages::
+
+    ~/ciclus $ ./submit.sh cyclist.run-spec
+
+Note the 'run id' that this returns. This is an integer, something like 27272.  
+Once the job has finished running, upload thes resultant packages to binstar 
+as the default mechnasim for distributing them. In this repository there is a 
+handy upload script for exactly this purpose.  Call this scrip with the run id::
+
+    ~/ciclus $ ./upload-cyclist.sh 42424
+
+And now the users have access to a new version of cyclist!
 
 .. _`Cyclus Homepage`: http://cyclus.github.com

@@ -13,4 +13,4 @@ del deploy\\dist\\externalApps\\*darwin*
 :: Install
 mkdir %INSTLOC%
 robocopy deploy\\dist %INSTLOC% /S
-echo java -jar %%~dp0\\..\\share\\cyclist\\cyclist.jar > %LIBRARY_BIN%\\cyclist.bat
+echo java -jar %%~dp0\\..\\Library\\share\\cyclist\\cyclist.jar > %SCRIPTS%\\cyclist.bat

@@ -1,13 +1,13 @@
 package:
   name: cyclist
-  version: 0.9.2
+  version: 0.9.3
 
 source:
   # keep these commented lines for batlab
-  #fn: 0.9.2.tar.gz
-  #url: https://github.com/cyclus/cyclist2/archive/0.9.2.tar.gz
+  #fn: 0.9.3.tar.gz
+  #url: https://github.com/cyclus/cyclist2/archive/0.9.3.tar.gz
   git_url: http://github.com/cyclus/cyclist2.git
-  git_tag: 0.9.2
+  git_tag: 0.9.3
 
 requirements:
    build:

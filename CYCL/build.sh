@@ -7,6 +7,10 @@ export PATH="$(pwd)/anaconda/bin:${PATH}"
 UNAME=$(uname)
 
 cyclus_tar_dir="cyclus-develop"
+echo "#### Listing anaconda/conda-bld/work/${cyclus_tar_dir}"
+ls -l "anaconda/conda-bld/work/${cyclus_tar_dir}"
+echo "#### Listing PWD"
+ls -l 
 if [ -d "anaconda/conda-bld/work/${cyclus_tar_dir}" ]; then
   # Move everything up one directory
   # probably obtained from zip or tarball

@@ -1,9 +1,11 @@
 #!/bin/bash
 
-if [ "1" -eq "$(ls -1 | wc -l)" ]; then
+cyclus_tar_dir="cyclus-develop"
+
+if [ -d ${cyclus_tar_dir} ]; then
   # Move everything up one directory
   # probably obtained from zip or tarball
-  mv */* . 
+  mv ${cyclus_tar_dir}/* . 
 fi
 mkdir build
 cd build
@@ -12,7 +14,6 @@ export CMAKE_LIBRARY_PATH=$PREFIX/lib/
 export PATH=$PREFIX/bin:$PATH
 export MACOSX_DEPLOYMENT_TARGET=
 if [[  `uname` == 'Linux' ]]; then
-
     cmake ..  -DCMAKE_INSTALL_PREFIX=$PREFIX -DBOOST_ROOT=$PREFIX  -DBOOST_LIBRARYDIR=$PREFIX/lib -DBoost_NO_SYSTEM_PATHS=ON -DCMAKE_BUILD_TYPE=Release -DLAPACK_LIBRARIES=$PREFIX/lib/liblapack.so -DBLAS_LIBRARIES=$PREFIX/lib/libblas.so
 else
 

@@ -4,32 +4,43 @@ set -e
 
 ./bin/conda-inst.sh
 export PATH="$(pwd)/anaconda/bin:${PATH}"
+UNAME=$(uname)
+
+cyclus_tar_dir="cyclus-develop"
+if [ -d ${cyclus_tar_dir} ]; then
+  # Move everything up one directory
+  # probably obtained from zip or tarball
+  export WORKDIR="anaconda/conda-bld/work/${cyclus_tar_dir}"
+else  
+  export WORKDIR="anaconda/conda-bld/work"
+fi
 
 anaconda/bin/conda build --no-test cyclus
 
 # force cycamore to build with local cyclus
-vers=`cat cyclus/meta.yaml | grep version`
+vers=$(cat cyclus/meta.yaml | grep version)
 read -a versArray <<< $vers
 
 anaconda/bin/conda install --use-local cyclus=${versArray[1]}
 tar -czf results.tar.gz anaconda
 
-echo "#### ls work"
-ls -1 anaconda/conda-bld/work
-cp -rv anaconda/conda-bld/work/tests cycltest
-cp -rv anaconda/conda-bld/work/release release
+echo "#### ls work: ${WORKDIR}"
+ls -1 "${WORKDIR}"
+cp -rv "${WORKDIR}/tests" cycltest
+cp -rv "${WORKDIR}/release" release
 
 # Duild Doc
-if [[  `uname` == 'Linux' ]]; then
-  cd anaconda/conda-bld/work/build
+if [[  "${UNAME}" == 'Linux' ]]; then
+  origdir="$(pwd)"
+  cd "${WORKDIR}/build"
   make cyclusdoc | tee  doc.out
-  line=`grep -i warning doc.out|wc -l`
+  line=$(grep -i warning doc.out | wc -l)
   if [ $line -ne 0 ]; then
     exit 1
   fi
   ls -l
-  mv doc ../../../../cyclusdoc
-  cd ../../../..
+  mv doc "${origdir}/cyclusdoc"
+  cd "$origdir"
 fi
 
 # Regression Testing

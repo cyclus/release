@@ -1,16 +1,5 @@
 #!/bin/bash
 
-cyclus_tar_dir="cyclus-develop"
-
-echo "### Now in $(pwd):"
-ls -l
-
-
-if [ -d ${cyclus_tar_dir} ]; then
-  # Move everything up one directory
-  # probably obtained from zip or tarball
-  mv ${cyclus_tar_dir}/* . 
-fi
 mkdir build
 cd build
 export LD_LIBRARY_PATH=$PREFIX/lib/

@@ -1,6 +1,12 @@
 #!/bin/bash
 
-mkdir build; cd build;
+if [ "1" -eq "$(ls -1 | wc -l)" ]; then
+  # Move everything up one directory
+  # probably obtained from zip or tarball
+  mv */* . 
+fi
+mkdir build
+cd build
 export LD_LIBRARY_PATH=$PREFIX/lib/
 export CMAKE_LIBRARY_PATH=$PREFIX/lib/
 export PATH=$PREFIX/bin:$PATH

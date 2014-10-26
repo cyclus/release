@@ -3,10 +3,11 @@ package:
   version: 0.0
 
 source:
-  #fn: develop.zip # [linux]
-  #url: https://github.com/cyclus/cyclus/archive/develop.zip # [linux]
+  fn: develop.tar.gz # [linux and __import__('os').getenv('NMI_PLATFORM')]
+  url: https://github.com/cyclus/cyclus/archive/develop.tar.gz # [linux and __import__('os').getenv('NMI_PLATFORM')]
   git_url: https://github.com/cyclus/cyclus.git 
-  git_tag: develop #17716084c828a56964c36cf7c5e8c9a0aba39fde
+  git_tag: develop
+
 requirements:
    build:
     - sigcpp
@@ -38,8 +39,8 @@ requirements:
     - pkg-config-lite # [osx]
 
 build:
-  number: 2
   string: nightly
+
 about:
   home: Cyclus
   license: BSD Clause 3

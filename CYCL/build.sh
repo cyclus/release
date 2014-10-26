@@ -5,8 +5,11 @@ set -e
 ./bin/conda-inst.sh
 export PATH="$(pwd)/anaconda/bin:${PATH}"
 UNAME=$(uname)
-
 cyclus_tar_dir="cyclus-develop"
+
+# Build Cyclus, must happen before we set the workdir
+anaconda/bin/conda build --no-test cyclus
+
 echo "#### Listing anaconda/conda-bld/work/${cyclus_tar_dir}"
 ls -l "anaconda/conda-bld/work/${cyclus_tar_dir}"
 echo "#### Listing PWD"
@@ -18,8 +21,6 @@ if [ -d "anaconda/conda-bld/work/${cyclus_tar_dir}" ]; then
 else  
   export WORKDIR="anaconda/conda-bld/work"
 fi
-
-anaconda/bin/conda build --no-test cyclus
 
 # force cycamore to build with local cyclus
 vers=$(cat cyclus/meta.yaml | grep version)

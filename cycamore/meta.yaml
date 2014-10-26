@@ -3,10 +3,11 @@ package:
   version: 0.0
 
 source:
-#  fn: develop.zip
- # url: https://github.com/cyclus/cycamore/archive/develop.zip
-  git_url: https://github.com/cyclus/cycamore.git 
-  git_tag: develop
+  fn: develop.zip # [linux and __import__('os').getenv('NMI_PLATFORM')]
+  url: https://github.com/cyclus/cycamore/archive/develop.zip # [linux and __import__('os').getenv('NMI_PLATFORM')]
+  git_url: https://github.com/cyclus/cycamore.git # [not (linux and __import__('os').getenv('NMI_PLATFORM'))]
+  git_tag: develop # [not (linux and __import__('os').getenv('NMI_PLATFORM'))]
+
 requirements:
    build:
     - cyclus
@@ -16,8 +17,8 @@ requirements:
     - cyclus
 
 build:
-  number: 3
   string: nightly
+
 about:
   home: Cyclus
   license: BSD 3 Clause

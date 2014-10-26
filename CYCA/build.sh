@@ -4,7 +4,10 @@ set -e
 
 `pwd`/CYCL/build.sh
 PATH=$PATH:`pwd`/install/bin
+UNAME=$(uname)
+cycamore_tar_dir="cycamore-develop"
 anaconda/bin/conda list
+
 # force cycamore to build with local cyclus
 vers=`anaconda/bin/conda list | grep cyclus`
 read -a versArray <<< $vers
@@ -21,7 +24,14 @@ read -a versArray <<< $vers
 anaconda/bin/conda build --no-test cycamore 
 anaconda/bin/conda install --use-local cycamore=${versArray[1]}
 
-cp -r anaconda/conda-bld/work/tests cycatest
+# Setup workdir for later use
+if [ -d "anaconda/conda-bld/work/${cycamore_tar_dir}" ]; then
+  export WORKDIR="anaconda/conda-bld/work/${cycamore_tar_dir}"
+else  
+  export WORKDIR="anaconda/conda-bld/work"
+fi
+
+cp -r "${WORKDIR}/tests" cycatest
 
 
 # Build Docs

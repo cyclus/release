@@ -10,13 +10,8 @@ cyclus_tar_dir="cyclus-develop"
 # Build Cyclus, must happen before we set the workdir
 anaconda/bin/conda build --no-test cyclus
 
-echo "#### Listing anaconda/conda-bld/work/${cyclus_tar_dir}"
-ls -l "anaconda/conda-bld/work/${cyclus_tar_dir}"
-echo "#### Listing PWD"
-ls -l 
+# Setup workdir for later use
 if [ -d "anaconda/conda-bld/work/${cyclus_tar_dir}" ]; then
-  # Move everything up one directory
-  # probably obtained from zip or tarball
   export WORKDIR="anaconda/conda-bld/work/${cyclus_tar_dir}"
 else  
   export WORKDIR="anaconda/conda-bld/work"
@@ -29,12 +24,10 @@ read -a versArray <<< $vers
 anaconda/bin/conda install --use-local cyclus=${versArray[1]}
 tar -czf results.tar.gz anaconda
 
-echo "#### ls work: ${WORKDIR}"
-ls -1 "${WORKDIR}"
-cp -rv "${WORKDIR}/tests" cycltest
-cp -rv "${WORKDIR}/release" release
+cp -r "${WORKDIR}/tests" cycltest
+cp -r "${WORKDIR}/release" release
 
-# Duild Doc
+# Build Doc
 if [[  "${UNAME}" == 'Linux' ]]; then
   origdir="$(pwd)"
   cd "${WORKDIR}/build"

@@ -14,8 +14,10 @@ read -a versArray <<< $vers
 anaconda/bin/conda install --use-local cyclus=${versArray[1]}
 tar -czf results.tar.gz anaconda
 
-cp -r anaconda/conda-bld/work/tests cycltest
-cp -r anaconda/conda-bld/work/release release
+echo "#### ls work"
+ls -1 anaconda/conda-bld/work
+cp -rv anaconda/conda-bld/work/tests cycltest
+cp -rv anaconda/conda-bld/work/release release
 
 # Duild Doc
 if [[  `uname` == 'Linux' ]]; then

@@ -11,7 +11,7 @@ anaconda/bin/conda list
 # force cycamore to build with local cyclus
 vers=`anaconda/bin/conda list | grep cyclus`
 read -a versArray <<< $vers
-if [[  `uname` == 'Linux' ]]; then
+if [[ "${UNAME}" == 'Linux' ]]; then
   sed -i  "s/- cyclus/- cyclus ${versArray[1]}/g" cycamore/meta.yaml
 else
   sed -i '' "s/- cyclus/- cyclus ${versArray[1]}/g" cycamore/meta.yaml
@@ -35,19 +35,19 @@ cp -r "${WORKDIR}/tests" cycatest
 
 
 # Build Docs
-if [[  `uname` == 'Linux' ]]; then
-  cd anaconda/conda-bld/work/build
-  make cycamoredoc | tee  doc.out
-  line=`grep -i warning doc.out|wc -l`
+if [[  "${UNAME}" == 'Linux' ]]; then
+  origdir="$(pwd)"
+  cd "${WORKDIR}/build"
+  make cycamoredoc | tee doc.out
+  line=$(grep -i warning doc.out | wc -l)
   if [ $line -ne 0 ]; then
     exit 1
   fi
   ls -l
-  mv doc ../../../../cycamoredoc
-  cd ../../../..
+  mv doc "${origdir}/cycamoredoc"
+  cd "$origdir"
   tar -czf results.tar.gz anaconda cyclusdoc cycamoredoc
 else
   tar -czf results.tar.gz anaconda 
 fi
-
 

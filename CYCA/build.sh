@@ -4,46 +4,50 @@ set -e
 
 `pwd`/CYCL/build.sh
 PATH=$PATH:`pwd`/install/bin
+UNAME=$(uname)
+cycamore_tar_dir="cycamore-develop"
 anaconda/bin/conda list
-#force cycamore to build with local cyclus
+
+# force cycamore to build with local cyclus
 vers=`anaconda/bin/conda list | grep cyclus`
 read -a versArray <<< $vers
-if [[  `uname` == 'Linux' ]]; then
-sed -i  "s/- cyclus/- cyclus ${versArray[1]}/g" cycamore/meta.yaml
+if [[ "${UNAME}" == 'Linux' ]]; then
+  sed -i  "s/- cyclus/- cyclus ${versArray[1]}/g" cycamore/meta.yaml
 else
-sed -i '' "s/- cyclus/- cyclus ${versArray[1]}/g" cycamore/meta.yaml
+  sed -i '' "s/- cyclus/- cyclus ${versArray[1]}/g" cycamore/meta.yaml
 fi
 
-#force cycamore to build with local cyclus
+# force cycamore to build with local cyclus
 vers=`cat cycamore/meta.yaml | grep version`
 read -a versArray <<< $vers
 
 anaconda/bin/conda build --no-test cycamore 
 anaconda/bin/conda install --use-local cycamore=${versArray[1]}
 
-cp -r anaconda/conda-bld/work/tests cycatest
+# Setup workdir for later use
+if [ -d "anaconda/conda-bld/work/${cycamore_tar_dir}" ]; then
+  export WORKDIR="anaconda/conda-bld/work/${cycamore_tar_dir}"
+else  
+  export WORKDIR="anaconda/conda-bld/work"
+fi
+
+cp -r "${WORKDIR}/tests" cycatest
 
 
-#build Doc
-if [[  `uname` == 'Linux' ]]; then
-
-cd anaconda/conda-bld/work/build
-make cycamoredoc | tee  doc.out
-line=`grep -i warning doc.out|wc -l`
-if [ $line -ne 0 ]
- then
+# Build Docs
+if [[  "${UNAME}" == 'Linux' ]]; then
+  origdir="$(pwd)"
+  cd "${WORKDIR}/build"
+  make cycamoredoc | tee doc.out
+  line=$(grep -i warning doc.out | wc -l)
+  if [ $line -ne 0 ]; then
     exit 1
-fi
-ls -l
-mv doc ../../../../cycamoredoc
-cd ../../../..
-
-
-tar -czf results.tar.gz anaconda cyclusdoc cycamoredoc
-
+  fi
+  ls -l
+  mv doc "${origdir}/cycamoredoc"
+  cd "$origdir"
+  tar -czf results.tar.gz anaconda cyclusdoc cycamoredoc
 else
-tar -czf results.tar.gz anaconda 
-
+  tar -czf results.tar.gz anaconda 
 fi
-
 

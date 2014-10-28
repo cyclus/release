@@ -9,5 +9,5 @@ project     = <a href="http://cyclus.github.io/">Cyclus</a>
 project_version = nightly
 description =  Builds/Unit tests Cyclus[dev], Cycamore[dev]
 notify = cyclus-ci@googlegroups.com
-#cron_hour = 0
-#cron_minute = 15
+cron_hour = 0
+cron_minute = 15

@@ -1,5 +1,5 @@
 run_type    = test
-inputs      = fetch/conda.linux.url,fetch/conda.mac.url, fetch/git.git, fetch/conda.scp,fetch/conda-recipe.git
+inputs      = fetch/conda.linux.url,fetch/conda.mac.url, fetch/git.git, fetch/myCiclus.scp,fetch/conda-recipe.git
 remote_pre_declare = CYCA/build.sh
 remote_task = CYCA/run_test.sh
 platforms   = x86_64_Ubuntu12,x86_64_MacOSX8

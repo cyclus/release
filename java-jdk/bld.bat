@@ -1,12 +1,12 @@
 :: Setup
-set JDK_VER=8u20
+set JDK_VER=8u25
 if defined NMI_PLATFORM (
   set ON_BATLAB=TRUE
   set URL=http://regtests.fuelcycle.org/jdk-%JDK_VER%-windows-x64.zip
   set JDK=jdk-%JDK_VER%-windows-x64.zip
 ) else (
   set ON_BATLAB=FALSE
-  set URL=http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-%JDK_VER%-windows-x64.exe
+  set URL=http://download.oracle.com/otn-pub/java/jdk/8u25-b17/jdk-%JDK_VER%-windows-x64.exe
   set JDK=jdk-%JDK_VER%-windows-x64.exe
 )
 echo "On Batlab? %ON_BATLAB%"

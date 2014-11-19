@@ -4,7 +4,7 @@ package:
 
 source:
   fn: apache-ant-1.9.4-src.tar.bz2
-  url: https://www.apache.org/dist/ant/source/apache-ant-1.9.4-src.tar.bz2
+  url: http://www.apache.org/dist/ant/source/apache-ant-1.9.4-src.tar.bz2
   sha1: cdefb110fd7dcf87d8697af4369fb476c4c36324
 
 requirements:

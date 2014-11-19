@@ -12,7 +12,7 @@ if [[ $UNAME == "Linux" ]]; then
   LINKLOC="$PREFIX/lib/*/jli"
 else
   # MacOSX
-  URL="http://download.oracle.com/otn-pub/java/jdk/8u20-b17/jdk-8u25-macosx-x64.dmg"
+  URL="http://download.oracle.com/otn-pub/java/jdk/8u25-b17/jdk-8u25-macosx-x64.dmg"
   JDK="jdk.dmg"
   NSTRIP=3
   LINKLOC="$PREFIX/lib/jli"

@@ -4,7 +4,7 @@ if not exist %BUILD_CACHE% (
   mkdir %BUILD_CACHE%
 )
 
-set URL=http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jre-8u20-windows-x64.tar.gz
+set URL=http://download.oracle.com/otn-pub/java/jdk/8u25-b17/jre-8u25-windows-x64.tar.gz
 
 :: Download
 if not exist %BUILD_CACHE%\\jre.tar.gz (

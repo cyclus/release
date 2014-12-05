@@ -14,8 +14,10 @@ ID="$1"
 if [ "$ID" == "" ]; then 
   echo "Please pass in a run id!"
   echo "  $ ./upload-cyclus.sh 424242"
-  exit
+  exit 1
 fi
+# split rundirs on colons, see 
+# http://stackoverflow.com/questions/25638795/bash-while-loop-with-read-and-ifs
 IFS=':' read -ra RUNDIRS <<< $(nmi_rundir $ID)
 RUNDIRS=($RUNDIRS)
 RUNDIR="${RUNDIRS[2]}"

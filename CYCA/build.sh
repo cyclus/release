@@ -31,6 +31,7 @@ else
   export WORKDIR="anaconda/conda-bld/work"
 fi
 
+cp -r "${WORKDIR}/input" input
 cp -r "${WORKDIR}/tests" cycatest
 
 

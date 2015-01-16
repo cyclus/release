@@ -39,9 +39,11 @@ conda_build () {
 ./bin/conda-inst.sh
 
 # build
-#conda_build libffi
-conda_build gettext
-conda_build pkg-config-lite
+if [[ "$UNAME" != "Linux" ]]; then
+  conda_build libffi
+  conda_build gettext
+  conda_build pkg-config-lite
+fi
 conda_build glib
 conda_build sigcpp
 conda_build glibmm

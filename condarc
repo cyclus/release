@@ -7,5 +7,6 @@
 # channel_alias key; see below).
 channels:
   - https://conda.binstar.org/cyclus 
+  - asmeurer
   - defaults
 

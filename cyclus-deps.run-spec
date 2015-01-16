@@ -1,0 +1,34 @@
+#
+# Windows EXE
+#  
+#inputs = fetch/conda.linux.url, fetch/conda.mac.url, fetch/conda.win.url, fetch/myCiclus.scp
+#platforms = x86_64_Ubuntu12,x86_64_MacOSX8,x86_64_Windows8
+#x86_64_Windows8_remote_task = CYCT/build-win.sh
+
+#
+# Windows ZIP
+#  
+#inputs = fetch/conda.linux.url, fetch/conda.mac.url, fetch/conda.win.zip.url, fetch/myCiclus.scp
+#platforms = x86_64_Ubuntu12,x86_64_MacOSX8,x86_64_Windows8
+#x86_64_Windows8_remote_task = CYCT/build-win.sh
+
+#
+# No Windows
+#
+inputs = fetch/conda.linux.url, fetch/conda.mac.url, fetch/myCiclus.scp
+platforms = x86_64_Ubuntu12,x86_64_MacOSX8
+
+#
+# Common
+#
+remote_task = DEPS/build.sh
+run_type = build
+x86_64_Ubuntu12_remote_task = DEPS/build.sh
+x86_64_MacOSX8_remote_task = DEPS/build.sh
+project = Cyclus
+project_version = dev/dev
+description = Builds Cyclus Dependencies
+
+# DO NOT SET THE FOLLOWING:
+#project = <a href="http://cyclus.github.io/">Cyclus</a>
+# This cuases extreme breakage with the Windows 'set' command

@@ -46,9 +46,9 @@ if [[ "$UNAME" != "Linux" ]]; then
 fi
 #conda_build glib
 #conda_build sigcpp
-conda_build glibmm
-conda_build libxml2
-conda_build libxmlpp
+#conda_build glibmm
+#conda_build libxml2
+#conda_build libxmlpp
 conda_build lapack
 conda_build boost
 conda_build coin

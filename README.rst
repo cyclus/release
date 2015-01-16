@@ -89,9 +89,7 @@ be run in each OS stage.  To get a complete list of available systems run
 ``nmi_list_platforms`` on Batlab's submit node.
 
 8) Create/upload a new version of a dependency
-Alter the dependency's ``meta.yaml`` file to point to the correct version of dependency source 
-code.  Change the ``CYCA/build.sh`` and ``CYCL/build.sh`` to build the dependency instead of 
-Cyclus and Cycamore.  Follow instructions in 1 to upload to binstar.
+Submit the ``cyclus-deps.run-spec``.
 
 The `Cyclus Homepage`_ has much more detailed guides and information.  If
 you intend to develop for *Cyclus*, please visit it to learn more.

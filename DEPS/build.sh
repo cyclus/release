@@ -39,7 +39,7 @@ conda_build () {
 ./bin/conda-inst.sh
 
 # build
-conda_build libffi
+#conda_build libffi
 conda_build gettext
 conda_build pkg-config-lite
 conda_build glib

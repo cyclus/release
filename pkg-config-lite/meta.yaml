@@ -6,10 +6,6 @@ source:
   fn:  pkg-config-lite-0.28-1.tar.gz
   url: http://sourceforge.net/projects/pkgconfiglite/files/0.28-1/pkg-config-lite-0.28-1.tar.gz
 
-build:
-  number: 2            [osx]
-
-
 about:
   home: pkgconfig
   license: Eclipse Public License 1.0

@@ -6,9 +6,6 @@ source:
   fn: glib-2.37.4.tar.xz
   url: http://ftp.acc.umu.se/pub/GNOME/sources/glib/2.37/glib-2.37.4.tar.xz
 
-build:
-  number: 2            [osx]
-
 # the build and runtime requirements. Dependencies of these requirements
 # # are included automatically.
 # requirements:
@@ -20,6 +17,7 @@ requirements:
    - libffi
    - pkg-config-lite
    - gettext
+
 about:
   home: Glib
   license: Eclipse Public License 1.0

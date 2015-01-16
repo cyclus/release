@@ -6,9 +6,6 @@ source:
   fn: libffi-3.0.13.tar.gz
   url:  ftp://sourceware.org/pub/libffi/libffi-3.0.13.tar.gz
 
-build:
-  number: 2            [osx]
-
 about:
   home: libffi
   license: Eclipse Public License 1.0

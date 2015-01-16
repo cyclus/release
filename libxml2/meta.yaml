@@ -6,9 +6,6 @@ source:
   fn:  libxml2-2.8.0.tar.gz
   url: ftp://xmlsoft.org/libxml2/libxml2-2.8.0.tar.gz
 
-build:
-  number: 2            [osx]
-
 requirements:
  build:
   - sigcpp

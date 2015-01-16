@@ -6,9 +6,6 @@ source:
   fn: libxml++-2.36.0.tar.xz
   url: http://ftp.gnome.org/pub/GNOME/sources/libxml++/2.36/libxml++-2.36.0.tar.xz
 
-build:
-  number: 2            [osx]
-
 requirements:
  build:
   - xz
@@ -20,6 +17,7 @@ requirements:
   - libxml2   # [not osx]
   - libffi # [osx]
   - gettext  # [osx]
+
 about:
   home: libxmlpp
   license: Eclipse Public License 1.0

@@ -9,6 +9,7 @@ source:
   git_tag: develop #17716084c828a56964c36cf7c5e8c9a0aba39fde
 requirements:
    build:
+    - glib
     - sigcpp
     - glibmm
     - libxmlpp 
@@ -24,6 +25,7 @@ requirements:
     - cmake
     - python
    run:
+    - glib
     - sigcpp
     - glibmm
     - libxmlpp

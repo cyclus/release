@@ -9,8 +9,10 @@ source:
 
 requirements:
    build:
+    - bzip2
     - lapack 
    run:
+    - bzip2
     - lapack 
 
 about:

@@ -10,7 +10,7 @@ source:
 
 requirements:
    build:
-    - cyclus
+    - cyclus ==0.0
     - cmake
     - python
     - jinja2
@@ -24,16 +24,15 @@ requirements:
     - mylibxml2 # [osx]
     - libxml2  #  [linux]
     - myglib   # [osx]  
-    - libffi # [osx]
-    - gettext # [osx]
+    - glib
+    - libffi 
+    - gettext  # [osx]
     - pkg-config-lite # [osx]
+    - bzip2 
    run:
-    - cyclus
+    - cyclus ==0.0
     - python
     - pandas
-
-build:
-  string: nightly
 
 about:
   home: Cymetric

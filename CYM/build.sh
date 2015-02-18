@@ -24,26 +24,3 @@ read -a versArray <<< $vers
 anaconda/bin/conda install --use-local cymetric=${versArray[1]}
 tar -czf results.tar.gz anaconda
 
-cp -r "${WORKDIR}/tests" cymtest
-cp -r "${WORKDIR}/release" release
-
-# Build Doc
-if [[  "${UNAME}" == 'Linux' ]]; then
-  origdir="$(pwd)"
-  cd "${WORKDIR}/build"
-  make cymetricdoc | tee  doc.out
-  line=$(grep -i warning doc.out | wc -l)
-  if [ $line -ne 0 ]; then
-    exit 1
-  fi
-  ls -l
-  mv doc "${origdir}/cymetricdoc"
-  cd "$origdir"
-fi
-
-# Regression Testing
-anaconda/bin/conda install nose
-#anaconda/bin/conda install numpy
-anaconda/bin/conda install cython
-#anaconda/bin/conda install numexpr
-#anaconda/bin/conda install pytables

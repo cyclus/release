@@ -28,6 +28,7 @@ requirements:
     - libffi 
     - gettext  # [osx]
     - pkg-config-lite # [osx]
+    - numpy
     - bzip2 
    run:
     - cyclus ==0.0

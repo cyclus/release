@@ -24,3 +24,4 @@ read -a versArray <<< $vers
 anaconda/bin/conda install --use-local cymetric=${versArray[1]}
 tar -czf results.tar.gz anaconda
 
+cp -r ${WORKDIR} cymtests

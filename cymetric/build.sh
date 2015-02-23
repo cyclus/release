@@ -1,6 +1,6 @@
 #!/bin/bash
-export LD_LIBRARY_PATH=$PREFIX/lib/
-export CMAKE_LIBRARY_PATH=$PREFIX/lib/
+export LD_LIBRARY_PATH=$PREFIX/lib
+export CMAKE_LIBRARY_PATH=$PREFIX/lib
 export PATH=$PREFIX/bin:$PATH
 export DYLD_FALLBACK_LIBRARY_PATH=$PREFIX/lib/cyclus:$PREFIX/lib
 

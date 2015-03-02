@@ -5,7 +5,8 @@ set -e
 ./bin/conda-inst.sh
 export PATH="$(pwd)/anaconda/bin:${PATH}"
 UNAME=$(uname)
-cymetric_tar_dir="cymetric-master"
+#cymetric_tar_dir="cymetric-master"
+cymetric_tar_dir="cymetric-ci"
 
 # Build Cyclus, must happen before we set the workdir
 anaconda/bin/conda install cyclus cycamore

@@ -10,8 +10,13 @@ cymetric_tar_dir="cymetric-ci"
 
 # Build Cyclus, must happen before we set the workdir
 anaconda/bin/conda install cyclus cycamore
-ln -s $(pwd)/anaconda/lib/libhdf5.so.9 $(pwd)/anaconda/lib/libhdf5.so.8
-ln -s $(pwd)/anaconda/lib/libhdf5_hl.so.9 $(pwd)/anaconda/lib/libhdf5_hl.so.8
+if [[ "${UNAME}" == 'Linux' ]]; then
+  ln -s $(pwd)/anaconda/lib/libhdf5.so.9 $(pwd)/anaconda/lib/libhdf5.so.8
+  ln -s $(pwd)/anaconda/lib/libhdf5_hl.so.9 $(pwd)/anaconda/lib/libhdf5_hl.so.8
+else
+  ln -s $(pwd)/anaconda/lib/libhdf5.9.dylib $(pwd)/anaconda/lib/libhdf5.8.dylib
+  ln -s $(pwd)/anaconda/lib/libhdf5_hl.9.dylib $(pwd)/anaconda/lib/libhdf5_hl.8.dylib
+fi
 which cyclus
 cyclus --version
 anaconda/bin/conda build --no-test cymetric

@@ -8,6 +8,11 @@ UNAME=$(uname)
 cymetric_tar_dir="cymetric-master"
 
 # Build Cyclus, must happen before we set the workdir
+anaconda/bin/conda install cyclus cycamore
+ln -s $(pwd)/anaconda/lib/libhdf5.so.9 $(pwd)/anaconda/lib/libhdf5.so.8
+ln -s $(pwd)/anaconda/lib/libhdf5_hl.so.9 $(pwd)/anaconda/lib/libhdf5_hl.so.8
+which cyclus
+cyclus --version
 anaconda/bin/conda build --no-test cymetric
 
 # Setup workdir for later use
@@ -24,4 +29,4 @@ read -a versArray <<< $vers
 anaconda/bin/conda install --use-local cymetric=${versArray[1]}
 tar -czf results.tar.gz anaconda
 
-cp -r ${WORKDIR} cymtests
+cp -r "${WORKDIR}/tests" cymtests

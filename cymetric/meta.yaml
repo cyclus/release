@@ -24,7 +24,7 @@ requirements:
     - mylibxml2 # [osx]
     - libxml2  #  [linux]
     - myglib   # [osx]  
-    - glib
+    - glib  # [linux]
     - libffi 
     - gettext  # [osx]
     - pkg-config-lite # [osx]

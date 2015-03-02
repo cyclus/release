@@ -15,9 +15,9 @@ $(which python) -c "import subprocess; print(subprocess.__file__)"
 cd cymtests
 ls .
 conda install nose
-export PYTHONPATH="$(ls ../anaconda/lib/python*/site-packages):$PYTHONPAH"
 echo "PATH: ${PATH}"
 echo "PYTHONPATH: $(python -c 'import sys; from pprint import pprint; pprint(sys.path)')"
-nosetests -vs
+echo "PYTHONPATH: $(python -c 'import cymetric; print(cymetric.__file__)')"
+../anaconda/bin/nosetests -vs
 
 exit $?

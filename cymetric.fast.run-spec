@@ -1,0 +1,8 @@
+run_type    = test
+inputs      = fetch/conda.linux.url,fetch/conda.mac.url, fetch/git.git, fetch/myCiclus.scp,fetch/conda-recipe.git
+remote_pre_declare = CYM/build.sh
+remote_task = CYM/run_test.sh
+platforms   = x86_64_Ubuntu14,x86_64_MacOSX10
+project     = <a href="http://github.com/cyclus/cymetric/">Cymetric</a>
+project_version = dev/dev
+description =  Builds/Unit tests Cyclus[dev], Cymetric[dev]

@@ -26,6 +26,7 @@ conda install binstar
 if [[  "$UNAME" == 'Linux' ]]; then
   conda install patchelf
   conda install conda-build
+  conda config --add channels asmeurer
 else
   cd conda-build
   python setup.py install

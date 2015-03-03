@@ -1,0 +1,40 @@
+package:
+  name: cymetric
+  version: 0.0
+
+source:
+  fn: master.zip # [__import__('os').getenv('NMI_PLATFORM')]
+  url: https://github.com/cyclus/cymetric/archive/master.zip # [__import__('os').getenv('NMI_PLATFORM')]
+  git_url: https://github.com/cyclus/cymetric.git # [not __import__('os').getenv('NMI_PLATFORM')]
+  git_tag: master # [not __import__('os').getenv('NMI_PLATFORM')]
+
+requirements:
+   build:
+    - cyclus ==0.0
+    - cmake
+    - python
+    - jinja2
+    - cython
+    - sigcpp
+    - glibmm
+    - libxmlpp 
+    - coincbc
+    - boost
+    - hdf5
+    - mylibxml2 # [osx]
+    - libxml2  #  [linux]
+    - myglib   # [osx]  
+    - glib  # [linux]
+    - libffi 
+    - gettext  # [osx]
+    - pkg-config-lite # [osx]
+    - numpy
+    - bzip2 
+   run:
+    - cyclus ==0.0
+    - python
+    - pandas
+
+about:
+  home: Cymetric
+  license: BSD 3 Clause

@@ -3,10 +3,10 @@ package:
   version: 0.0
 
 source:
-  fn: ci.zip # [__import__('os').getenv('NMI_PLATFORM')]
-  url: https://github.com/scopatz/cymetric/archive/ci.zip # [__import__('os').getenv('NMI_PLATFORM')]
-  git_url: https://github.com/scopatz/ci.git # [not __import__('os').getenv('NMI_PLATFORM')]
-  git_tag: ci # [not __import__('os').getenv('NMI_PLATFORM')]
+  fn: master.zip # [__import__('os').getenv('NMI_PLATFORM')]
+  url: https://github.com/cyclus/cymetric/archive/master.zip # [__import__('os').getenv('NMI_PLATFORM')]
+  git_url: https://github.com/cyclus/cymetric.git # [not __import__('os').getenv('NMI_PLATFORM')]
+  git_tag: master # [not __import__('os').getenv('NMI_PLATFORM')]
 
 requirements:
    build:

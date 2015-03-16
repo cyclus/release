@@ -2,6 +2,7 @@ package:
   name: cyclus
   version: 0.0
 
+# Only use fn and url for polyphemus compatability
 source:
   fn: cyclus-src.tar.gz 
   url: https://github.com/cyclus/cyclus/archive/develop.tar.gz 

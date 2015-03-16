@@ -2,11 +2,10 @@ package:
   name: cymetric
   version: 0.0
 
+# Only use fn and url for polyphemus compatability
 source:
-  fn: master.zip # [__import__('os').getenv('NMI_PLATFORM')]
-  url: https://github.com/cyclus/cymetric/archive/master.zip # [__import__('os').getenv('NMI_PLATFORM')]
-  git_url: https://github.com/cyclus/cymetric.git # [not __import__('os').getenv('NMI_PLATFORM')]
-  git_tag: master # [not __import__('os').getenv('NMI_PLATFORM')]
+  fn: cymetric-src.tar.gz
+  url: https://github.com/cyclus/cymetric/archive/master.tar.gz
 
 requirements:
    build:

@@ -3,10 +3,10 @@ package:
   version: 0.0
 
 source:
-  fn: develop.tar.gz # [linux and __import__('os').getenv('NMI_PLATFORM')]
-  url: https://github.com/cyclus/cyclus/archive/develop.tar.gz # [linux and __import__('os').getenv('NMI_PLATFORM')]
-  git_url: https://github.com/cyclus/cyclus.git # [not (linux and __import__('os').getenv('NMI_PLATFORM'))]
-  git_tag: develop # [not (linux and __import__('os').getenv('NMI_PLATFORM'))]
+  fn: develop.tar.gz # [linux and environ.get('NMI_PLATFORM', False)]
+  url: https://github.com/cyclus/cyclus/archive/develop.tar.gz # [linux and environ.get('NMI_PLATFORM', False)]
+  git_url: https://github.com/cyclus/cyclus.git # [not (linux and environ.get('NMI_PLATFORM', False))]
+  git_tag: develop # [not (linux and environ.get('NMI_PLATFORM', False))]
 
 requirements:
    build:

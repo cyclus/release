@@ -5,14 +5,14 @@ set -e
 ./bin/conda-inst.sh
 export PATH="$(pwd)/anaconda/bin:${PATH}"
 UNAME=$(uname)
-cyclus_tar_dir="cyclus-develop"
+proj="cyclus"
 
 # Build Cyclus, must happen before we set the workdir
 anaconda/bin/conda build --no-test cyclus
 
 # Setup workdir for later use
-if [ -d "anaconda/conda-bld/work/${cyclus_tar_dir}" ]; then
-  export WORKDIR="anaconda/conda-bld/work/${cyclus_tar_dir}"
+if [ -d "$(ls -d anaconda/conda-bld/work/*${proj}*/tests)" ]; then
+  export WORKDIR="$(ls -d anaconda/conda-bld/work/*${proj}*)"
 else  
   export WORKDIR="anaconda/conda-bld/work"
 fi

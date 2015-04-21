@@ -1,6 +1,6 @@
 package:
   name: cyclus
-  version: "0.2"
+  version: "0.0"
 
 # Only use fn and url for polyphemus compatability
 source:

@@ -1,11 +1,12 @@
 package:
   name: cycamore
-  version: 0.0
+  version: "0.2"
 
 # Only use fn and url for polyphemus compatability
 source:
-  fn: cycamore-src.tar.gz
-  url: https://github.com/cyclus/cycamore/archive/develop.tar.gz
+  fn: cycamore-src.tar.gz # ["TRAVIS" not in environ] 
+  url: https://github.com/cyclus/cycamore/archive/develop.tar.gz # ["TRAVIS" not in environ]
+  path: ..  # ["TRAVIS" in environ]
 
 requirements:
    build:
@@ -14,6 +15,11 @@ requirements:
     - python
    run:
     - cyclus
+
+test:
+  requires:
+    - nose
+    - pytables
 
 build:
   string: nightly

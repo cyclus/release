@@ -31,11 +31,3 @@ fi
 make VERBOSE=1
 make install
 cd ..
-
-# Annoying hack for copying dlls
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  cp build/src/*.dylib $PREFIX/lib
-elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-  find . -name '*.so' | xargs chmod +x
-  cp build/src/*.so $PREFIX/lib
-fi

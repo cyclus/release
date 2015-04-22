@@ -1,4 +1,4 @@
-package:
+B1;3409;0cpackage:
   name: cyclus
   version: 0.0
 
@@ -15,7 +15,7 @@ requirements:
     - libxmlpp 
     - coincbc
     - boost
-    - hdf5
+    - hdf5 1.8.13
     - mylibxml2 # [osx]
     - libxml2  #  [linux]
     - myglib   # [osx]  
@@ -30,7 +30,7 @@ requirements:
     - libxmlpp
     - coincbc
     - boost
-    - hdf5
+    - hdf5 1.8.13
     - mylibxml2 # [osx]
     - libxml2  #  [linux]
     - myglib   # [osx]  

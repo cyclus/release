@@ -7,7 +7,7 @@ export PATH=$PREFIX/bin:$PATH
 export MACOSX_DEPLOYMENT_TARGET=
 
 # hack fix for hdf5 issues
-if [[ "${UNAME}" == 'Linux' ]]; then
+if [[  `uname` == 'Linux' ]]; then
   ln -s $PREFIX/lib/libhdf5.so.9 $PREFIX/lib/libhdf5.so.8
   ln -s $PREFIX/lib/libhdf5_hl.so.9 $PREFIX/lib/libhdf5_hl.so.8
 else

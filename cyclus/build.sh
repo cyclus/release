@@ -22,7 +22,7 @@ export MACOSX_DEPLOYMENT_TARGET=
 
 if [[  `uname` == 'Linux' ]]; then
     cmake ..  -DCMAKE_INSTALL_PREFIX=$PREFIX -DHDF5_ROOT=$PREFIX -DBOOST_ROOT=$PREFIX  -DBOOST_LIBRARYDIR=$PREFIX/lib -DBoost_NO_SYSTEM_PATHS=ON -DCMAKE_BUILD_TYPE=Release -DLAPACK_LIBRARIES=$PREFIX/lib/liblapack.so -DBLAS_LIBRARIES=$PREFIX/lib/libblas.so
-    make VERBOSE=1 -j `nproc`
+    make VERBOSE=1
 else
 echo $CFLAGS
 echo $LDFLAGS

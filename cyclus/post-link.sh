@@ -1,5 +1,8 @@
 #/bin/bash
 
+echo "Post-link.sh"
+echo "Prefix: $PREFIX"
+
 # hack fix for hdf5 issues
 if [[  `uname` == 'Linux' ]]; then
   ln -s $PREFIX/lib/libhdf5.so.9 $PREFIX/lib/libhdf5.so.8

@@ -15,7 +15,7 @@ requirements:
     - libxmlpp 
     - coincbc
     - boost
-    - hdf5 1.8.13
+    - hdf5
     - mylibxml2 # [osx]
     - libxml2  #  [linux]
     - myglib   # [osx]  
@@ -30,7 +30,7 @@ requirements:
     - libxmlpp
     - coincbc
     - boost
-    - hdf5 1.8.13
+    - hdf5
     - mylibxml2 # [osx]
     - libxml2  #  [linux]
     - myglib   # [osx]  

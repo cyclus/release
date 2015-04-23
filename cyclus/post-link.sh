@@ -1,4 +1,5 @@
-#/bin/bash
+
+echo "post-link.sh, PREFIX: $PREFIX"
 
 mv $PREFIX/bin/cyclus $PREFIX/bin/cyclus_base
 echo "

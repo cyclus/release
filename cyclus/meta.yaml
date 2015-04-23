@@ -4,8 +4,9 @@ package:
 
 # Only use fn and url for polyphemus compatability
 source:
-  fn: cyclus-src.tar.gz 
-  url: https://github.com/cyclus/cyclus/archive/develop.tar.gz 
+  fn: cyclus-src.tar.gz # ["TRAVIS" not in environ] 
+  url: https://github.com/cyclus/cyclus/archive/develop.tar.gz # ["TRAVIS" not in environ]
+  path: ..  # ["TRAVIS" in environ]
 
 requirements:
    build:
@@ -36,6 +37,11 @@ requirements:
     - libffi # [osx]
     - gettext # [osx]
     - pkg-config-lite # [osx]
+
+test:
+  requires:
+    - nose
+    - pytables
 
 build:
   string: nightly

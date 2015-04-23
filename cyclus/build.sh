@@ -8,14 +8,18 @@ export PATH=$PREFIX/bin:$PATH
 
 export MACOSX_DEPLOYMENT_TARGET=
 
-# # hack fix for hdf5 issues
-# if [[  `uname` == 'Linux' ]]; then
-#   ln -s $PREFIX/lib/libhdf5.so.9 $PREFIX/lib/libhdf5.so.8
-#   ln -s $PREFIX/lib/libhdf5_hl.so.9 $PREFIX/lib/libhdf5_hl.so.8
-# else
-#   ln -s $PREFIX/lib/libhdf5.9.dylib $PREFIX/lib/libhdf5.8.dylib
-#   ln -s $PREFIX/lib/libhdf5_hl.9.dylib $PREFIX/lib/libhdf5_hl.8.dylib
-# fi
+# 
+# Previous iterations have ahd trouble with hdf build vs. link
+# versions. Something like the following has helped in the past.
+#
+#### hack fix for hdf5 issues
+### if [[  `uname` == 'Linux' ]]; then
+###   ln -s $PREFIX/lib/libhdf5.so.9 $PREFIX/lib/libhdf5.so.8
+###   ln -s $PREFIX/lib/libhdf5_hl.so.9 $PREFIX/lib/libhdf5_hl.so.8
+### else
+###   ln -s $PREFIX/lib/libhdf5.9.dylib $PREFIX/lib/libhdf5.8.dylib
+###   ln -s $PREFIX/lib/libhdf5_hl.9.dylib $PREFIX/lib/libhdf5_hl.8.dylib
+### fi
 
 if [[  `uname` == 'Linux' ]]; then
     cmake .. \

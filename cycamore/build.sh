@@ -1,6 +1,7 @@
 #!/bin/bash
 
-mkdir build; cd build;
+mkdir build; 
+cd build;
 export LD_LIBRARY_PATH=$PREFIX/lib/
 export CMAKE_LIBRARY_PATH=$PREFIX/lib/
 export PATH=$PREFIX/bin:$PATH

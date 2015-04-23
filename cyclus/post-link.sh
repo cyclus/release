@@ -1,7 +1,5 @@
-#/bin/bash
 
-echo "Post-link.sh"
-echo "Prefix: $PREFIX"
+echo "post-link.sh, PREFIX: $PREFIX"
 
 # # hack fix for hdf5 issues
 # if [[  `uname` == 'Linux' ]]; then

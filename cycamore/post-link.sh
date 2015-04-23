@@ -1,3 +1,6 @@
+
+echo "post-link.sh, PREFIX: $PREFIX"
+
 mv $PREFIX/bin/cycamore_unit_tests $PREFIX/bin/cycamore_unit_tests_base
 echo "
 #!/bin/bash

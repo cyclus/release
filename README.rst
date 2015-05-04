@@ -8,7 +8,7 @@ release process.
 Utilities
 ----------
 A number of utilities helpful to the release process can be found in the
-`utilties` folder. Their use is described in `Release Procedure
+`utils` folder. Their use is described in `Release Procedure
 <http://fuelcycle.org/cep/cep3.html>`_.
 
 

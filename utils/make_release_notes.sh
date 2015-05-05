@@ -30,12 +30,20 @@ EOF
 
 }
 
-
 die() {
     echo -n >&2 "ERROR: "
     echo >&2 "$@"
     usage
     exit 1
+}
+
+# special behavior for macosx
+sed_i() {
+    if [[ "`uname`" == "Linux" ]]; then
+	sed -i  "$1" "$2";
+    else
+    	sed -i '' "$1" "$2";
+    fi
 }
 
 HERE=$PWD
@@ -83,12 +91,12 @@ echo "$CONTRIBTXT" > .contribs
 # replace
 FILE=release_notes.rst
 cp -i release_notes.rst.in $FILE
-sed -i "s/@PREV_VERSION@/$PREV/g" $FILE 
-sed -i "s/@VERSION@/$VERSION/g" $FILE 
-sed -i "s/@CYCLUS_SUMMARY@/$CYCLUSTXT/g" $FILE 
-sed -i "s/@CYCAMORE_SUMMARY@/$CYCAMORETXT/g" $FILE 
-sed -i '/@CONTRIBUTORS@/r .contribs' $FILE 
-sed -i '/@CONTRIBUTORS@/d' $FILE 
+sed_i "s/@PREV_VERSION@/$PREV/g" $FILE 
+sed_i "s/@VERSION@/$VERSION/g" $FILE 
+sed_i "s/@CYCLUS_SUMMARY@/$CYCLUSTXT/g" $FILE 
+sed_i "s/@CYCAMORE_SUMMARY@/$CYCAMORETXT/g" $FILE 
+sed_i '/@CONTRIBUTORS@/r .contribs' $FILE 
+sed_i '/@CONTRIBUTORS@/d' $FILE 
 rm .contribs
 
 echo "

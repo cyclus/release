@@ -60,7 +60,7 @@ cd _build
 export CONDA="$PWD/miniconda"
 export PATH="$CONDA/bin:$PATH"
 export PYTHONPATH="$CONDA"
-wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh;
+wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh
 bash miniconda.sh -b -p $CONDA
 hash -r
 conda config --set always_yes yes --set changeps1 no

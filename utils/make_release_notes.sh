@@ -12,9 +12,9 @@ HERE=$PWD
 # check input
 CORE=${CORE_DIR?"Environment variable CORE_DIR must be set to the cyclus repository directory."}
 CYCA=${CYCAMORE_DIR?"Environment variable CYCAMORE_DIR must be set to the cycamore repository directory."}
-[ "$#" -eq 2 ] || die "Input requires from version and to version, e.g., 
-$ ./make_release_notes.sh 0.2.0 0.3.0
-" 
+[ "$#" -eq 2 ] || die "Must provide the from version and to version (e.g., W.W.W -> X.X.X) as an argument, usage:
+
+$ ./conda_upload.sh W.W.W X.X.X"
 PREV=$1
 VERSION=$2
 echo "Making release notes template for Cyclus stack verison $VERSION from $PREV. 

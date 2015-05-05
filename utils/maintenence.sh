@@ -11,9 +11,9 @@ die() {
 CORE=${CORE_DIR?"Environment variable CORE_DIR must be set to the cyclus repository directory."}
 CYCA=${CYCAMORE_DIR?"Environment variable CYCAMORE_DIR must be set to the cycamore repository directory."}
 STUB=${STUB_DIR?"Environment variable STUB_DIR must be set to the cycstub repository directory."}
-[ "$#" -eq 1 ] || die "Input requires version, e.g., 
-$ ./maintence.sh 0.3.0
-" 
+[ "$#" -eq 1 ] || die "Must provide the version (e.g., X.X.X) as an argument, usage:
+
+$ ./conda_upload.sh X.X.X" 
 VERSION=$1
 echo "Performing maintence updates for Cyclus stack verison $VERSION"
 

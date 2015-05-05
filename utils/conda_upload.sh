@@ -1,6 +1,5 @@
 #!/bin/bash
 
-set -x
 set -e
 
 die() {
@@ -11,7 +10,9 @@ die() {
 # check input
 CORE=${CORE_DIR?"Environment variable CORE_DIR must be set to the cyclus repository directory."}
 CYCAMORE=${CYCAMORE_DIR?"Environment variable CYCAMORE_DIR must be set to the cycamore repository directory."}
-[ "$#" -eq 1 ] || die "Must provide the version (e.g., X.X.X) as an argument" 
+[ "$#" -eq 1 ] || die "Must provide the version (e.g., X.X.X) as an argument, usage:
+
+$ ./conda_upload.sh X.X.X" 
 VERSION=$1
 echo "Conda updating for Cyclus stack verison $VERSION"
 

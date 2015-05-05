@@ -7,18 +7,52 @@
 
 set -e
 
+usage() {
+
+cat <<EOF
+
+Script to upload compiled binaries of Cyclus and Cycamore to binstar as part of the release process.
+
+usage: $0 <version>
+
+        version : the version string (e.g., X.Y.Z) to with which this package will be labeled.
+
+The following environment variables must be set for this script to function:
+
+     CYCLUS_DIR : Environment variable CYCLUS_DIR must be set to the cyclus repository directory.
+   CYCAMORE_DIR : Environment variable CYCAMORE_DIR must be set to the cycamore repository directory.
+
+EOF
+
+}
+
 die() {
+    echo -n >&2 "ERROR: "
     echo >&2 "$@"
+    usage
     exit 1
 }
 
-# check input
-CORE=${CORE_DIR?"Environment variable CORE_DIR must be set to the cyclus repository directory."}
-CYCAMORE=${CYCAMORE_DIR?"Environment variable CYCAMORE_DIR must be set to the cycamore repository directory."}
-[ "$#" -eq 1 ] || die "Must provide the version (e.g., X.X.X) as an argument, usage:
+upload_pkg() {
 
-$ ./conda_upload.sh X.X.X" 
+    pkg_name=$1
+
+    cp conda-recipe/meta.yaml conda-recipe/.orig.meta.yaml
+    sed -i  "s/version: 0.0/version: $VERSION/g" conda-recipe/meta.yaml
+    sed -i  "s/string: nightly/string: 0/g" conda-recipe/meta.yaml
+    conda build --no-test conda-recipe
+    binstar upload --force -u cyclus $CONDA/conda-bld/linux-64/$pkg_name-$VERSION-0.tar.bz2
+    mv conda-recipe/.orig.meta.yaml conda-recipe/meta.yaml
+
+}
+
+
+# check input
+CYCLUS=${CYCLUS_DIR?"Environment variable CYCLUS_DIR must be set to the cyclus repository directory."}
+CYCAMORE=${CYCAMORE_DIR?"Environment variable CYCAMORE_DIR must be set to the cycamore repository directory."}
+[ "$#" -eq 1 ] || die "Must provide the version (e.g., X.X.X) as an argument"
 VERSION=$1
+
 echo "Conda updating for Cyclus stack verison $VERSION"
 
 mkdir _build
@@ -38,18 +72,8 @@ conda install conda-build jinja2 setuptools binstar patchelf nose
 conda info -a
 cd ..
 
-cd $CORE
-cp conda-recipe/meta.yaml conda-recipe/.orig.meta.yaml
-sed -i  "s/version: 0.0/version: $VERSION/g" conda-recipe/meta.yaml
-sed -i  "s/string: nightly/string: 0/g" conda-recipe/meta.yaml
-conda build --no-test conda-recipe
-binstar upload --force -u cyclus $CONDA/conda-bld/linux-64/cyclus-$VERSION-0.tar.bz2
-mv conda-recipe/.orig.meta.yaml conda-recipe/meta.yaml
+cd $CYCLUS
+upload_pkg("cyclus")
 
 cd $CYCAMORE
-cp conda-recipe/meta.yaml conda-recipe/.orig.meta.yaml
-sed -i  "s/version: 0.0/version: $VERSION/g" conda-recipe/meta.yaml
-sed -i  "s/string: nightly/string: 0/g" conda-recipe/meta.yaml
-conda build --no-test conda-recipe
-binstar upload --force -u cyclus $CONDA/conda-bld/linux-64/cycamore-$VERSION-0.tar.bz2
-mv conda-recipe/.orig.meta.yaml conda-recipe/meta.yaml
+upload_pkg("cycamore")

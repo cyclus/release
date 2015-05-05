@@ -15,21 +15,28 @@ A number of utilities helpful to the release process can be found in the
 ----------------------------------------------------------------
 Building Cyclus With Conda
 ----------------------------------------------------------------
-The process of building Conda packages involves a system called `Conda Recipes <http://conda.pydata.org/docs/build.html>`_ .
-A Conda Recipe is a directory containing at least two files, meta.yaml and build.sh.
-Version information, build and run dependencies, the location of the source code, and other 
-information about the package are stored in meta.yaml, while build.sh contains a script to
-build from source. Packages are built from recipes using the ``conda build`` command. 
-Necessary dependency packages will be automatically downloaded and installed before the 
-build.sh script is run and installed.  The final output is a tar.bz2 file which is a conda package containing
-the necessary binaries, libraries, etc.  This package can then be installed or can be uploaded to `Binstar <binstar.org>`_, 
-which is a service provided to store and distribute conda packages. Notice that Conda requires all dependencies explicitly 
-listed in meta.yaml must have an available Conda package to install. 
+
+The process of building Conda packages involves a system called 
+`Conda Recipes <http://conda.pydata.org/docs/build.html>`_ .  A Conda Recipe 
+is a directory containing at least two files, meta.yaml and build.sh.  Version
+information, build and run dependencies, the location of the source code, and
+other information about the package are stored in meta.yaml, while build.sh
+contains a script to build from source. Packages are built from recipes using
+the ``conda build`` command.  Necessary dependency packages will be
+automatically downloaded and installed before the build.sh script is run and
+installed.  The final output is a tar.bz2 file which is a conda package
+containing the necessary binaries, libraries, etc.  This package can then be
+installed or can be uploaded to `Binstar <binstar.org>`_, which is a service
+provided to store and distribute conda packages. Notice that Conda requires
+all dependencies explicitly listed in meta.yaml must have an available Conda
+package to install.
 
 
-As part of installing and maintaining Cyclus with conda, recipes for a number of dependencies have also been created.  All 
-lowercase directories in this repo (except fetch) are conda recipes.  Additionally, this repo contains a stock ``.condarc`` file
-which automatically points to the `Cyclus Binstar Account <binstar.org/cyclus>`_. 
+As part of installing and maintaining Cyclus with conda, recipes for a number
+of dependencies have also been created.  All lowercase directories in this
+repo (except fetch) are conda recipes.  Additionally, this repo contains a
+stock ``.condarc`` file which automatically points to the 
+`Cyclus Binstar Account <binstar.org/cyclus>`_.
 
 ----------------------------------------------------------------
 Building Cyclist with Conda
@@ -42,15 +49,15 @@ build the conda recipe::
     ~ $ cd ciclus
     ~/ciclus $ conda build --no-binstar-upload cyclist
 
-If you would also like to build the dependencies, please build their recipes as 
-well::
+If you would also like to build the dependencies, please build their recipes
+as well::
 
     ~/ciclus $ conda build --no-binstar-upload java-jre
     ~/ciclus $ conda build --no-binstar-upload java-jdk
     ~/ciclus $ conda build --no-binstar-upload ant
 
-If you would like to install any of these locally, pass in the ``--use-local`` flag.
-For example::
+If you would like to install any of these locally, pass in the ``--use-local``
+flag.  For example::
 
     ~/ciclus $ conda install --use-local cyclist
 

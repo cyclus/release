@@ -5,6 +5,7 @@ set -e
 usage() {
 
    usage_text = <<EOF
+
 Script to perform maintenance tasks related to the release of Cyclus and Cycamore.
 
 usage: $0 <version>
@@ -22,8 +23,9 @@ EOF
 }
 
 die() {
+    echo -n >&2 "ERROR: "
     echo >&2 "$@"
-    usage()
+    usage
     exit 1
 }
 

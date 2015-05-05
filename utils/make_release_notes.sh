@@ -4,7 +4,8 @@ set -e
 
 usage() {
 
-   usage_text = <<EOF
+   cat <<EOF
+
 Script to generate release notes for the current release version relative to a previous version.
 
 usage: $0 <previous>  <version>
@@ -26,8 +27,9 @@ EOF
 
 
 die() {
+    echo -n >&2 "ERROR: "
     echo >&2 "$@"
-    usage()
+    usage
     exit 1
 }
 
@@ -37,6 +39,7 @@ HERE=$PWD
 CYCLUS=${CYCLUS_DIR?"Environment variable CYCLUS_DIR must be set to the cyclus repository directory."}
 CYCAMORE=${CYCAMORE_DIR?"Environment variable CYCAMORE_DIR must be set to the cycamore repository directory."}
 [ "$#" -eq 2 ] || die "Must provide the from version and to version (e.g., W.W.W -> X.X.X) as an argument"
+
 PREV=$1
 VERSION=$2
 echo "Making release notes template for Cyclus stack verison $VERSION from $PREV. 
@@ -61,11 +64,11 @@ CYCAMORECONTRIB=`git log --format="%aN" $PREV...$VERSION | sort -u`
 cd $HERE
 
 # contributors, beware, thar be hackery ahead
-echo "Raw core contributors:"
+echo "Raw Cyclus core contributors:"
 echo "$CYCLUSCONTRIB"
 echo ""
 echo "$CYCLUSCONTRIB" > .contribs
-echo "Raw cyca contributors:"
+echo "Raw Cycamore contributors:"
 echo "$CYCAMORECONTRIB"
 echo ""
 echo "$CYCAMORECONTRIB" >> .contribs

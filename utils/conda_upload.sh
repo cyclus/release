@@ -4,7 +4,8 @@ set -e
 
 usage() {
 
-   usage_text = <<EOF
+cat <<EOF
+
 Script to upload compiled binaries of Cyclus and Cycamore to binstar as part of the release process.
 
 usage: $0 <version>
@@ -21,8 +22,9 @@ EOF
 }
 
 die() {
+    echo -n >&2 "ERROR: "
     echo >&2 "$@"
-    usage()
+    usage
     exit 1
 }
 

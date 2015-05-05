@@ -4,7 +4,7 @@ set -e
 
 usage() {
 
-   usage_text = <<EOF
+cat <<EOF
 
 Script to perform maintenance tasks related to the release of Cyclus and Cycamore.
 

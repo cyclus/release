@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# file: maintenence.sh
+# author: Matthew Gidden
+# description: performs all cyclus project maintenence tasks for a release 
+
 set -e
 
 die() {

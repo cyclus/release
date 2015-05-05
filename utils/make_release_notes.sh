@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# file: make_release_notes.sh
+# author: Matthew Gidden
+# description: makes a release notes template for a release of the cyclus
+# project
+
 set -e
 
 die() {

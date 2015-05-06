@@ -21,6 +21,7 @@ The following environment variables must be set for this script to function:
 
      CYCLUS_DIR : Environment variable CYCLUS_DIR must be set to the cyclus repository directory.
    CYCAMORE_DIR : Environment variable CYCAMORE_DIR must be set to the cycamore repository directory.
+   CYMETRIC_DIR : Environment variable CYMETRIC_DIR must be set to the cymetric repository directory.
 
 EOF
 
@@ -50,6 +51,7 @@ upload_pkg() {
 # check input
 CYCLUS=${CYCLUS_DIR?"Environment variable CYCLUS_DIR must be set to the cyclus repository directory."}
 CYCAMORE=${CYCAMORE_DIR?"Environment variable CYCAMORE_DIR must be set to the cycamore repository directory."}
+CYMETRIC=${CYMETRIC_DIR?"Environment variable CYMETRIC_DIR must be set to the cymetric repository directory."}
 [ "$#" -eq 1 ] || die "Must provide the version (e.g., X.X.X) as an argument"
 VERSION=$1
 
@@ -77,3 +79,7 @@ upload_pkg("cyclus")
 
 cd $CYCAMORE
 upload_pkg("cycamore")
+
+cd $CYMETRIC
+upload_pkg("cymetric")
+

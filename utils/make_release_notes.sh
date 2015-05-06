@@ -19,12 +19,13 @@ usage: $0 <previous>  <version>
                   basis for determining what is new in the current release
         version : the version string (e.g., V.V.V) to with which this package will be labeled.
 
-NOTE: both version strings must already be existing tags in both the Cyclus and Cycamore repositories.
+NOTE: both version strings must already be existing tags in both the Cyclus, Cycamore, and Cymetric repositories.
 
 The following environment variables must be set for this script to function:
 
      CYCLUS_DIR : Environment variable CYCLUS_DIR must be set to the cyclus repository directory.
    CYCAMORE_DIR : Environment variable CYCAMORE_DIR must be set to the cycamore repository directory.
+   CYMETRIC_DIR : Environment variable CYMETRIC_DIR must be set to the cymetric repository directory.
 
 EOF
 
@@ -51,6 +52,7 @@ HERE=$PWD
 # check input
 CYCLUS=${CYCLUS_DIR?"Environment variable CYCLUS_DIR must be set to the cyclus repository directory."}
 CYCAMORE=${CYCAMORE_DIR?"Environment variable CYCAMORE_DIR must be set to the cycamore repository directory."}
+CYMETRIC=${CYMETRIC_DIR?"Environment variable CYMETRIC_DIR must be set to the cymetric repository directory."}
 [ "$#" -eq 2 ] || die "Must provide the from version and to version (e.g., W.W.W -> X.X.X) as an argument"
 
 PREV=$1
@@ -76,6 +78,14 @@ CYCAMORETXT="$NCOMMITS commits resulting in $SUMMARY"
 CYCAMORECONTRIB=`git log --format="%aN" $PREV...$VERSION | sort -u`
 cd $HERE
 
+# cymetric summary
+cd $CYMETRIC
+NCOMMITS=`git rev-list $PREV...$VERSION --count | tail -n1`
+SUMMARY=`git diff --stat $PREV...$VERSION | tail -n1`
+CYMETRICTXT="$NCOMMITS commits resulting in $SUMMARY"
+CYMETRICCONTRIB=`git log --format='%aN' $PREV...$VERSION | sort -u`
+cd $HERE
+
 # contributors, beware, thar be hackery ahead
 echo "Raw Cyclus core contributors:"
 echo "$CYCLUSCONTRIB"
@@ -85,6 +95,10 @@ echo "Raw Cycamore contributors:"
 echo "$CYCAMORECONTRIB"
 echo ""
 echo "$CYCAMORECONTRIB" >> .contribs
+echo "Raw Cymetric core contributors:"
+echo "$CYMETRICCONTRIB"
+echo ""
+echo "$CYMETRICCONTRIB" > .contribs
 CONTRIBTXT=`cat .contribs | sort -u | awk '{print "* " $0}'`
 echo "$CONTRIBTXT" > .contribs
 
@@ -95,6 +109,7 @@ sed_i "s/@PREV_VERSION@/$PREV/g" $FILE
 sed_i "s/@VERSION@/$VERSION/g" $FILE 
 sed_i "s/@CYCLUS_SUMMARY@/$CYCLUSTXT/g" $FILE 
 sed_i "s/@CYCAMORE_SUMMARY@/$CYCAMORETXT/g" $FILE 
+sed_i "s/@CYMETRIC_SUMMARY@/$CYMETRICTXT/g" $FILE 
 sed_i '/@CONTRIBUTORS@/r .contribs' $FILE 
 sed_i '/@CONTRIBUTORS@/d' $FILE 
 rm .contribs

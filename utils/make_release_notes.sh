@@ -2,7 +2,7 @@
 
 # file: make_release_notes.sh
 # author: Matthew Gidden
-# description: makes a release notes template for a release of the cyclus
+# description: makes a release notes template for a release of the cyclus stack
 # project
 
 set -e
@@ -19,7 +19,7 @@ usage: $0 <previous>  <version>
                   basis for determining what is new in the current release
         version : the version string (e.g., V.V.V) to with which this package will be labeled.
 
-NOTE: both version strings must already be existing tags in both the Cyclus, Cycamore, and Cymetric repositories.
+NOTE: all version strings must already be existing tags in both the Cyclus, Cycamore, and Cymetric repositories.
 
 The following environment variables must be set for this script to function:
 
@@ -57,7 +57,7 @@ CYMETRIC=${CYMETRIC_DIR?"Environment variable CYMETRIC_DIR must be set to the cy
 
 PREV=$1
 VERSION=$2
-echo "Making release notes template for Cyclus stack verison $VERSION from $PREV. 
+echo "Making release notes template for Cyclus stack version $VERSION from $PREV. 
 
 Note, these version names must refer to *existing tags* in all repositories.
 "

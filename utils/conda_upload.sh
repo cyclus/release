@@ -2,7 +2,7 @@
 
 # file: conda_upload.sh
 # author: Matthew Gidden
-# description: builds and uploads cyclus projects (cyclus, cycamore) to binstar
+# description: builds and uploads cyclus projects (cyclus, cycamore, and cymetric) to binstar
 # for a release
 
 set -e
@@ -11,7 +11,7 @@ usage() {
 
 cat <<EOF
 
-Script to upload compiled binaries of Cyclus and Cycamore to binstar as part of the release process.
+Script to upload compiled binaries of Cyclus, Cycamore, and Cymetric to binstar as part of the release process.
 
 usage: $0 <version>
 

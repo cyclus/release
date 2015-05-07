@@ -81,10 +81,10 @@ cd $HERE
 # cymetric summary
 cd $CYMETRIC
 [[ `git tag` =~ $PREV ]] && CYMETRIC_PREV=$PREV || CYMETRIC_PREV=`git log --pretty=format:%H|tail -1`
-NCOMMITS=`git rev-list CYMETRIC_PREV...$VERSION --count | tail -n1`
-SUMMARY=`git diff --stat CYMETRIC_PREV...$VERSION | tail -n1`
+NCOMMITS=`git rev-list $CYMETRIC_PREV...$VERSION --count | tail -n1`
+SUMMARY=`git diff --stat $CYMETRIC_PREV...$VERSION | tail -n1`
 CYMETRICTXT="$NCOMMITS commits resulting in $SUMMARY"
-CYMETRICCONTRIB=`git log --format='%aN' CYMETRIC_PREV...$VERSION | sort -u`
+CYMETRICCONTRIB=`git log --format='%aN' $CYMETRIC_PREV...$VERSION | sort -u`
 cd $HERE
 
 # contributors, beware, thar be hackery ahead

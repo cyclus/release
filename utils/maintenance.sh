@@ -33,10 +33,12 @@ EOF
 }
 
 die() {
+
     echo -n >&2 "ERROR: "
     echo >&2 "$@"
     usage
     exit 1
+
 }
 
 

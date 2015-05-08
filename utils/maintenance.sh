@@ -159,6 +159,7 @@ fi
 
 UPDATE_ALL=$((UPDATE_DATA+UPDATE_PYNE+UPDATE_SMBCHK+UPDATE_STUB))
 
+if [[ "$UPDATE_ALL"    -eq 0 ]]; then die "No tasks were requested."; fi
 if [[ "$UPDATE_PYNE"   -eq 1 ]]; then update_pyne;   fi
 if [[ "$UPDATE_DATA"   -eq 1 ]]; then update_data;   fi
 if [[ "$UPDATE_SMBCHK" -eq 1 ]]; then update_smbchk; fi

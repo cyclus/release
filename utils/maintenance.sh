@@ -159,8 +159,8 @@ fi
 
 UPDATE_ALL=$((UPDATE_DATA+UPDATE_PYNE+UPDATE_SMBCHK+UPDATE_STUB))
 
-if [[ "$UPDATE_PYNE"   -eq 1 ]]; then echo "update_pyne";   fi
-if [[ "$UPDATE_DATA"   -eq 1 ]]; then echo "update_data";   fi
-if [[ "$UPDATE_SMBCHK" -eq 1 ]]; then echo "update_smbchk"; fi
-if [[ "$UPDATE_STUB"   -eq 1 ]]; then echo "update_stub";   fi
-if [[ "$UPDATE_ALL"    -eq 4 ]]; then echo "update_all";    fi
+if [[ "$UPDATE_PYNE"   -eq 1 ]]; then update_pyne;   fi
+if [[ "$UPDATE_DATA"   -eq 1 ]]; then update_data;   fi
+if [[ "$UPDATE_SMBCHK" -eq 1 ]]; then update_smbchk; fi
+if [[ "$UPDATE_STUB"   -eq 1 ]]; then update_stub;   fi
+if [[ "$UPDATE_ALL"    -eq 4 ]]; then update_all;    fi

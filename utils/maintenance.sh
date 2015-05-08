@@ -115,7 +115,6 @@ master.
 
 # check input
 CYCLUS=${CYCLUS_DIR?"Environment variable CYCLUS_DIR must be set to the cyclus repository directory."}
-CYCAMORE=${CYCAMORE_DIR?"Environment variable CYCAMORE_DIR must be set to the cycamore repository directory."}
 CYCSTUB=${CYCSTUB_DIR?"Environment variable CYCSTUB_DIR must be set to the cycstub repository directory."}
 
 VERSION=-1

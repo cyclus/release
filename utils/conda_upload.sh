@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # file: conda_upload.sh
-# author: Matthew Gidden
 # description: builds and uploads cyclus projects (cyclus, cycamore) to binstar
 # for a release
 

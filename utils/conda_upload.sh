@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # file: conda_upload.sh
-# description: builds and uploads cyclus projects (cyclus, cycamore) to binstar
+# description: builds and uploads cyclus projects (cyclus, cycamore, and cymetric) to binstar
 # for a release
 
 set -e
@@ -10,7 +10,7 @@ usage() {
 
 cat <<EOF
 
-Script to upload compiled binaries of Cyclus and Cycamore to binstar as part of the release process.
+Script to upload compiled binaries of Cyclus, Cycamore, and Cymetric to binstar as part of the release process.
 
 usage: $0 <version>
 
@@ -20,6 +20,7 @@ The following environment variables must be set for this script to function:
 
      CYCLUS_DIR : Environment variable CYCLUS_DIR must be set to the cyclus repository directory.
    CYCAMORE_DIR : Environment variable CYCAMORE_DIR must be set to the cycamore repository directory.
+   CYMETRIC_DIR : Environment variable CYMETRIC_DIR must be set to the cymetric repository directory.
 
 EOF
 
@@ -49,6 +50,7 @@ upload_pkg() {
 # check input
 CYCLUS=${CYCLUS_DIR?"Environment variable CYCLUS_DIR must be set to the cyclus repository directory."}
 CYCAMORE=${CYCAMORE_DIR?"Environment variable CYCAMORE_DIR must be set to the cycamore repository directory."}
+CYMETRIC=${CYMETRIC_DIR?"Environment variable CYMETRIC_DIR must be set to the cymetric repository directory."}
 [ "$#" -eq 1 ] || die "Must provide the version (e.g., X.X.X) as an argument"
 VERSION=$1
 
@@ -76,3 +78,7 @@ upload_pkg("cyclus")
 
 cd $CYCAMORE
 upload_pkg("cycamore")
+
+cd $CYMETRIC
+upload_pkg("cymetric")
+

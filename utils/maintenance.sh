@@ -17,7 +17,7 @@ usage: $0 -v|--version <version_string> [-a|--abi_chk] [-d|--nuc_data] [-p|--pyn
     -a|--abi_chk  : perform test for ABI consistency
     -d|--nuc_data : upload new nuc_data.h5
     -p|--pyne     : update amalgamated PyNE
-    -r|--release  : perform ALL tasks for release
+    -r|--release  : perform ALL tasks for release (same as -a -d -p -s)
     -s|--stub     : update cycstub
 
 The following environment variables must be set for this script to function:

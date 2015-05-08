@@ -26,6 +26,8 @@ The following environment variables must be set for this script to function:
      CYCLUS_DIR : Environment variable CYCLUS_DIR must be set to the cyclus repository directory.
     CYCSTUB_DIR : Environment variable CYCSTUB_DIR must be set to the cycstub repository directory.
 
+The -d|--nuc_data option requires the rs.cred files found in the Accounts Metadata file on Google Drive.
+
 EOF
 
 }
@@ -45,10 +47,10 @@ update_pyne() {
 
     wget https://github.com/pyne/pyne/archive/develop.zip
     unzip -d pyne develop.zip
-    cd pyne
+    cd pyne/pyne-develop
     ./amalgamate.py -s pyne.cc -i pyne.h
     cp pyne.* $CYCLUS/src
-    cd ..
+    cd ../..
     rm -rf pyne develop.zip
 
     cd $HERE
@@ -61,7 +63,6 @@ update_nuc_data() {
     HERE=`pwd`
 
     # nuc_data upload
-    cd $CYCLUS/release
     nuc_data_make -o cyclus_nuc_data.h5 \
         -m atomic_mass,scattering_lengths,decay,simple_xs,materials,eaf,wimsd_fpy,nds_fpy
     python upload_nuc_data.py
@@ -161,7 +162,7 @@ UPDATE_ALL=$((UPDATE_DATA+UPDATE_PYNE+UPDATE_SMBCHK+UPDATE_STUB))
 
 if [[ "$UPDATE_ALL"    -eq 0 ]]; then die "No tasks were requested."; fi
 if [[ "$UPDATE_PYNE"   -eq 1 ]]; then update_pyne;   fi
-if [[ "$UPDATE_DATA"   -eq 1 ]]; then update_data;   fi
+if [[ "$UPDATE_DATA"   -eq 1 ]]; then update_nuc_data;   fi
 if [[ "$UPDATE_SMBCHK" -eq 1 ]]; then update_smbchk; fi
 if [[ "$UPDATE_STUB"   -eq 1 ]]; then update_stub;   fi
 if [[ "$UPDATE_ALL"    -eq 4 ]]; then update_all;    fi

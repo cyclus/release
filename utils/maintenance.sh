@@ -11,9 +11,10 @@ cat <<EOF
 
 Script to perform maintenance tasks related to the release of Cyclus and Cycamore.
 
-usage: $0 -v|--version <version_string> [-r|--release] [-a|--abi_chk] [-d|--nuc_data] [-p|--pyne] [-s|--stub]
+usage: $0 -v|--version <version_string> [-a|--abi_chk] [-d|--nuc_data] [-p|--pyne] [-s|--stub]
+       $0 -v|--version <version_string> -r|--release
 
-    -v|--version  : provide a version string for these tasks (REQUIRED)
+    -v|--version  : provide a version string for these tasks in the form X.Y.Z (REQUIRED)
     -a|--abi_chk  : perform test for ABI consistency
     -d|--nuc_data : upload new nuc_data.h5
     -p|--pyne     : update amalgamated PyNE

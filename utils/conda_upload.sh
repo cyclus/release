@@ -27,10 +27,21 @@ EOF
 }
 
 die() {
+
     echo -n >&2 "ERROR: "
     echo >&2 "$@"
     usage
     exit 1
+
+}
+
+# special behavior for macosx
+sed_i() {
+    if [[ "`uname`" == "Linux" ]]; then
+	sed -i  "$1" "$2";
+    else
+    	sed -i '' "$1" "$2";
+    fi
 }
 
 upload_pkg() {
@@ -38,8 +49,8 @@ upload_pkg() {
     pkg_name=$1
 
     cp conda-recipe/meta.yaml conda-recipe/.orig.meta.yaml
-    sed -i  "s/version: 0.0/version: $VERSION/g" conda-recipe/meta.yaml
-    sed -i  "s/string: nightly/string: 0/g" conda-recipe/meta.yaml
+    sed_i  "s/version: 0.0/version: $VERSION/g" conda-recipe/meta.yaml
+    sed_i  "s/string: nightly/string: 0/g" conda-recipe/meta.yaml
     conda build --no-test conda-recipe
     binstar upload --force -u cyclus $CONDA/conda-bld/linux-64/$pkg_name-$VERSION-0.tar.bz2
     mv conda-recipe/.orig.meta.yaml conda-recipe/meta.yaml

@@ -104,7 +104,7 @@ echo "$CONTRIBTXT" > .contribs
 
 # replace
 FILE=release_notes.rst
-cp -i release_notes.rst.in $FILE
+cp -v --backup=numbered release_notes.rst.in $FILE
 sed_i "s/@PREV_VERSION@/$PREV/g" $FILE 
 sed_i "s/@VERSION@/$VERSION/g" $FILE 
 sed_i "s/@CYCLUS_SUMMARY@/$CYCLUSTXT/g" $FILE 

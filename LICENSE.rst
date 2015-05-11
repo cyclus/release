@@ -36,7 +36,7 @@ LICENSE
 Other Files
 ===========
 
-`utils/upload_nuc_data.py` was largely taken from PyNE and maintains its
+``utils/upload_nuc_data.py`` was largely taken from PyNE and maintains its
  `license <https://github.com/pyne/pyne/blob/develop/license.txt>`_ and
- copyright: `Copyright 2011-2015, the PyNE Development Team. All rights
- reserved.`.
+ copyright: ``Copyright 2011-2015, the PyNE Development Team. All rights
+ reserved.``.

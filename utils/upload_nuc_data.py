@@ -1,4 +1,4 @@
-"""# This is a simple tool to update the cyclus_nuc_data.h5 taken from pyne's upload.py
+"""This is a simple tool to update the cyclus_nuc_data.h5 taken from pyne's upload.py
 
 Note that this script is run automatically in maintenence.sh! You don't have to
 run it separately if you're using that tool.
@@ -21,7 +21,7 @@ Update procedure:
 
  * then run::
  
- python upload.py
+ python upload_nuc_data.py
  
  * The cyclus prebuilt_nuc_data.h5 should now be on rackspace it may take 12-24
    hours for this to propagate to all the CDN nodes.

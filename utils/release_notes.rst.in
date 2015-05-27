@@ -1,5 +1,7 @@
+.. _@VERSION@:
+
 ==================================
-Cyclus @VERSION@ Release Notes
+Cyclus @VERSION@ Release
 ==================================
 :Author: Cyclus Developers
 :Website: http://fuelcycle.org/
@@ -14,6 +16,22 @@ Major features
 .. warning::
 
    TODO: Fill in major features
+
+
+`Cyclus <https://github.com/cyclus/cyclus>`_
+---------------------------------------------
+
+Foo
+
+`Cycamore <https://github.com/cyclus/cycamore>`_
+--------------------------------------------------
+
+Bar
+
+`Cymetric <https://github.com/cyclus/cymetric>`_
+--------------------------------------------------
+
+Baz
 
 Summary
 =======

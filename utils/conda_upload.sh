@@ -51,8 +51,8 @@ upload_pkg() {
 
     git checkout $version
     cp conda-recipe/meta.yaml conda-recipe/.orig.meta.yaml
-    sed_i  "s/version: 0.0/version: $version/g" conda-recipe/meta.yaml
-    sed_i  "s/string: nightly/string: 0/g" conda-recipe/meta.yaml
+    sed_i  "s/0.0/$version/g" conda-recipe/meta.yaml
+    sed_i  "s/nightly/0/g" conda-recipe/meta.yaml
     conda build --no-test conda-recipe
     binstar upload --force -u cyclus $CONDA/conda-bld/linux-64/$pkg_name-$version-0.tar.bz2
     mv conda-recipe/.orig.meta.yaml conda-recipe/meta.yaml
@@ -67,6 +67,7 @@ CYMETRIC=${CYMETRIC_DIR?"Environment variable CYMETRIC_DIR must be set to the cy
 [ "$#" -eq 1 ] || die "Must provide the version (e.g., X.X.X) as an argument"
 VERSION=$1
 
+HERE=$PWD
 echo "Conda updating for Cyclus stack verison $VERSION"
 
 mkdir _build
@@ -95,4 +96,5 @@ upload_pkg "cycamore" "$VERSION"
 cd $CYMETRIC
 upload_pkg "cymetric" "$VERSION"
 
+cd $HERE
 rm -rf _build

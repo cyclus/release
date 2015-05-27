@@ -81,3 +81,5 @@ api_docs "cyclus" "$VERSION"
 
 cd $CYCAMORE
 api_docs "cycamore" "$VERSION"
+
+cd $HERE

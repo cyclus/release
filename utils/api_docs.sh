@@ -41,7 +41,7 @@ api_docs() {
 
     # make docs
     git checkout $branch
-    ./install.py --build-only --build-dir=_tmp_build
+    ./install.py --build-only --build_dir=_tmp_build
     cd _tmp_build
     make "$pkg"doc
     cd ..

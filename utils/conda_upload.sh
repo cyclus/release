@@ -85,11 +85,12 @@ conda info -a
 cd ..
 
 cd $CYCLUS
-upload_pkg("cyclus")
+upload_pkg "cyclus"
 
 cd $CYCAMORE
-upload_pkg("cycamore")
+upload_pkg "cycamore"
 
 cd $CYMETRIC
-upload_pkg("cymetric")
+upload_pkg "cymetric"
 
+rm -rf _build

@@ -14,7 +14,7 @@ Script to upload api docs of Cyclus and Cycamore as part of the release process.
 
 usage: $0 <version>
 
-        version : the version string (e.g., X.Y.Z) to with which this package will be labeled.
+        version : the version string (e.g., X.X.X)
 
 The following environment variables must be set for this script to function:
 

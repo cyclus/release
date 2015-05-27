@@ -41,17 +41,18 @@ api_docs() {
 
     # make docs
     git checkout $branch
-    ./install.py --build-only
-    cd build
-    make $pkgdoc_forced
+    ./install.py --build-only --build-dir=_tmp_build
+    cd _tmp_build
+    make "$pkg"doc
     cd ..
 
     # set up remote/branch
     git remote add _tmp_upstream git@github.com:cyclus/$pkg
-    git checkout -b _tmp_upstream/gh-pages _tmp_gh_pages
+    git fetch _tmp_upstream
+    git checkout -b _tmp_gh_pages _tmp_upstream/gh-pages
 
     # update website
-    rsync -a build/doc/html/* api/
+    rsync -a _tmp_build/doc/html/* api/
     git add "api/*"
     git commit -m "api doc update"
     ## git push remote local_branch:remote_branch
@@ -61,6 +62,7 @@ api_docs() {
     git checkout $branch
     git branch -D _tmp_gh_pages
     git remote rm _tmp_upstream
+    rm -rf _tmp_build
 
 }
 
@@ -75,7 +77,7 @@ VERSION=$1
 echo "Updating API docs for Cyclus stack verison $VERSION"
 
 cd $CYCLUS
-api_docs("cyclus" $VERSION)
+api_docs "cyclus" "$VERSION"
 
-# cd $CYCAMORE
-# api_docs("cycamore" $VERSION)
+cd $CYCAMORE
+api_docs "cycamore" "$VERSION"

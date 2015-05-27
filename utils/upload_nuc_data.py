@@ -38,7 +38,6 @@ def push_rackspace(fname, cred_file='rs.cred'):
         fdata = f.read()
     cont = cf.get_container("cyclus-data")
     obj = cf.store_object("cyclus-data", fname, fdata)
-    cont.purge_cdn_object(fname)
 
 def setup():
     pyrax.set_setting("identity_type", "rackspace")

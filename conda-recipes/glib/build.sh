@@ -34,7 +34,9 @@ set -e
 #PKG_CONFIG_PATH=
 #./configure -h
 export DYLD_LIBRARY_PATH=$PREFIX/lib
-./configure --prefix=$PREFIX PKG_CONFIG=$PREFIX/bin/pkg-config PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig   LD_LIBRARY_PATH=/$PREFIX/lib/  CPPFLAGS=-I/$PREFIX/include LDFLAGS=-L/$PREFIX/lib
+export LIBFFI_CFLAGS=-I$PREFIX/lib/libffi-3.0.11/include
+export LIBFFI_LIBS="-L$PREFIX/lib -lffi"
+./configure --prefix=$PREFIX PKG_CONFIG=$PREFIX/bin/pkg-config PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig   LD_LIBRARY_PATH=$PREFIX/lib/  CPPFLAGS=-I$PREFIX/include LDFLAGS=-L$PREFIX/lib
 make
 make install
 

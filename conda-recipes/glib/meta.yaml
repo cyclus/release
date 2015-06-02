@@ -7,7 +7,7 @@ source:
   url: http://ftp.acc.umu.se/pub/GNOME/sources/glib/2.37/glib-2.37.4.tar.xz
 
 build:
-  number: 2            [osx]
+  number: 0
 
 # the build and runtime requirements. Dependencies of these requirements
 # # are included automatically.

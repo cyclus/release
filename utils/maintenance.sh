@@ -93,6 +93,7 @@ update_stub() {
 
     cp $CYCLUS/tests/input/stub_example.xml $CYCSTUB/input/example.xml
     cp $CYCLUS/stubs/stub_* $CYCSTUB/src/
+    cp $CYCLUS/cmake/* $CYCSTUB/cmake/
 
     cd $HERE
 

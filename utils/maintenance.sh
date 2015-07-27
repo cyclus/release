@@ -91,6 +91,7 @@ update_stub() {
     echo "Updating cycstub...."
     HERE=`pwd`
 
+    cp `cyclus --cmake-module-path`/FindCyclus.cmake $CYCSTUB/cmake/
     cp $CYCLUS/tests/input/stub_example.xml $CYCSTUB/input/example.xml
     cp $CYCLUS/stubs/stub_* $CYCSTUB/src/
 

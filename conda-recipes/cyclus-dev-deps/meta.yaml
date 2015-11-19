@@ -1,0 +1,30 @@
+package:
+  name: cyclus-dev-deps
+  version: 1.3
+
+requirements:
+   run:
+    - sigcpp
+    - glibmm
+    - libxmlpp
+    - coincbc
+    - boost
+    - hdf5
+    - libxml2
+    - libffi # [osx]
+    - gettext # [osx]
+    - pkg-config-lite # [osx]
+    - cmake
+    - bzip2
+    - libgfortran
+    - glib
+    #- tcmalloc  # there needs to exist a package for this
+    #- myglib   # [osx]  
+    #- mylibxml2 # [osx]
+
+build:
+  number: 0
+
+about:
+  home: Cyclus
+  license: BSD Clause 3

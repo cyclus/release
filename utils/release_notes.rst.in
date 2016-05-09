@@ -1,0 +1,56 @@
+.. _@VERSION@:
+
+==================================
+Cyclus @VERSION@ Release
+==================================
+:Author: Cyclus Developers
+:Website: http://fuelcycle.org/
+:Contact: https://groups.google.com/forum/#!forum/cyclus-dev
+
+The Cyclus core team is excited to announce the latest stable version of the
+cyclus ecosystem!
+
+Major features
+==============
+
+.. warning::
+
+   TODO: Fill in major features
+
+
+`Cyclus <https://github.com/cyclus/cyclus>`_
+---------------------------------------------
+
+Foo
+
+`Cycamore <https://github.com/cyclus/cycamore>`_
+--------------------------------------------------
+
+Bar
+
+`Cymetric <https://github.com/cyclus/cymetric>`_
+--------------------------------------------------
+
+Baz
+
+Summary
+=======
+
+Since v@PREV_VERSION@,
+
+* Cyclus: @CYCLUS_SUMMARY@
+
+* Cycamore: @CYCAMORE_SUMMARY@
+
+* Cymetric: @CYMETRIC_SUMMARY@
+
+Contributors
+============
+The following people contributed to this release of Cyclus.  A "*" by their
+name indicates a first time contributor.  Names follow alphabetically, 
+
+.. warning::
+
+   TODO: Add star next any new contributors and clean up list as needed
+
+@CONTRIBUTORS@

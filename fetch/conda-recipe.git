@@ -1,3 +1,0 @@
-method = git
-git_repo = git://github.com/pydata/conda-recipes
-git_path = conda-recipes

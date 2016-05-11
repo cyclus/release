@@ -1,6 +1,6 @@
 package:
   name: java-jre
-  version: 8.25.17
+  version: 8.45.14
 
 # Cannot use source section because of cookies blocking download
 #source:

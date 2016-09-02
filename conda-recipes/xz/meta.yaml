@@ -7,7 +7,7 @@ source:
   url: http://tukaani.org/xz/xz-5.0.5.tar.gz
 
 build:
-  number: 2            [osx]
+  number: 0
 
 about:
   home: tukaani

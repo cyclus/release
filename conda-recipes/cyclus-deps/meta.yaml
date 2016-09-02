@@ -1,17 +1,14 @@
 package:
   name: cyclus-deps
-  version: 1.0
+  version: 9999
 
-source:
-  #fn: develop.zip # [linux]
-  #url: https://github.com/cyclus/cyclus/archive/develop.zip # [linux]
-  git_url: https://github.com/cyclus/cyclus.git 
-  git_tag: develop #17716084c828a56964c36cf7c5e8c9a0aba39fde
 requirements:
    build:
     - sigcpp
+    - myglib
     - glibmm
-    - libxmlpp 
+    - libxmlpp
+    - bzip2 
     - coincbc
     - boost
     - hdf5
@@ -23,10 +20,15 @@ requirements:
     - pkg-config-lite # [osx]
     - cmake
     - python
+    - nose
+    - pytables
+
    run:
     - sigcpp
+    - myglib
     - glibmm
     - libxmlpp
+    - bzip2 
     - coincbc
     - boost
     - hdf5
@@ -36,9 +38,13 @@ requirements:
     - libffi # [osx]
     - gettext # [osx]
     - pkg-config-lite # [osx]
+    - cmake
+    - python
+    - nose
+    - pytables
 
 build:
-  number: 2
+  string: 0
 
 about:
   home: Cyclus

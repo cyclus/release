@@ -7,7 +7,7 @@ source:
   url: http://ftp.gnome.org/pub/GNOME/sources/glibmm/2.32/glibmm-2.32.1.tar.xz
 
 build:
-  number: 2            [osx]
+  number: 0
 
 # the build and runtime requirements. Dependencies of these requirements
 # # are included automatically.

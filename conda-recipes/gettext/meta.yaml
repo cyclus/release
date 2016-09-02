@@ -7,7 +7,7 @@ source:
   url: http://ftp.gnu.org/gnu/gettext/gettext-0.18.3.tar.gz
 
 build:
-  number: 2            [osx]
+  number: 0
 
 requirements:
  build:

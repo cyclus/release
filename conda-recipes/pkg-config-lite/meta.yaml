@@ -7,7 +7,7 @@ source:
   url: http://sourceforge.net/projects/pkgconfiglite/files/0.28-1/pkg-config-lite-0.28-1.tar.gz
 
 build:
-  number: 2            [osx]
+  number: 0
 
 
 about:
